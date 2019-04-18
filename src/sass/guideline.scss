@@ -1,0 +1,177 @@
+
+@import "_ress";
+
+$kiri:"DS-kirigirisu";
+$shuM:"Shuei KakuGo Kin M";
+$shuB:"Shuei KakuGo Kin B";
+*{
+  scroll-behavior: smooth;
+  outline: none;
+}
+html,
+body{
+  width: 100%;
+  height: 100%;
+}
+html{
+  font-size: 62.5%;
+}
+
+body{
+  max-width: 800px;
+  margin: 0 auto;
+  background: #eceae3;
+}
+.bgArea{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  img{
+    display: block;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+  }
+  img:first-child{
+    width: 40%;
+    left: -20%;
+  }
+  img:nth-of-type(2){
+    width: 30%;
+    top: 20%;
+    left: 56%;
+  }
+  img:last-child{
+    width: 20%;
+    top: 60%;
+    left: 40%;
+  }
+}
+.head{
+  padding-left: 20px;
+  p{
+    margin: 20px 0 0 14px;
+  }
+}
+.head-glnav{
+  margin-top: 20px;
+  ul{
+    display: flex;
+    min-width: 100%;
+    flex-wrap: wrap;
+    li{
+      margin: 6px 20px 0 0;
+      list-style-type: none;
+      i{
+        margin-right: 4px;
+      }
+      a{
+        padding-bottom: 2px;
+        text-decoration: none;
+        border-bottom: solid 1px #6d634a; 
+        &:hover{
+          border: none;
+        }
+      }
+    }
+  }
+}
+h1,h2{
+  font-family: $kiri;
+}
+h1{
+  margin-top: 60px;
+  font-size: 5rem;
+}
+h2{
+  padding-top: 80px;
+  font-size: 3.4rem;
+}
+h3{
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-family: $shuB;
+}
+p,li{
+  font-size: 1.4rem;
+  font-family: $shuM;
+  line-height: 1.8;
+}
+ul{
+  padding-left: 40px;
+}
+*{
+  color: #6d634a;
+}
+
+main>ul{
+  padding-right: 40px;
+  >li{
+  list-style-type: none;
+  &:first-child h2{
+    padding-top: 40px;
+  }
+  h2{
+    display: flex;
+    align-items: center;
+    i{
+      margin-right: 10px;
+      font-size: 2rem;
+    }
+  }
+}
+}
+main > p{
+  margin-top: 30px;
+  text-align: right;
+}
+
+main>ul>li>ul>li{
+  margin-top: 50px;
+}
+main>ul>li:first-child>ul>li{
+  margin-top: 20px;
+}
+
+.btn-top{
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+  transition: ease 0.4s;
+  position: fixed;
+  bottom: 26px;
+  right: 40px;
+  background: #6d634a;
+  color: #fff;
+  font-family: $kiri;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.btn-top.on{
+  opacity: 1;
+  bottom: 30px;
+}
+.foot{
+  line-height: 40px;
+  text-align: center;
+  font-family: $kiri;
+  font-size: 1.6rem;
+}
+
+@media (max-width:800px){
+  html{
+    font-size: 50%;
+  }
+  body{
+    max-width: 600px;
+  }
+}
+@media (max-width:400px){
+  html{
+    font-size: 30%;
+  }
+  body{
+    max-width: 600px;
+  }
+}

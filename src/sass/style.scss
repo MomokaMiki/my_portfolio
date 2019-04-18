@@ -1,0 +1,464 @@
+@import "_ress";
+
+$semi : "FB Miller Display Semibold";
+$roman : "FB Miller Display Roman";
+$goL: "A1 Gothic L","Hiragino Kaku Gothic ProN","メイリオ", "sans-serif";
+$goR: "A1 Gothic R","Hiragino Kaku Gothic ProN","メイリオ", "sans-serif";
+$main : #8c8060;
+
+*{
+  scroll-behavior: smooth;
+  outline: none;
+}
+
+html,
+body{
+  width: 100%;
+  height: 100%;
+}
+html{
+  font-size: 62.5%;
+  // overflow: hidden;
+}
+// html.on{
+//   overflow: visible;
+// }
+.flex{
+  display: flex;
+}
+.between{
+  display: flex;
+  justify-content: space-between;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style-type: none; 
+}
+.contents{
+  transition: ease 0.2s;
+  width: calc(100% - 60px);
+  height: 100%;
+  margin-left: 60px;
+}
+.contents.on{
+  width: calc(100% - 100px);
+  margin-left: 100px;
+}
+
+/* サイドナビ */
+.sideNavi.on{
+  width: 100px;
+}
+.sideNavi{
+  width: 60px;
+  height: 100%;
+  transition: ease 0.2s;
+  position: fixed;
+  border-right: 1px solid $main;
+  background:#fff;
+  nav{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    ul{
+      flex-direction: column;
+      height: 260px;
+      text-align: center;
+      li.show{
+        opacity: 1;
+      }
+      li{
+        width: 100%;
+        opacity: 0.6;
+        transition: ease 0.2s;
+        color: $main;
+        cursor: pointer;
+        &:hover{
+          opacity: 1;
+        }
+        i{
+          font-size: 1.6rem;
+        }
+        p{
+          opacity: 0;/* 変化 */
+          transition: ease 0.2s;
+          position: relative;
+          left: -8px;
+          margin-top: 4px;
+          font-family: $roman;
+          font-size: 1.4rem;
+        }
+        p.on{
+          opacity: 1;
+          left: 0px;
+        }
+      }
+    }
+  }
+}
+
+/* メインビジュアル */
+.mainVisual{
+  opacity: 0;
+  transition: ease 2s;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/photo-home.jpg");
+  background-size: 50%;
+  background-position: center;
+  h1{
+    width: 12%;
+    position: relative;
+    top: 62%;
+    left: calc(60px + 54%);
+    img{
+      width: 100%;
+    }
+  }
+}
+
+/* HOME */
+.content-home.on{
+  opacity: 1;
+  top: 0;
+}
+.content-home{
+  opacity: 0;
+  transition: ease 1.4s;
+  width: calc(100% - 60px);
+  height: 100%;
+  position: absolute;
+  top: 50px;
+  justify-content: center;
+  align-items: center;
+  background: rgba(151,141,120,0.7);
+  color: #fff;
+  text-align: center;
+  >div:first-child{
+    align-items: center;
+    p:last-child{
+      margin-top: 30px;
+      // line-height: 2;
+      font-size: 1.6rem;
+      font-family: $goR;
+    }
+  }
+  h2,h3{
+    font-family: $semi;
+  }
+  h2{
+    margin-bottom: 30px;
+    font-size: 3.8rem;
+    letter-spacing: 0.2rem;
+  }
+  h3{
+    margin: 60px 0 20px;
+    font-size: 2.8rem;
+    letter-spacing: 0.16rem;
+  }
+  ul{
+    margin: 16px 0;
+  }
+  p,li{
+    font-family: $goL;
+    font-size: 1.6rem;
+    line-height: 2.4;
+  }
+  li{
+    line-height: 1.8;
+  }
+  strong{
+    font-family: $goR;
+  }
+  .scroll-works{
+    width: 56px;
+    height: 50px;
+    position: absolute;
+    bottom: 8%;
+    span{
+      display: block;
+      width: 10px;
+      height: 1px;
+      background: #fff;
+      &:first-child{
+        width: 56px;
+        position: absolute;
+        top: 24px;
+        transform: rotate(90deg);
+      }
+      &:nth-of-type(2){
+        position: absolute;
+        left: 20px;
+        bottom: 0;
+        transform: rotate(45deg);
+      }
+      &:nth-of-type(3){
+        position: absolute;
+        bottom: 0;
+        left: 26px;
+        transform: rotate(-45deg);
+      }
+    }
+    p{
+      position: absolute;
+      top :60px;
+      right: -4px;
+      font-family: $semi;
+      letter-spacing: 0.1rem;
+    }
+  }
+}
+
+/* section */
+.content-works h2,
+.content-profile h2,
+.content-contact h2{
+  padding: 80px 0 30px;
+  font-family: $semi;
+  font-size: 2.2rem;
+  text-align: center; 
+  letter-spacing: 0.16rem;
+}
+
+/* WORKS */
+.work-search{
+  opacity: 0;
+  width: 300px;
+  height: 30px;
+  padding-left: 4px;
+  margin: 0 auto;
+  border: solid 1px $main;
+  border-radius: 10px;
+  input{
+    width: 268px;
+    padding-left: 4px;
+    font-size: 1.4rem;
+    color: $main;
+  }
+  ::-webkit-input-placeholder {
+    color: $main;/* ブラウザチェック */
+  }
+  i{
+    font-size: 1.4rem;
+    position: relative;
+    top: 1px;
+  }
+}
+.content-works,
+.content-profile{
+  color: $main;
+}
+
+.worksList{
+  max-width: 1100px;
+  margin: 60px auto 0;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  >li{
+    flex-direction: column;
+    justify-content: space-between;
+    width: 314px;
+    margin: 0 10px 60px 10px;
+    padding: 16px 12px 8px 12px; 
+    position: relative;
+    border: solid 1px $main;
+    >div div{
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+    }
+    h4{
+      margin-bottom: 4px;
+      font-family: $goR;
+      font-size: 1.4rem;
+    }
+    p{
+      margin: 4px 0;
+      font-family: $goL;
+      font-size: 1.2rem;
+      line-height: 1.4;
+    }
+  }
+  >li.no{
+    opacity: 0;
+  }
+  h3{
+    font-family: $goR;
+    font-size: 1.6rem;
+  }
+  figure{
+    height: 140px;
+    margin: 20px 0;
+    text-align: center;
+    img{
+      height: 100%;
+    }
+  }
+}
+.list-device{
+  i{
+    margin-left: 8px;
+    font-size: 1.6rem;
+    color: rgba(151,141,120,0.5);
+  }
+  i.on{
+    color: $main;
+  }
+}
+.list-used{
+  margin-top: 8px;
+  li{
+    width: 50%;
+    li{
+      width: 20px;
+      margin: 0 2px;
+    }
+  }
+}
+.list-hash{
+  flex-wrap: wrap;
+  margin-top: 6px;
+  li{
+    margin-right: 8px;
+    a{
+      color: $main;
+      font-family: $goL;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+/* PROFILE */
+.content-profile{
+  text-align: center;
+  h3{
+    margin: 60px 0 14px;
+    font-family: $roman;
+    font-size: 1.8rem;
+    letter-spacing: 0.12rem;
+  }
+  p{
+    font-family: $goL;
+    font-size: 1.4rem;
+    line-height: 2.4;
+  }
+  ul ul>li{
+    width: 510px;
+    margin: 0 auto;
+    text-align: left;
+    font-family: $goL;
+    font-size: 1.4rem;
+    line-height: 2.4;
+  }
+  a{
+    padding-bottom: 2px;
+    border-bottom: solid 1px $main;
+    color: $main;
+    &:hover{
+      border: none;
+    }
+  }
+}
+
+/* HISTORY */
+.content-history{
+  padding-bottom: 30px;
+  background: $main;
+  color: #fff;
+  h2{
+    margin: 80px 0 30px;
+    padding-top: 60px;
+    font-family: "FB Miller Display Semibold";
+    font-size: 2.2rem;
+    text-align: center;
+    letter-spacing: 0.16rem;
+  }
+  ul{
+    width: 700px;
+    margin: 60px auto 0 auto;
+    li{
+      margin-bottom: 70px;
+      p{
+        font-size: 1.4rem;
+        line-height: 1.4;
+      }
+      >p{
+        font-family: $roman;
+        width: 140px;
+        font-style: italic;
+      }
+      div{
+        width: calc(700px - 140px);
+        p{
+          font-family: $goL;
+        }
+      }
+      h3{
+        margin-bottom: 20px;
+        font-family: $semi;
+        font-size: 1.8rem;
+        font-style: italic;
+        letter-spacing: 0.12rem;
+      }
+    }
+  }  
+}
+
+/* CONTACT */
+.content-contact{
+  width: 310px;
+  height: calc(100vh - 60px);
+  margin: 0 auto;
+  position: relative;
+  color:$main;
+  text-align: center;
+  >div{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+      div a{
+      display: block;
+      margin: 40px 0 80px;
+      padding: 10px;
+      border: solid 1px $main;
+      border-radius: 10px;
+      font-family: $roman;
+      font-size: 2rem;
+      color:$main;
+    }
+  }
+  p{
+    font-size: 1.6rem;
+    font-family: $goL;
+  }
+  ul{
+    width: 140px;
+    margin: 0 auto;
+    li{
+      width: 36px;
+      a{
+        color: $main;
+        i{
+          font-size: 3.4rem;
+        }
+      }
+    }
+  }
+}
+
+
+/* フッター */
+.foot{
+  width: 100%;
+  padding-left: 60px;
+  line-height: 4;
+  background: $main;
+  font-family: $semi;
+  font-size: 1.6rem;
+  letter-spacing: 0.16rem;
+  color: #fff;
+  text-align: center;
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="三木百花がいつもコーディングする上で決めているルールなどをまとめています。">
+  <title>三木百花｜ガイドライン</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/guideline.css">
+  <link rel="shortcut icon" href="img/guideline-favi.png" type="image/png">
+</head>
+<body>
+  <div class="bgArea">
+    <img src="img/bg-lace.svg" alt="">
+    <img src="img/bg-lace.svg" alt="">
+    <img src="img/bg-lace.svg" alt="">
+  </div>
+  
+  <header class="head">
+    <h1>コーディングガイドライン</h1>
+    <p>いつもコーディングする上で意識しているルールです。</p>
+    <nav class="head-glnav">
+      <ul>
+        <li><i class="far fa-star"></i><a href="#guide1">ディレクトリ階層</a></li>
+        <li><i class="far fa-star"></i><a href="#guide2">コーディングチェック</a></li>
+        <li><i class="far fa-star"></i><a href="#guide3">命名規則</a></li>
+        <li><i class="far fa-star"></i><a href="#guide4">複数言語共通ルール</a></li>
+        <li><i class="far fa-star"></i><a href="#guide5">HTML記述ルール</a></li>
+        <li><i class="far fa-star"></i><a href="#guide6">CSS記述ルール</a></li>
+        <li><i class="far fa-star"></i><a href="#guide7">JavaSript記述ルール</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <ul>
+      <li id="guide1">
+        <h2><i class="far fa-star"></i>ディレクトリ階層</h2>
+        <ul>
+          <li>index.html</li>
+          <li><i class="fas fa-folder"></i>&nbsp;css( cssのファイル )</li>
+          <li><i class="fas fa-folder"></i>&nbsp;js( JavaScriptのファイル )</li>
+          <li><i class="fas fa-folder"></i>&nbsp;img( png,jpg,svg等の画像ファイル )</li>
+          <li><i class="fas fa-folder"></i>&nbsp;src( sassのファイル )</li>
+          <li>Sassのファイル</li>
+        </ul>
+      </li>
+      <li id="guide2">
+        <h2><i class="far fa-star"></i>コーディングチェック</h2>
+        <ul>
+          <li>
+            <h3>PCクロスブラウザチェック</h3>
+            <p>Chrome、Internet Explorer、Firefox、Safari</p>
+          </li>
+          <li>
+            <h3>スマートフォンチェック</h3>
+            <p>Android( Chrom )、iPhone( Safari )</p>
+          </li>
+          <li>
+            <h3>コーディングチェック</h3>
+            <p>W3Cのチェックサービスを使います。</p>
+            <ul>
+              <li>HTML&nbsp;&rArr;&nbsp;<a href="https://validator.w3.org/">W3C&nbsp;Markup&nbsp;Validation&nbsp;Service</a></li>
+              <li>CSS&nbsp;&rArr;&nbsp;<a href="https://jigsaw.w3.org/css-validator/">W3C&nbsp;CSS Validation&nbsp;Service</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li id="guide3">
+        <h2><i class="far fa-star"></i>命名規則</h2>
+        <ul>
+          <li>
+            <h3>ファイル名</h3>
+            <p>英単語ひと単語で命名する。下層ページはハイフンで繋げる。例：search.html&nbsp;search-result.html<br>画像の場合は、「種類-名前00.png」のような形にする。例：icon-search01.png</p>
+          </li>
+          <li>
+            <h3>クラス名</h3>
+            <ul>
+              <li>header&nbsp;&rArr;&nbsp;.head</li>
+              <li>main&nbsp;&rArr;&nbsp;.main</li>
+              <li>footer&nbsp;&rArr;&nbsp;.foot</li>
+              <li>sectionをまとめるdiv&nbsp;&rArr;&nbsp;.contents</li>
+              <li>section&nbsp;&rArr;&nbsp;.content-〇〇&nbsp;例：.content-search</li>
+              <li>sectionの中の部品&nbsp;&rArr;&nbsp;.〇〇-△△&nbsp;例：.search-head</li>
+            </ul>
+          </li>
+          <li>
+            <h3>変数名</h3>
+            <p>javaScript等で使用する変数名は、クラス名を参考してキャメルケースで命名する。例：var&nbsp;searchHead</p>
+          </li>
+        </ul>
+      </li>
+      <li id="guide4">
+        <h2><i class="far fa-star"></i>複数言語共通ルール</h2>
+        <ul>
+          <li>
+            <h3>1行1要素(HTML,CSS)</h3>
+            <p>なるべく1行に1要素しか書かないようにする。<br>HTMLの閉じタグが不要なタグや、1部のインライン要素などはOK。<br>例：&lt;p&gt;これは&lt;span&gt;サンプル&lt;/span&gt;です。&lt;/p&gt;</p>
+          </li>
+          <li>
+            <h3>レスポンシブ対応(HTML,CSS)</h3>
+            <p>レスポンシブ対応させることを意識してコーディングする。@mediaを使用し、適切な見た目になるようにする。<br>一番見る人が多いであろうデバイスから作っていく。</p>
+          </li>
+          <li>
+            <h3>コメント(HTML,CSS,JS)</h3>
+            <ul>
+              <li>HTML&nbsp;&rArr;&nbsp;&lt;!--&nbsp;コメント&nbsp;--&gt;</li>
+              <li>CSS&nbsp;&rArr;&nbsp;/*&nbsp;コメント&nbsp;*/</li>
+              <li>JavaScript&nbsp;&rArr;&nbsp;//&nbsp;コメント</li>
+            </ul>
+          </li>
+          <li>
+            <h3>クォーテーション</h3>
+            <p>JavaScript等で特別な場合を除いて、基本的にはダブルクォーテーション("")を使用する。</p>
+          </li>
+        </ul>
+      </li>
+      <li id="guide5">
+        <h2><i class="far fa-star"></i>HTML記述ルール</h2>
+        <ul>
+          <li>
+            <h3>doctype宣言</h3>
+            <p>HTML5を使用する。&rArr;&lt;!DOCTYPE&nbsp;html&gt;</p>
+          </li>
+          <li>
+            <h3>使用言語の指定</h3>
+            <p>日本語&rArr;lang="ja"</p>
+          </li>
+          <li>
+            <h3>metaタグの記述</h3>
+            <ul>
+              <li>&lt;meta&nbsp;charset="UTF-8"&gt;</li>
+              <li>&lt;meta&nbsp;name="viewport"&nbsp;content="width=device-width,&nbsp;initial-scale=1.0"&gt;</li>
+              <li>&lt;meta&nbsp;http-equiv="X-UA-Compatible"&nbsp;content="ie=edge"&gt;</li>
+              <li>&lt;meta&nbsp;name="description"&nbsp;content="ページの説明"&gt;</li>
+            </ul>
+          </li>
+          <li>
+            <h3>タイトルタグの記述</h3>
+            <p>&lt;title&gt;タイトル&lt;/title&gt;</p>
+          </li>
+          <li>
+            <h3>タグについて</h3>
+            <ul>
+              <li>HTML5のタグを使用する。例：header,main,section</li>
+              <li>h1はロゴなど見出しに使う。</li>
+              <li>線や丸などは、spanタグを使用する。</li>
+              <li>aタグやimgタグは、pタグで囲む。</li>
+            </ul>
+          </li>
+          <li>
+            <h3>属性について</h3>
+            <ul>
+              <li>alt属性は必ず書く。iconなどの見た目で使用している、意味を持たないものは、不要。</li>
+              <li>記述順は、id&nbsp;&rArr;&nbsp;class&nbsp;&rArr;&nbsp;他属性。styleは書かない</li>
+            </ul>
+          </li>
+          <li>
+            <h3>インデント</h3>
+            <p>tabを使用し、揃える。</p>
+          </li>
+          <li>
+            <h3>特殊文字の記述</h3>
+            <ul>
+              <li>&quot;&nbsp;&rArr;&nbsp;&amp;quot;</li>
+              <li>&amp;&nbsp;&rArr;&nbsp;&amp;amp;</li>
+              <li>&lt;&nbsp;&rArr;&nbsp;&amp;lt;</li>
+              <li>&gt;&nbsp;&rArr;&nbsp;&amp;gt;</li>
+              <li>半角スペース&nbsp;&rArr;&nbsp;&amp;nbsp;</li>
+              <li>ほぼ全角スペース&nbsp;&rArr;&nbsp;&amp;emsp;</li>
+              <li>&copy;&nbsp;&rArr;&nbsp;&amp;copy;</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li id="guide6">
+        <h2><i class="far fa-star"></i>CSS記述ルール</h2>
+        <ul>
+          <li>
+            <h3>Sassを使用する。</h3>
+            <p>そのページでよく使用するフォントや色は、変数に登録する。</p>
+          </li>
+          <li>
+            <h3>ressファイルを使用する。</h3>
+            <p><a href=""></a></p>
+          </li>
+          <li>
+            <h3>共通スタイル</h3>
+            <p>複数のページで繰り返し使用するスタイルは、_common.cssに記述し、@importで読み込む。</p>
+          </li>
+          <li>
+            <h3>繰り返し使うスタイルはクラス名を作る。</h3>
+            <p>例：display:flex&nbsp;&rArr;&nbsp;.flexというクラスを作り、HTMLのタグに.flexを記述。</p>
+          </li>
+          <li>
+            <h3>プロパティの記述順</h3>
+            <p>表示系&rArr;トランジション&rArr;サイズ系&rArr;位置系&rArr;その他スタイル<br>display(flex),float&rArr;opacity&rArr;overflow&rArr;transition<br>&rArr;width&rArr;height&rArr;margin&rArr;padding&rArr;border<br>&rArr;position&rArr;transform&rArr;その他</p>
+          </li>
+          <li>
+            <h3>単位</h3>
+            <ul>
+              <li>htmlには62.5%を指定する。</li>
+              <li>line-height:なし</li>
+              <li>border,border-radius:px</li>
+              <li>letter-spacing,font-size:em,rem</li>
+            </ul>
+          </li>
+          <li>
+            <h3>省略するもの・まとめるもの</h3>
+            <ul>
+              <li>margin・padding</li>
+              <li>background</li>
+              <li>カラーコード3桁にできるものは省略。(小文字)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li id="guide7">
+        <h2><i class="far fa-star"></i>JavaScript記述ルール</h2>
+        <ul>
+          <li>
+            <h3>プラグインは使わない。</h3>
+            <p>参考にするのは可だが、自分でコーディングする。</p>
+          </li>
+          <li>
+            <h3>j-Queryの使用</h3>
+            <p>バージョン3.3.1のファイルを使用。</p>
+          </li>
+          <li>
+            <h3>cssスタイル</h3>
+            <p>クラス名.onなどをタグにつけて、それを追加・削除することで変化させる。</p>
+          </li>
+        </ul>
+        
+    </ul>
+    <p>最終更新日：2019/04/12</p>
+    <button class="btn-top">TOP</button>
+  </main>
+
+  <footer class="foot">
+    <small>&copy;2019 Momoka Miki</small>
+  </footer>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript"
+    src="//typesquare.com/3/tsst/script/ja/typesquare.js?5b49521a4774449c972b1df2e90393a3&fadein=10&auto_load_font=true"
+    charset="utf-8"></script>
+  <script>
+    $(function(){
+      $(".btn-top").on("click",function(){
+        $(document).scrollTop(0);
+      })
+      $(document).on("scroll",function(){
+        if ($(document).scrollTop() >= 400) {
+          $(".btn-top").addClass("on");
+        }
+        else {
+          $(".btn-top").removeClass("on");
+        }
+      })
+      
+    })
+  </script>
+
+
+</body>
+</html>
