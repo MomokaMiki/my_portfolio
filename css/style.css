@@ -1179,8 +1179,8 @@ li {
 }
 
 .bg-profile .parts.on {
-  opacity: 0.1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+  opacity: 0.15;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=15)";
   transition: ease 0.8;
 }
 

@@ -1,6 +1,6 @@
 $(function(){
   $.ajax({
-    url: "read/data-works.php",
+    url: "read/works.php",
     method: "get",
     cache: false,
     dataType: "json",
@@ -28,16 +28,16 @@ $(function(){
           <div>
             <div class="flex">
               <div class="title flex">
-                <h3>${ worksInfo[i]['name'] }</h3>
+                <h3>${ worksInfo[i]['workname'] }</h3>
               </div>
               <ul class="list-device flex">
                 <li><i class="fas fa-desktop ${ iconPc }"></i></li>
                 <li><i class="fas fa-mobile-alt ${ iconSp }"></i></li>
               </ul>
             </div>
-            <figure><a href="http://click.ecc.ac.jp/ecc/mmiki/material/${ worksInfo[i]['link']}" target="_blank"><img src="img/thumb-${ worksInfo[i]['link']}.png" alt="${worksInfo[i]['name'] }のサムネイル"></a></figure>
+            <figure><a href="http://click.ecc.ac.jp/ecc/mmiki/material/${ worksInfo[i]['link']}" target="_blank"><img src="img/thumb-${worksInfo[i]['link']}.png" alt="${worksInfo[i]['workname'] }のサムネイル"></a></figure>
             <h4>${ worksInfo[i]['title'] }</h4>
-            <p>${ worksInfo[i]['text'] }</p>
+            <p>${ worksInfo[i]['worktext'] }</p>
           </div>
           <div>
             <ul class="list-used flex">
@@ -52,15 +52,15 @@ $(function(){
             </ul>
             <ul class="list-hash flex">
               <li>#${worksInfo[i]['season']}</li>
-              <li>#${worksInfo[i]['type']}</li>
-              <li>#約${worksInfo[i]['time']}時間</li>
+              <li>#${worksInfo[i]['worktype']}</li>
+              <li>#約${worksInfo[i]['worktime']}時間</li>
             </ul>
           </div>
         </li>`
         $(".worksList").append(item);
 
-        if (worksInfo[i]['proposal'] == "") {
-          var proposal = `<a href="pdf/${worksInfo[i]['link']}.pdf" target="_blank"><img src="img/icon-proposal.svg"></a>`
+        if (worksInfo[i]['proposal'] == "block") {
+          var proposal = `<a href="pdf/${worksInfo[i]['link']}.pdf" target="_blank"><img src="img/icon-proposal.svg" alt='企画書を見る'></a>`
           $(".title").eq(i).append(proposal);
         }
 
@@ -69,7 +69,7 @@ $(function(){
           $(".worksList > li").eq(i).find(".used-soft ul").append(`<li><img src='img/soft-${softs[k]}.svg' alt='${softs[k] }のアイコン'></li>`);
         });
 
-        var langs = worksInfo[i]['language'].split("/");
+        var langs = worksInfo[i]['lang'].split("/");
         $.each(langs, function (k, e) {
           $(".worksList > li").eq(i).find(".used-lang ul").append(`<li><img src='img/lang-${langs[k]}.svg' alt='${langs[k]}のアイコン'></li>`);
         });
@@ -94,7 +94,6 @@ $(function(){
               $(".worksList .no").addClass("none");
             }
           }
-          console.log("2222222")
         }
         if (winWid >= 668 && winWid < 1082) {  
           if (!Number(worksInfo.length % 2) == 0){
@@ -103,15 +102,12 @@ $(function(){
               $(".worksList").append("<li class='no'></li>");
             }
           }
-          console.log("111111")
         }
       }
 
       $(window).on("resize", function () {
         addEmpty();
       });
-
-      
     })
     .fail(function (error) {
       console.log(error);
