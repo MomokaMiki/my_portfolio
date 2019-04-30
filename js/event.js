@@ -1,161 +1,251 @@
-$(function(){
 
-  // pcサイズの場合
-  if ($(".sideNavi").hasClass("pc")){
-    // サイドナビ
-    $(".sideNavi").hover(function(){
-      $(this).addClass("on");
-      $(".contents").addClass("on");
-      $("html").removeClass("on");
-    },
-    function(){
-      $(this).removeClass("on");
-      $(".contents").removeClass("on");
-      $("html").addClass("on");
-    });
+  // ローディング画面表示
+  $(window).on("load", function () {
+    console.log("window")
+    // リロードしたらトップへ
+    $('html').animate({ scrollTop: 0 }, '1');
+    // リロードでスクロールアニメを見えなくする為に
+    setTimeout(function(){
+      // ローディング画面を消す
+      $(".load").css("opacity", 0);
+      setTimeout(function () {
+        $(".load").css("display", "none");
+      }, 500)
 
-    $(".sideNavi li").hover(function(){
-      $(this).children("p").addClass("on");
-    },
-    function(){
-      $(this).children("p").removeClass("on");
-    });
-  }
-  
-  // ４秒後に実行
+      // トップ画面表示
+      $(".mainVisual").css("opacity", "0.7")
 
-  // サイドナビの透明度変更
-  // サイドナビをクリックした時
-  var sideNaviIndex = 0;
-  $(".sideNavi li").each(function(i,e){
-    $(".sideNavi li").eq(i).on("click", function () {
-      sideNaviIndex = i;
-      var offTop = $(".content").eq(sideNaviIndex).offset().top;
-      $(document).scrollTop(offTop);
-    })
-  });
+      // 1.5秒後、タイトルを表示
+      setTimeout(function () {
+        setTimeout(function () {
+          $.each($(".titleSvg"), function (i, e) {
+            setTimeout(function () {
+              $(".titleSvg").eq(i).css("opacity", "1");
+            }, 100 * i)
+          })
+        }, 300)
+      }, 1500)
 
-
-  // スクロール前のスクロール値
-  var beforeSc = $(document).scrollTop();
-
-  // スクロールした時
-  $(document).on("scroll",function(){
-
-    var scTop = $(this).scrollTop();
-    var content = $(".content");
-
-    $(".sideNavi li").removeClass("show");
-    content.each(function(i,e){
-      var next = i+1;
-      // CONTACTの時だけ例外
-      if (scTop >= $(".content").eq(4).offset().top ){
-        $(".sideNavi li").eq(4).addClass("show");
+      // 5秒後、home-contentを表示
+      setTimeout(function () {
+        $(".titleSvg").css("opacity", "0");
+        $(".content-home").addClass("on");
+        $("html").css("overflow", "visible");
+      }, 4500)
+      // ６個目以降を消す
+      for (var i = 6; i <= $(".worksList > li").length; i++){
+        $(".worksList > li").eq(i).addClass("none");
       }
-      else{
-        if ($(".content").eq(i).offset().top <= scTop && scTop < $(".content").eq(next).offset().top) {
-          $(".sideNavi li").eq(i).addClass("show");
-        }
-      }      
-  
-    })
-  });
 
-
-  
-
-  var wheelFlg = true;
-  $(window).on("wheel",function(e){
-    console.log(wheelFlg);
-
-    // wheelイベントを一回だけ　
-    if (wheelFlg) {
-
-      console.log("ホイル")
-      if ( e.originalEvent.deltaY ){
-        var delta = -(e.originalEvent.deltaY);
-      }
-      else{
-        if (e.originalEvent.wheelDelta ){
-          var delta = e.originalEvent.wheelDelta;
+      // .btn-more
+      $(document).on('click', '.btn-more', function () {
+        if( $(".worksList").hasClass("rimit") ){
+          $(".worksList > li").removeClass("none");
+          $(".btn-more").html("Close")
+          $(".worksList").removeClass("rimit")
+          setTimeout(function(){
+            $(".worksList > li").addClass("on");
+          },200)
         }
         else{
-          var delta = -(e.originalEvent.detail)
+          $(document).scrollTop($(".content-works").offset().top)
+          setTimeout(function(){
+            $(".btn-more").html("View&nbsp;More");
+            $(".worksList").addClass("rimit")
+            for (var i = 6; i <= $(".worksList > li").length; i++) {
+              $(".worksList > li").eq(i).addClass("none");
+            }
+          },1000)
+        }        
+      });
+
+      //scroll-works
+      $(".scroll-works").on("click",function(){
+        $(document).scrollTop($(".content-works").offset().top)
+      })
+
+      // ハンバーガーメニュー
+      $(".btn-humb").on("click",function(){
+        $(this).removeClass("offAnime");
+        $(this).removeClass("onAnime");
+        if($(this).hasClass("on")){
+          $(this).addClass("offAnime");
+          $(".sideNavi").css({ opacity: 0, zIndex: -1 })
+          setTimeout(function () {
+            $(".btn-humb").removeClass("on");
+          },1900)
         }
+        else{
+          console.log("開く")
+          $(this).addClass("onAnime");
+          $(".sideNavi").css({opacity:1,zIndex:1})
+          setTimeout(function(){
+            $(".btn-humb").addClass("on");
+          },1900)
+        }
+      })
+
+      // スマホサイズかどうかを測定
+      if ($(window).width() <= 960) {
+        // SP
+        $(".sideNavi li p").addClass("on");
+        $(".sideNavi").addClass("sp");
+      }
+      else{
+        // PC        
       }
 
-      // 下にスクロールしていたら
-      if (delta < 0) {
-        console.log(delta)
-        var winHeight = $(window).height();
-        var nextPos = document.getElementsByClassName("content")[1].getBoundingClientRect().top;
+      // 画面サイズ変わるたびに
+      $(window).on("resize", function () {
+        $(".sideNavi").removeClass("sp");
+        if ($(window).width() <= 960) {
+          $(".sideNavi").css({ opacity: 0, zIndex: -1 })
+          $(".sideNavi li p").addClass("on");
+          $(".sideNavi").addClass("sp");
+        }
+        else{
+          $(".sideNavi").css({ opacity: 1, zIndex: 1 })
+          $(".sideNavi li p").removeClass("on");
+          $(".sideNavi li").each(function(){
+            if($(this).hasClass("show")){
+              $(this).children("p").addClass("on");
+            }
+          })
+        }
+      });
 
-        // もし2つめの画面からの位置が画面の高さより小さくなったらそのコンテンツへ
-        if (winHeight >= nextPos) {
-            var nextOff = $(".content").eq(1).offset().top;
-            $(document).scrollTop(nextOff);
+      // ホバーイベント
+      $(".sideNavi li").on("mouseover", function () {
+        $(this).children("p").addClass("on");
+        $(this).addClass("on");
+      })
+      $(".sideNavi li").on("mouseout", function () {
+        if (!$(this).hasClass("show")) {
+          $(this).removeClass("on");
+          if (!$(".sideNavi").hasClass("sp")){
+            $(this).children("p").removeClass("on");
           }
         }
-      wheelFlg = false;
-      }
+      })
+
+      // サイドナビをクリックした時
+      var sideNaviIndex = 0;
+      $(".sideNavi li").each(function (i, e) {
+        $(".sideNavi li").eq(i).on("click", function () {
+          $("html").css("overflow", "visible");
+          sideNaviIndex = i;
+          $(this).addClass("click");
+          $(this).addClass("on");
+          $(this).addClass("show");
+          var thisClick = $(this);
+          var offTop = $(".content").eq(sideNaviIndex).offset().top;
+          $(document).scrollTop(offTop);
+          // クリックされた瞬間だけ.clickをつけておく
+          setTimeout(function () {
+            thisClick.removeClass("click");
+          }, 1500)
+        })
+      });
+
+      flgProfile = true;
+      // スクロールした時
+      $(document).on("scroll", function () {
+        var scTop = $(this).scrollTop();
+        var content = $(".content");
+        var naviList = $(".sideNavi li");
+
+        content.each(function (i, e) {
+          // クリックされたリスト以外のものはクラス削除しておく
+          if (!naviList.eq(i).hasClass("click")) {
+            naviList.eq(i).removeClass("show");
+            naviList.eq(i).removeClass("on");
+            if (!$(".sideNavi").hasClass("sp")) {
+              naviList.eq(i).children("p").removeClass("on");
+            }
+          }
+
+          // クリックせずに普通にスクロールした時の処理
+          if (!naviList.hasClass("click")) {
+            var next = i + 1;
+            //CONTACTの時だけ例外
+            if (scTop >= $(".content").eq(4).offset().top) {
+              naviList.eq(4).addClass("show");
+              naviList.eq(4).addClass("on");
+              naviList.children("p").eq(4).addClass("on");
+            }
+            else {
+              if ($(".content").eq(i).offset().top <= scTop && scTop < $(".content").eq(next).offset().top) {
+                naviList.eq(i).addClass("show");
+                naviList.eq(i).addClass("on");
+                naviList.children("p").eq(i).addClass("on");
+              }
+            }
+          }
+        })
     
-    });// wheel
-  
 
-      //e.preventDefault();
+        // works表示アニメーション
+        $.each($(".worksList > li"), function (i, e) {
+          if ($(this).offset().top - scTop < $(window).height()/4*3) {
+            if(!$(this).hasClass("none")){
+              if(!$(this).hasClass("no")){
+                $(this).addClass("on");
+              }
+            }
+          }
+          else{
+            $(this).removeClass("on");
+          }
+        })
 
-    // ? もし
-    // true : false 
-    // var delta = e.originalEvent.deltaY 
-    // ? -(e.originalEvent.deltaY) : e.originalEvent.wheelDelta 
-    // ? e.originalEvent.wheelDelta : -(e.originalEvent.detail);
+        // profile表示アニメーション
+        if ($(".content-profile").offset().top - scTop < $(window).height() / 2 ){
+          if( flgProfile ){
+            $.each($(".parts"), function (i, e) {
+              setTimeout(function () {
+                $(".parts").eq(i).addClass("on");
+              }, 80 * i)
+            }) 
+            flgProfile = false;
+          }
+        }
+        else{
+          $.each($(".parts"), function (i, e) {
+            setTimeout(function () {
+              $(".parts").eq(i).removeClass("on");
+            }, 40 * i)
+          }) 
+          flgProfile = true;
+        }
 
-    //   // プラスなら上のコンテンツへ
-    //   if(flg){
-    //   if (delta > 0) {
-    //     console.log("うえへ")
-    //     var offTop = $(".content").eq(sideNaviIndex - 1).offset().top;
-    //   }
-    //   // マイナスなら下のコンテンツへ
-    //   else{
-    //     console.log("下へ")
-    //     var offTop = $(".content").eq(sideNaviIndex + 1).offset().top;
-    //   }
-    //   $(document).scrollTop(offTop);
-    //   flg = false;
-    // }
+        // history表示アニメーション
+        $.each($(".content-history li"),function(i,e){
+          if ($(this).offset().top - scTop < $(window).height() / 4 * 3) {
+            $(this).children("p").addClass("on");
+            $(this).find("h3").addClass("on");
+          }
+          else{
+            $(this).children("p").removeClass("on");
+            $(this).find("h3").removeClass("on");
+          }
+        })
+        $.each($(".content-history li > div p"), function (i, e) {
+          if ($(this).offset().top - scTop < $(window).height() / 4 * 3) {
+            $(this).addClass("on");
+          }
+          else{
+            $(this).removeClass("on");
+          }
+        })
 
+        // contact表示アニメーション
+        if( $(".content-contact").offset().top - scTop < $(window).height() / 2 ){
+          $(".content-contact > div").addClass("on");
+        }
+        else{
+          $(".content-contact > div").removeClass("on");
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // トップ画面表示
-  $(".mainVisual").css("opacity", "1")
-  setTimeout(function(){
-    $(".content-home").addClass("on");
-  },2000)
-
-  // スクロール値が100の時スクロールしたらーーーの位置へ
-
-  var scTop = $(document).scrollTop();
-  var ot2 = $(".content").eq(1).offset().top;
-  setTimeout(function () {
-    if (scTop == 100) {
-      $(document).scrollTop(ot2);
-      console.log("100")
-    }
-  }, 4000)
-
-})
+      }); // scroll
+    },1500);// setTimeout
+  });// window laod

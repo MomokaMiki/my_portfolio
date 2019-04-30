@@ -1,6 +1,6 @@
 $(function(){
   $.ajax({
-    url: "data-works.php",
+    url: "read/data-works.php",
     method: "get",
     cache: false,
     dataType: "json",
@@ -8,30 +8,28 @@ $(function(){
   })
     .done(function(data){
       var worksInfo = data;
-      console.log(worksInfo)
-
       $.each(worksInfo,function (i, e) {
 
-      var iconPc = "";
-      var iconSp = "";
-      if (worksInfo[i]['device'] == 2 ){
-        iconPc = "on";
-        iconSp = "on";
-      }
+        var iconPc = "";
+        var iconSp = "";
+        if (worksInfo[i]['device'] == 2 ){
+          iconPc = "on";
+          iconSp = "on";
+        }
         if (worksInfo[i]['device'] == 0  ){
           iconPc = "on";
         }
-
         if (worksInfo[i]['device'] == 1) {
           iconSp = "on";
         }
-
-      
+          
         var item = `
         <li class="flex">
           <div>
             <div class="flex">
-              <h3>${ worksInfo[i]['name'] }</h3>
+              <div class="title flex">
+                <h3>${ worksInfo[i]['name'] }</h3>
+              </div>
               <ul class="list-device flex">
                 <li><i class="fas fa-desktop ${ iconPc }"></i></li>
                 <li><i class="fas fa-mobile-alt ${ iconSp }"></i></li>
@@ -53,14 +51,18 @@ $(function(){
               </li>
             </ul>
             <ul class="list-hash flex">
-              <li><a href="">#${worksInfo[i]['season']}</a></li>
-              <li><a href="">#${worksInfo[i]['type']}</a></li>
-              <li><a href="">#約${worksInfo[i]['time']}時間</a></li>
+              <li>#${worksInfo[i]['season']}</li>
+              <li>#${worksInfo[i]['type']}</li>
+              <li>#約${worksInfo[i]['time']}時間</li>
             </ul>
           </div>
         </li>`
-
         $(".worksList").append(item);
+
+        if (worksInfo[i]['proposal'] == "") {
+          var proposal = `<a href="pdf/${worksInfo[i]['link']}.pdf" target="_blank"><img src="img/icon-proposal.svg"></a>`
+          $(".title").eq(i).append(proposal);
+        }
 
         var softs = worksInfo[i]['soft'].split("/");
         $.each(softs,function(k,e){
@@ -72,33 +74,46 @@ $(function(){
           $(".worksList > li").eq(i).find(".used-lang ul").append(`<li><img src='img/lang-${langs[k]}.svg' alt='${langs[k]}のアイコン'></li>`);
         });
 
-        // setTimeout(function(){
-          Ts.setAutoLoadFontSelector(".worksList", 100);
-        // },100)
-        
-        
+        Ts.setAutoLoadFontSelector(".worksList", 100);
       })
 
+      addEmpty();
+
       // ウィンドウの幅によって、WORKSの余りの空箱を追加
-      var winWid = $(window).width();
-      if ( winWid >= 1062 ){
-        var addCount = 3 - worksInfo.length % 3;
-        for (i = 1; i <= addCount; i++ ){
-          $(".worksList").append("<li class='no'></li>");
+      // 余りがある時だけ追加
+      function addEmpty() {
+        $(".no").remove();
+        var winWid = $(window).width();
+        if (winWid >= 1082) {
+          if (!Number(worksInfo.length % 3) == 0){
+            var addCount = 3 - worksInfo.length % 3;
+            for (i = 1; i <= addCount; i++) {
+              $(".worksList").append("<li class='no'></li>");
+            }
+            if($(".worksList").hasClass("rimit")){
+              $(".worksList .no").addClass("none");
+            }
+          }
+          console.log("2222222")
+        }
+        if (winWid >= 668 && winWid < 1082) {  
+          if (!Number(worksInfo.length % 2) == 0){
+            var addCount = 2 - worksInfo.length % 2;
+            for (i = 1; i <= addCount; i++) {
+              $(".worksList").append("<li class='no'></li>");
+            }
+          }
+          console.log("111111")
         }
       }
-      if (winWid >= 728 && winWid < 1062 ){
-        var addCount = 2 - worksInfo.length % 2;
-        for (i = 1; i <= addCount; i++) {
-          $(".worksList").append("<li class='no'></li>");
-        }
-      }
-            
+
+      $(window).on("resize", function () {
+        addEmpty();
+      });
+
+      
     })
     .fail(function (error) {
       console.log(error);
     })
 })
-
-
-
