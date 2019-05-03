@@ -35,6 +35,7 @@ $(window).on("load", function () {
       $(".content-home").addClass("on");
       $("html").css("overflow", "visible");
     }, 4500)
+    
     // ６個目以降を消す
     for (var i = 6; i <= $(".worksList > li").length; i++){
       $(".worksList > li").eq(i).addClass("none");
@@ -148,7 +149,7 @@ $(window).on("load", function () {
 
     flgProfile = true;
     // スクロールした時
-    $(document).on("scroll", function () {
+    $(document).on("scroll", function (event) {
       var scTop = $(this).scrollTop();
       var naviList = sideNaviList;
 
