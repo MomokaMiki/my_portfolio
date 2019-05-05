@@ -1,7 +1,15 @@
-// リロードしたらトップへ
+
+
+//
+// load
+//
+
+$(window).on("load", function () {
+
+  // リロードしたらトップへ
   $('html').animate({ scrollTop: 0 }, '1');
   // リロードでスクロールアニメを見えなくする為に
-  setTimeout(function(){
+  setTimeout(function () {
     // ローディング画面を消す
     $(".load").css("opacity", 0);
     setTimeout(function () {
@@ -26,3 +34,10 @@
       $(".content-home").addClass("on");
       $("html").css("overflow", "visible");
     }, 4500)
+
+    // ６個目以降を消す
+    for (var i = 6; i <= $(".worksList > li").length; i++) {
+      $(".worksList > li").eq(i).addClass("none");
+    }
+  }, 1500);// setTimeout
+});// window laod

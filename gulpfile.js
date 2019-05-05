@@ -95,6 +95,22 @@ gulp.task('imagemin', function (done) {
 
 
 //
+// jsファイルの結合
+//
+
+// jsファイル結合
+var concat = require('gulp-concat');
+
+gulp.task('concat', function (done) {
+  gulp.src(['./src/concat/var.js', './src/concat/base.js','./src/concat/*.js'])
+    .pipe(plumber())
+    .pipe(concat('script.js'))
+    .pipe(gulp.dest('./js/'));
+  done();
+});
+
+
+//
 // オートリロード
 //
 
@@ -134,11 +150,12 @@ gulp.task('watch',  function (done) {
   gulp.watch("./**/*.php", gulp.series('bs-reload'));
   gulp.watch("./src/sass/**/*.scss", gulp.series('sass', 'bs-reload'));
   gulp.watch("./src/imagemin/*", gulp.series('imagemin', 'bs-reload'));
+  gulp.watch("./src/concat/*.js", gulp.series('concat', 'bs-reload'))
   done();
 });
 
 // gulp を実行で、browserSync立ち上げ + watch実行
-gulp.task('default', gulp.series('sync','watch') );
+gulp.task('default', gulp.series('sass','imagemin','concat','sync','watch') );
 
 
 //

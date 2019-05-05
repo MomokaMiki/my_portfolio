@@ -19,38 +19,41 @@
       <img src="img/icon-flower03.svg" alt="">
     </div>
   </div>
+
+  <div class="sideNavi">
+    <nav class="flex">
+      <ul class="between">
+        <li class="show on">
+          <i class="fas fa-home"></i>
+          <p class="on">HOME</p>
+        </li>
+        <li>
+          <i class="fas fa-laptop-code"></i>
+          <p>WORKS</p>
+        </li>
+        <li>
+          <i class="fas fa-user"></i>
+          <p>PROFILE</p>
+        </li>
+        <li>
+          <i class="fas fa-history"></i>
+          <p>HISTORY</p>
+        </li>
+        <li>
+          <i class="fas fa-envelope"></i>
+          <p>CONTACT</p>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
   <main class="main flex">
     <div class="btn-humb">
           <span></span>
           <span></span>
           <span></span>
     </div>
-    <div class="sideNavi">
-      <nav class="flex">
-        <ul class="between">
-          <li class="show on">
-            <i class="fas fa-home"></i>
-            <p class="on">HOME</p>
-          </li>
-          <li>
-            <i class="fas fa-laptop-code"></i>
-            <p>WORKS</p>
-          </li>
-          <li>
-            <i class="fas fa-user"></i>
-            <p>PROFILE</p>
-          </li>
-          <li>
-            <i class="fas fa-history"></i>
-            <p>HISTORY</p>
-          </li>
-          <li>
-            <i class="fas fa-envelope"></i>
-            <p>CONTACT</p>
-          </li>
-        </ul>
-      </nav>
-    </div>
+
     <div class="contents">
       <div class="mainVisual">
         <h1>
@@ -313,9 +316,7 @@
   </footer>
 
   <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/works.js"></script>
-  <script src="js/scroll.js"></script>
-  <script src="js/event.js"></script>
+  <script src="js/script.js"></script>
   <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?5b49521a4774449c972b1df2e90393a3"
     charset="utf-8"></script>
 </body>
