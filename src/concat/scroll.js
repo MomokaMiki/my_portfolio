@@ -4,10 +4,10 @@
 // scroll
 //
 
-$(function(){
+// $(function(){
   // スクロールした時
-  $(document).on("scroll", function (event) {
-
+  $(document).on("scroll", function () {
+console.log("aaaa")
     // HOMEにいた時に下にスクロールするとWORKSヘ飛ぶ
     var afterSc = $(document).scrollTop();
     if (beforeSc < afterSc) {
@@ -59,6 +59,7 @@ $(function(){
       if ($(this).offset().top - scTop < $(window).height() / 4 * 3) {
         if (!$(this).hasClass("none")) {
           if (!$(this).hasClass("no")) {
+            console.log("rrrr")
             $(this).addClass("on");
           }
         }
@@ -117,4 +118,4 @@ $(function(){
     }
 
   }); // scroll
-})
+// })

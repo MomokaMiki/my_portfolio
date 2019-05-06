@@ -4,7 +4,7 @@
 // event
 //
 
-$(function(){
+// $(function(){
   // 作品 ViewMoreボタン
   $(document).on('click', '.btn-more', function () {
     if (worksList.hasClass("rimit")) {
@@ -85,4 +85,4 @@ $(function(){
       }, 1500)
     })
   });
-})
+// })

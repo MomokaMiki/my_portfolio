@@ -4,7 +4,7 @@
 // window
 //
 
-$(function(){
+// $(function(){
   // スマホサイズかどうかを測定
   if ($(window).width() <= 960) {
     // SP
@@ -30,4 +30,4 @@ $(function(){
       })
     }
   });
-})
+// })

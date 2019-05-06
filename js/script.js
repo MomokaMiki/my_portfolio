@@ -7,7 +7,7 @@
 var worksList = $(".worksList");
 var content = $(".content");
 var sideNavi = $(".sideNavi");
-var naviList = $(".sideNavi li");
+var naviList = $(".naviList");
 var scTop = $(document).scrollTop();
 var beforeSc = $(document).scrollTop();
 var scFlg = true;
@@ -61,7 +61,7 @@ $(window).on("load", function () {
 // event
 //
 
-$(function(){
+// $(function(){
   // 作品 ViewMoreボタン
   $(document).on('click', '.btn-more', function () {
     if (worksList.hasClass("rimit")) {
@@ -142,17 +142,17 @@ $(function(){
       }, 1500)
     })
   });
-})
+// })
 
 
 //
 // scroll
 //
 
-$(function(){
+// $(function(){
   // スクロールした時
-  $(document).on("scroll", function (event) {
-
+  $(document).on("scroll", function () {
+console.log("aaaa")
     // HOMEにいた時に下にスクロールするとWORKSヘ飛ぶ
     var afterSc = $(document).scrollTop();
     if (beforeSc < afterSc) {
@@ -204,6 +204,7 @@ $(function(){
       if ($(this).offset().top - scTop < $(window).height() / 4 * 3) {
         if (!$(this).hasClass("none")) {
           if (!$(this).hasClass("no")) {
+            console.log("rrrr")
             $(this).addClass("on");
           }
         }
@@ -262,14 +263,14 @@ $(function(){
     }
 
   }); // scroll
-})
+// })
 
 
 //
 // window
 //
 
-$(function(){
+// $(function(){
   // スマホサイズかどうかを測定
   if ($(window).width() <= 960) {
     // SP
@@ -295,7 +296,7 @@ $(function(){
       })
     }
   });
-})
+// })
 $(function(){
   $.ajax({
     url: "read/works.php",
