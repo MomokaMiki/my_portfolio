@@ -6,10 +6,7 @@ $(function(){
   var naviList = $(".naviList");
   var scTop = $(document).scrollTop();
     
-    // ６個目以降を消す
-    for (var i = 6; i <= $(".worksList > li").length; i++){
-      $(".worksList > li").eq(i).addClass("none");
-    }
+
 
     // 作品 ViewMoreボタン
     $(document).on('click', '.btn-more', function () {

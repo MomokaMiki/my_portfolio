@@ -102,7 +102,7 @@ gulp.task('imagemin', function (done) {
 var concat = require('gulp-concat');
 
 gulp.task('concat', function (done) {
-  gulp.src(['./src/concat/works.js', './src/concat/load.js','./src/concat/*.js'])
+  gulp.src(['./src/concat/works.js', './src/concat/load.js', './src/concat/scroll.js', './src/concat/event.js'])
     .pipe(plumber())
     .pipe(concat('script.js'))
     .pipe(gulp.dest('./js/'));

@@ -79,6 +79,11 @@ $(function(){
 
     addEmpty();
 
+    // ６個目以降を消す
+    for (var i = 6; i <= $(".worksList > li").length; i++) {
+      $(".worksList > li").eq(i).addClass("none");
+    }
+
     // ウィンドウの幅によって、WORKSの余りの空箱を追加
     // 余りがある時だけ追加
     function addEmpty() {
@@ -153,10 +158,7 @@ $(function(){
   var naviList = $(".naviList");
   var scTop = $(document).scrollTop();
     
-    // ６個目以降を消す
-    for (var i = 6; i <= $(".worksList > li").length; i++){
-      $(".worksList > li").eq(i).addClass("none");
-    }
+
 
     // 作品 ViewMoreボタン
     $(document).on('click', '.btn-more', function () {
@@ -393,17 +395,3 @@ $(function(){
   })
 
 })
-
-
-//
-// var
-//
-
-var worksList = $(".worksList");
-var content = $(".content");
-var sideNavi = $(".sideNavi");
-var naviList = $(".naviList");
-var scTop = $(document).scrollTop();
-var beforeSc = $(document).scrollTop();
-var scFlg = true;
-var flgProfile = true;

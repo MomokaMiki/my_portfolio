@@ -79,6 +79,11 @@ $(function(){
 
     addEmpty();
 
+    // ６個目以降を消す
+    for (var i = 6; i <= $(".worksList > li").length; i++) {
+      $(".worksList > li").eq(i).addClass("none");
+    }
+
     // ウィンドウの幅によって、WORKSの余りの空箱を追加
     // 余りがある時だけ追加
     function addEmpty() {
