@@ -39,5 +39,5 @@ $(window).on("load", function () {
     for (var i = 6; i <= $(".worksList > li").length; i++) {
       $(".worksList > li").eq(i).addClass("none");
     }
-  }, 1500);// setTimeout
+  }, 1000);// setTimeout
 });// window laod

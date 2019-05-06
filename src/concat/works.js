@@ -24,23 +24,23 @@ $(function(){
       }
         
       var item = `
-      <li class="flex">
-        <div>
-          <div class="flex">
-            <div class="title flex">
+      <li class="work-box flex">
+        <div class="work-main">
+          <div class="work-main__head flex">
+            <div class="work-title flex">
               <h3>${ worksInfo[i]['workname'] }</h3>
             </div>
-            <ul class="list-device flex">
+            <ul class="work-device flex">
               <li><i class="fas fa-desktop ${ iconPc }"></i></li>
               <li><i class="fas fa-mobile-alt ${ iconSp }"></i></li>
             </ul>
           </div>
-          <figure><a href="http://click.ecc.ac.jp/ecc/mmiki/material/${ worksInfo[i]['link']}" target="_blank"><img src="img/thumb-${worksInfo[i]['link']}.png" alt="${worksInfo[i]['workname'] }のサムネイル"></a></figure>
-          <h4>${ worksInfo[i]['title'] }</h4>
-          <p>${ worksInfo[i]['worktext'] }</p>
+          <figure class="work-main__img"><a href="http://click.ecc.ac.jp/ecc/mmiki/material/${ worksInfo[i]['link']}" target="_blank"><img src="img/thumb-${worksInfo[i]['link']}.png" alt="${worksInfo[i]['workname'] }のサムネイル"></a></figure>
+          <h4 class="work-main__title">${ worksInfo[i]['title'] }</h4>
+          <p class="work-main__text">${ worksInfo[i]['worktext'] }</p>
         </div>
-        <div>
-          <ul class="list-used flex">
+        <div class="work-bottom">
+          <ul class="work-bottom__used flex">
             <li class="used-soft">
               <h4>使用ソフト</h4>
               <ul class="flex"></ul>
@@ -50,7 +50,7 @@ $(function(){
               <ul class="flex"></ul>
             </li>
           </ul>
-          <ul class="list-hash flex">
+          <ul class="work-bottom__hash flex">
             <li>#${worksInfo[i]['season']}</li>
             <li>#${worksInfo[i]['worktype']}</li>
             <li>#約${worksInfo[i]['worktime']}時間</li>
