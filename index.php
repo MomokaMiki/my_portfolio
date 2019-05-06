@@ -26,19 +26,19 @@
           <i class="naviList__icon fas fa-home"></i>
           <p class="naviList__title on">HOME</p>
         </li>
-        <li class="naviList show">
+        <li class="naviList">
           <i class="naviList__icon fas fa-laptop-code"></i>
           <p class="naviList__title">WORKS</p>
         </li>
-        <li class="naviList show">
+        <li class="naviList">
           <i class="naviList__icon fas fa-user"></i>
           <p class="naviList__title">PROFILE</p>
         </li>
-        <li class="naviList show">
+        <li class="naviList">
           <i class="naviList__icon fas fa-history"></i>
           <p class="naviList__title">HISTORY</p>
         </li>
-        <li class="naviList show">
+        <li class="naviList">
           <i class="naviList__icon fas fa-envelope"></i>
           <p class="naviList__title">CONTACT</p>
         </li>
@@ -83,7 +83,7 @@
         <button class="btn-more">View&nbsp;More</button>
       </section>
       <section class="content content-profile">
-        <div class="bg-profile">
+        <div class="bg-profile flex">
           <?php include("read/svg-profile.html"); ?>
         </div>
           <h2>PROFILE</h2>

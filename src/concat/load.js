@@ -4,6 +4,7 @@ $(window).on("load",function(){
   $('html').animate({ scrollTop: 0 }, '1');
   // リロードでスクロールアニメを見えなくする為に
   setTimeout(function(){
+
     // ローディング画面を消す
     $(".load").css("opacity", 0);
     setTimeout(function () {
@@ -26,7 +27,7 @@ $(window).on("load",function(){
     setTimeout(function () {
       $(".titleSvg").css("opacity", "0");
       $(".content-home").addClass("on");
-      $("html").css("overflow", "visible");
+      // $("html").css("overflow", "visible");
     }, 4500)
-  },1000);
+  },1500);
 })
