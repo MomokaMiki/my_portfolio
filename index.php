@@ -318,8 +318,9 @@
   <!-- <script src="js/script.js"></script> -->
   <script src="src/concat/var.js"></script>
   <script src="src/concat/works.js"></script>
-  <script src="src/concat/base.js"></script>
-  <script src="src/concat/window.js"></script>
+  <script src="src/concat/load.js"></script>
+  <!-- <script src="src/concat/base.js"></script> -->
+  <!-- <script src="src/concat/window.js"></script> -->
   <script src="src/concat/scroll.js"></script>
   <script src="src/concat/event.js"></script>
   <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?5b49521a4774449c972b1df2e90393a3"
