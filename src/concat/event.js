@@ -87,6 +87,7 @@ $(function(){
     naviList.on("mouseover", function () {
       $(this).children("p").addClass("on");
       $(this).addClass("on");
+      $(this).addClass("mouseon");
     })
     naviList.on("mouseout", function () {
       if (!$(this).hasClass("show")) {
@@ -95,6 +96,7 @@ $(function(){
           $(this).children("p").removeClass("on");
         }
       }
+      $(this).removeClass("mouseon");
     })
 
     // サイドナビをクリックした時
@@ -119,14 +121,18 @@ $(function(){
     flgProfile = true;
     // スクロールした時
     $(document).on("scroll", function (event) {
+      
 
       content.each(function (i, e) {
         // クリックされたリスト以外のものはクラス削除しておく
         if (!naviList.eq(i).hasClass("click")) {
           naviList.eq(i).removeClass("show");
-          naviList.eq(i).removeClass("on");
-          if (!sideNavi.hasClass("sp")) {
-            naviList.eq(i).children("p").removeClass("on");
+
+          if (!naviList.eq(i).hasClass("mouseon")){
+            naviList.eq(i).removeClass("on");
+            if (!sideNavi.hasClass("sp")) {
+              naviList.eq(i).children("p").removeClass("on");
+            }
           }
         }
 

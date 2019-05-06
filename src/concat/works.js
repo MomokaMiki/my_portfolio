@@ -89,11 +89,11 @@ $(function(){
     function addEmpty() {
       $(".no").remove();
       var winWid = $(window).width();
-      if (winWid >= 1082) {
+      if (winWid >= 1) {
         if (!Number(worksInfo.length % 3) == 0){
           var addCount = 3 - worksInfo.length % 3;
           for (i = 1; i <= addCount; i++) {
-            $(".worksList").append("<li class='no'></li>");
+            $(".worksList").append("<li class='work-box no'></li>");
           }
           if($(".worksList").hasClass("rimit")){
             $(".worksList .no").addClass("none");

@@ -124,9 +124,6 @@
 .content-profile{
   color: $main;
 }
-.worksList.rimit{
-  height: auto;
-}
 .worksList{
   max-width: 1100px;
   height: auto;
@@ -182,6 +179,10 @@
 }
 .work-title{
   align-items: center;
+  h3{
+    font-family: $goR;
+    font-size: 1.6rem;
+  }
   a{
     width: 14px;
     height: 16px;
@@ -189,7 +190,7 @@
     left: 4px;
   }
 }
-.list-device{
+.work-device{
   i{
     margin-left: 8px;
     font-size: 1.6rem;
