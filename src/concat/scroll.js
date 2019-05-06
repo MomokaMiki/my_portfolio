@@ -20,7 +20,6 @@ $(function(){
     }
     beforeSc = afterSc;
     
-
     // works表示アニメーション
     $.each($(".worksList > li"), function (i, e) {
       if ($(this).offset().top - scTop < $(window).height() / 4 * 3) {
@@ -82,7 +81,5 @@ $(function(){
     else {
       $(".content-contact > div").removeClass("on");
     }
-
   })
-
 })

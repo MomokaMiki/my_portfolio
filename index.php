@@ -19,7 +19,6 @@
       <img src="img/icon-flower03.svg" alt="">
     </div>
   </div>
-
   <div class="sideNavi">
     <nav class="sideNavi-nav flex">
       <ul class="sideNavi-list between">
@@ -52,7 +51,6 @@
       <span></span>
       <span></span>
     </div>
-
     <div class="contents">
       <div class="mainVisual">
         <h1 class="mainVisual__title">
@@ -79,13 +77,11 @@
           <p>WORKS</p>
         </div>
       </section>
-
       <section class="content content-works">
         <h2>WORKS</h2>
         <ul class="worksList flex rimit"></ul>
         <button class="btn-more">View&nbsp;More</button>
       </section>
-
       <section class="content content-profile">
         <div class="bg-profile">
           <?php include("read/svg-profile.html"); ?>
@@ -109,7 +105,7 @@
               <p>星の数は自己評価です。</p>
               <ul class="list-skill flex">
                 <li>
-                  <img src="img/skill01.svg" alt="HTML5のロゴ">
+                  <p class="skill-logo"><img src="img/skill01.svg" alt="HTML5のロゴ"></p>
                   <p>HTML5</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -120,7 +116,7 @@
                   </div>
                 </li>
                 <li>
-                  <img src="img/skill02.svg" alt="CSS3のロゴ">
+                  <p class="skill-logo"><img src="img/skill02.svg" alt="CSS3のロゴ"></p>
                   <p>CSS3</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -131,7 +127,7 @@
                   </div>
                 </li>
                 <li>
-                  <img src="img/skill03.svg" alt="Sassのロゴ">
+                  <p class="skill-logo"><img src="img/skill03.svg" alt="Sassのロゴ"></p>
                   <p>Sass</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -142,7 +138,7 @@
                   </div>
                 </li>
                 <li>
-                  <img src="img/skill04.svg" alt="JavaScriptのロゴ">
+                  <p class="skill-logo"><img src="img/skill04.svg" alt="JavaScriptのロゴ"></p>
                   <p>JavaScript</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -153,7 +149,7 @@
                   </div>
                 </li>
                 <li>
-                  <img src="img/skill05.svg" alt="jQueryのロゴ">
+                  <p class="skill-logo"><img src="img/skill05.svg" alt="jQueryのロゴ"></p>
                   <p>jQuery</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -164,7 +160,7 @@
                   </div>
                 </li>
                 <li>
-                  <img src="img/skill06.svg" alt="Vue.jsのロゴ">
+                  <p class="skill-logo"><img src="img/skill06.svg" alt="Vue.jsのロゴ"></p>
                   <p>Vue.js</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -175,7 +171,18 @@
                   </div>
                 </li>
                 <li>
-                  <img src="img/skill07.svg" alt="PHPのロゴ">
+                  <p class="skill-logo"><img src="img/skill10.svg" alt="Node.jsのロゴ"></p>
+                  <p>Node.js</p>
+                  <div>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                  </div>
+                </li>
+                <li>
+                  <p class="skill-logo"><img src="img/skill07.svg" alt="PHPのロゴ"></p>
                   <p>PHP</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -186,18 +193,18 @@
                   </div>
                 </li>
                 <li>
-                  <img src="img/skill08.svg" alt="MySQLのロゴ">
+                  <p class="skill-logo"><img src="img/skill08.svg" alt="MySQLのロゴ"></p>
                   <p>MySQL</p>
                   <div>
                     <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
                     <i class="far fa-star"></i>
                     <i class="far fa-star"></i>
                     <i class="far fa-star"></i>
                   </div>
                 </li>
                 <li>
-                  <img src="img/skill09.svg" alt="Laravelのロゴ">
+                  <p class="skill-logo"><img src="img/skill09.svg" alt="Laravelのロゴ"></p>
                   <p>Laravel</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -244,7 +251,6 @@
             </li>
           </ul>
       </section>
-
       <section class="content content-history">
         <h2 class="content-history__title">HISTORY</h2>
         <ul class="content-history__list">
@@ -292,7 +298,6 @@
           </li>
         </ul>
       </section>
-
       <section class="content content-contact">
         <h2 class="content-contact__title">CONTACT</h2>
         <div class="content-contact__main contact">
@@ -313,10 +318,8 @@
   <footer class="foot">
     <small>&copy;&nbsp;2019&nbsp;&nbsp;Momoka&nbsp;Miki</small>
   </footer>
-
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/script.js"></script>
-
   <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?5b49521a4774449c972b1df2e90393a3"
     charset="utf-8"></script>
 </body>

@@ -8,7 +8,7 @@ $(function(){
   })
   .done(function(data){
     var worksInfo = data;
-    $.each(worksInfo,function (i, e) {
+    $.each(worksInfo,function (i) {
 
       var iconPc = "";
       var iconSp = "";
@@ -59,24 +59,25 @@ $(function(){
       </li>`
       $(".worksList").append(item);
 
+      // 企画書の有無
       if (worksInfo[i]['proposal'] == "block") {
         var proposal = `<a href="pdf/${worksInfo[i]['link']}.pdf" target="_blank"><img src="img/icon-proposal.svg" alt='企画書を見る'></a>`
         $(".title").eq(i).append(proposal);
       }
-
+      // 使用ソフト一覧
       var softs = worksInfo[i]['soft'].split("/");
       $.each(softs,function(k,e){
         $(".worksList > li").eq(i).find(".used-soft ul").append(`<li><img src='img/soft-${softs[k]}.svg' alt='${softs[k] }のアイコン'></li>`);
       });
-
+      // 使用言語一覧
       var langs = worksInfo[i]['lang'].split("/");
       $.each(langs, function (k, e) {
         $(".worksList > li").eq(i).find(".used-lang ul").append(`<li><img src='img/lang-${langs[k]}.svg' alt='${langs[k]}のアイコン'></li>`);
       });
-
+      // タイプスクエアリロード
       Ts.setAutoLoadFontSelector(".worksList", 100);
     })
-
+    // 余白分のworklist追加
     addEmpty();
 
     // ６個目以降を消す
@@ -85,7 +86,6 @@ $(function(){
     }
 
     // ウィンドウの幅によって、WORKSの余りの空箱を追加
-    // 余りがある時だけ追加
     function addEmpty() {
       $(".no").remove();
       var winWid = $(window).width();

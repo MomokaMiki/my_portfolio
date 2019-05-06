@@ -1,23 +1,8 @@
 // miki taskrunner 2019/5/4
 // gulp => 4.0.0
 
-// srcフォルダ
-// ・imagemin (圧縮したい画像ファイル) => imgファイルへ
-// ・sass (コンパイルするscssファイル) => cssファイルへ
-
-// minフォルダ
-// ・js (圧縮されたjsファイル)
-// ・css (圧縮されたcssファイル)
-
-// gulp v4からは、taskにコールバックを渡さないとエラーが出てしまう
-
 // gulp
 var gulp = require('gulp');
-
-//
-// sassのコンパイル
-// 
-
 // Sass
 var sass = require('gulp-sass');
 // ベンダープレフィックス
@@ -51,12 +36,6 @@ gulp.task('sass',function(done){
     .pipe(gulp.dest('./css/'))
   done();
 })
-
-//
-// 画像の圧縮
-// 
-
-// 外部からダウンロードしてきたファイルは圧縮できなかった
 
 // 書き出し先のファイルと比較し、変更がある場合のみ処理
 var changed = require('gulp-changed');
@@ -93,11 +72,6 @@ gulp.task('imagemin', function (done) {
   done();
 });
 
-
-//
-// jsファイルの結合
-//
-
 // jsファイル結合
 var concat = require('gulp-concat');
 
@@ -109,27 +83,13 @@ gulp.task('concat', function (done) {
   done();
 });
 
-
-//
-// オートリロード
-//
-
 // 自動的にリロード
 var browserSync = require('browser-sync');
 
 gulp.task('sync', function (done) {
   browserSync({
-    // server だとphp動かない
-    // server: {
-    //   baseDir: "./",
-    //   // ここ変更
-    //   index: "index.php"
-    // }
-
     proxy: "localhost/Git/portfolio"
   });
-  done();
-
   done();
 });
 gulp.task('bs-reload', function (done) {
@@ -137,14 +97,7 @@ gulp.task('bs-reload', function (done) {
   done();
 });
 
-
-//
 // ファイル監視
-//
-
-// gulp -v4からは、タスク実行する時に同期処理か非同期処理か明記しないといけない
-
-
 gulp.task('watch',  function (done) {
   gulp.watch("./**/*.html", gulp.series('bs-reload'));
   gulp.watch("./**/*.php", gulp.series('bs-reload'));
@@ -156,11 +109,6 @@ gulp.task('watch',  function (done) {
 
 // gulp を実行で、browserSync立ち上げ + watch実行
 gulp.task('default', gulp.series('sass','imagemin','concat','sync','watch') );
-
-
-//
-// ファイル圧縮
-//
 
 // JSファイル圧縮
 var uglify = require('gulp-uglify');
@@ -190,11 +138,7 @@ gulp.task('cssmin', function (done) {
   done();
 });
 
-
-//
 // ES6からES5にコンパイル
-//
-
 var babel = require('gulp-babel');
 
 gulp.task('babel', function (done) {

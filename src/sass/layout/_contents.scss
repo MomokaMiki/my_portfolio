@@ -53,8 +53,6 @@
     font-family: $goR;
   }
 }
-
-
 @media (max-width:960px){
   .content-home{
     width: 100%;
@@ -102,7 +100,8 @@
   p{
     position: absolute;
     top :60px;
-    right: -4px;
+    left: 50%;
+    transform: translateX(-50%);
     font-family: $semi;
     letter-spacing: 0.1rem;
   }
@@ -200,7 +199,6 @@
     color: $main;
   }
 }
-
 .btn-more{
   display: block;
   overflow: hidden;
@@ -220,7 +218,6 @@
     right: 0;
   }
 }
-
 .work-bottom{
   &__used{
     margin-top: 8px;
@@ -242,7 +239,6 @@
     }
   }
 }
-
 
 /* PROFILE */
 .content-profile{
@@ -317,10 +313,18 @@
   li{
     width: 120px;
     margin-bottom: 30px;
-    img{
-      width: 50px;
-      height: 50px;
-    }
+  }
+}
+.skill-logo{
+  display: block;
+  width: 60px;
+  height: 40px;
+  margin: 0 auto;
+  img{
+    width: auto;
+    height: auto;
+    max-width: 60px;
+    max-height: 40px;
   }
 }
 @media (max-width:960px){
@@ -457,7 +461,6 @@
 
 /* CONTACT */
 .content-contact{
-  width: 290px;
   height: calc(100vh - 60px);
   margin: 0 auto;
   position: relative;
@@ -472,11 +475,13 @@
     top: 58%;
   }
   &__main{
+    max-width: 300px;
     opacity: 0;
     transition: ease 0.5s;
     position: absolute;
     top: 60%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%,-50%);
     a{
       transition: ease 0.2s;
       color: $main;
@@ -489,7 +494,7 @@
 .contact{
   &__mail a{
     display: block;
-    width: 290px;
+    width: 100%;
     margin: 40px 0 80px;
     padding: 10px;
     border: solid 1px $main;
@@ -524,5 +529,3 @@
     }
   }
 }
-
-
