@@ -1,16 +1,9 @@
-// ローディング画面表示
-$(window).on("load", function () {
-
-  // 変数
-  var sideNavi = $(".sideNavi");
-  var sideNaviList = $(".sideNavi li");
-  var worksList = $(".worksList");
-  var content = $(".content");
+$(window).on("load",function(){
 
   // リロードしたらトップへ
   $('html').animate({ scrollTop: 0 }, '1');
   // リロードでスクロールアニメを見えなくする為に
-  setTimeout(function () {
+  setTimeout(function(){
     // ローディング画面を消す
     $(".load").css("opacity", 0);
     setTimeout(function () {
@@ -35,5 +28,5 @@ $(window).on("load", function () {
       $(".content-home").addClass("on");
       $("html").css("overflow", "visible");
     }, 4500)
-  },1000)
-});
+  },1000);
+})

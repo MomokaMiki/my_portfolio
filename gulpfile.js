@@ -102,10 +102,10 @@ gulp.task('imagemin', function (done) {
 var concat = require('gulp-concat');
 
 gulp.task('concat', function (done) {
-  // gulp.src(['./src/concat/var.js', './src/concat/base.js','./src/concat/*.js'])
-  //   .pipe(plumber())
-  //   .pipe(concat('script.js'))
-  //   .pipe(gulp.dest('./js/'));
+  gulp.src(['./src/concat/works.js', './src/concat/load.js','./src/concat/*.js'])
+    .pipe(plumber())
+    .pipe(concat('script.js'))
+    .pipe(gulp.dest('./js/'));
   done();
 });
 

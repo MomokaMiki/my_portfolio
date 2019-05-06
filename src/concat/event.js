@@ -1,6 +1,11 @@
-
-// $(window).on("load", function () {
-
+// ローディング画面表示
+$(function(){
+  var worksList = $(".worksList");
+  var content = $(".content");
+  var sideNavi = $(".sideNavi");
+  var naviList = $(".naviList");
+  var scTop = $(document).scrollTop();
+    
     // ６個目以降を消す
     for (var i = 6; i <= $(".worksList > li").length; i++){
       $(".worksList > li").eq(i).addClass("none");
@@ -33,23 +38,25 @@
       $(document).scrollTop($(".content-works").offset().top)
     })
 
+    var content = $(".content");
+    var sideNavi = $(".sideNavi");
     // ハンバーガーメニュー
-    $(".btn-humb").on("click",function(){
+    $(".btn-humb").on("click", function () {
       $(this).removeClass("offAnime");
       $(this).removeClass("onAnime");
-      if($(this).hasClass("on")){
+      if ($(this).hasClass("on")) {
         $(this).addClass("offAnime");
         sideNavi.css({ opacity: 0, zIndex: -1 })
         setTimeout(function () {
           $(".btn-humb").removeClass("on");
-        },1900)
+        }, 1900)
       }
-      else{
+      else {
         $(this).addClass("onAnime");
-        sideNavi.css({opacity:1,zIndex:1})
-        setTimeout(function(){
+        sideNavi.css({ opacity: 1, zIndex: 1 })
+        setTimeout(function () {
           $(".btn-humb").addClass("on");
-        },1900)
+        }, 1900)
       }
     })
 
@@ -68,11 +75,11 @@
         $(".sideNavi li p").addClass("on");
         sideNavi.addClass("sp");
       }
-      else{
+      else {
         sideNavi.css({ opacity: 1, zIndex: 1 })
         $(".sideNavi li p").removeClass("on");
-        sideNaviList.each(function(){
-          if($(this).hasClass("show")){
+        naviList.each(function () {
+          if ($(this).hasClass("show")) {
             $(this).children("p").addClass("on");
           }
         })
@@ -87,7 +94,7 @@
     naviList.on("mouseout", function () {
       if (!$(this).hasClass("show")) {
         $(this).removeClass("on");
-        if (!sideNavi.hasClass("sp")){
+        if (!sideNavi.hasClass("sp")) {
           $(this).children("p").removeClass("on");
         }
       }
@@ -115,7 +122,6 @@
     flgProfile = true;
     // スクロールした時
     $(document).on("scroll", function (event) {
-      var scTop = $(this).scrollTop();
 
       content.each(function (i, e) {
         // クリックされたリスト以外のものはクラス削除しておく
@@ -145,70 +151,9 @@
           }
         }
       })
-  
 
-      // works表示アニメーション
-      $.each($(".worksList > li"), function (i, e) {
-        if ($(this).offset().top - scTop < $(window).height()/4*3) {
-          if(!$(this).hasClass("none")){
-            if(!$(this).hasClass("no")){
-              $(this).addClass("on");
-            }
-          }
-        }
-        else{
-          $(this).removeClass("on");
-        }
-      })
 
-      // profile表示アニメーション
-      if ($(".content-profile").offset().top - scTop < $(window).height() / 2 ){
-        if( flgProfile ){
-          $.each($(".parts"), function (i, e) {
-            setTimeout(function () {
-              $(".parts").eq(i).addClass("on");
-            }, 80 * i)
-          }) 
-          flgProfile = false;
-        }
-      }
-      else{
-        $.each($(".parts"), function (i, e) {
-          setTimeout(function () {
-            $(".parts").eq(i).removeClass("on");
-          }, 40 * i)
-        }) 
-        flgProfile = true;
-      }
-
-      // history表示アニメーション
-      $.each($(".content-history li"),function(i,e){
-        if ($(this).offset().top - scTop < $(window).height() / 4 * 3) {
-          $(this).children("p").addClass("on");
-          $(this).find("h3").addClass("on");
-        }
-        else{
-          $(this).children("p").removeClass("on");
-          $(this).find("h3").removeClass("on");
-        }
-      })
-      $.each($(".content-history li > div p"), function (i, e) {
-        if ($(this).offset().top - scTop < $(window).height() / 4 * 3) {
-          $(this).addClass("on");
-        }
-        else{
-          $(this).removeClass("on");
-        }
-      })
-
-      // contact表示アニメーション
-      if( $(".content-contact").offset().top - scTop < $(window).height() / 2 ){
-        $(".content-contact > div").addClass("on");
-      }
-      else{
-        $(".content-contact > div").removeClass("on");
-      }
 
     }); // scroll
-  // },1500);// setTimeout
-// });// window laod
+
+});// window laod
