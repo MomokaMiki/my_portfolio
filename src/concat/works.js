@@ -59,10 +59,17 @@ $(function(){
       </li>`
       $(".worksList").append(item);
 
+      
+
       // 企画書の有無
       if (worksInfo[i]['proposal'] == "block") {
         var proposal = `<a href="pdf/${worksInfo[i]['link']}.pdf" target="_blank"><img src="img/icon-proposal.svg" alt='企画書を見る'></a>`
-        $(".title").eq(i).append(proposal);
+        $(".work-title").eq(i).append(proposal);
+      }
+      // Githubの有無
+      if (!worksInfo[i]['git'] == "") {
+        var git = `<a href="${worksInfo[i]['git']}" target="_blank"><i class="fab fa-github"></i></a>`
+        $(".work-title").eq(i).append(git);
       }
       // 使用ソフト一覧
       var softs = worksInfo[i]['soft'].split("/");

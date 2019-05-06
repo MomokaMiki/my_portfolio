@@ -179,6 +179,7 @@
 .work-title{
   align-items: center;
   h3{
+    margin-right: 2px;
     font-family: $goR;
     font-size: 1.6rem;
   }
@@ -187,7 +188,12 @@
     height: 16px;
     position: relative;
     left: 4px;
+    i{
+    color: $main;
+    font-size: 1.6rem;
+    }
   }
+  
 }
 .work-device{
   i{
