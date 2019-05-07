@@ -35,7 +35,7 @@ $(function(){
               <li><i class="fas fa-mobile-alt ${ iconSp }"></i></li>
             </ul>
           </div>
-          <figure class="work-main__img"><a href="http://click.ecc.ac.jp/ecc/mmiki/material/${ worksInfo[i]['link']}" target="_blank"><img src="img/thumb-${worksInfo[i]['link']}.png" alt="${worksInfo[i]['workname'] }のサムネイル"></a></figure>
+          <figure class="work-main__img"><a href="http://momokamiki.com/material/${ worksInfo[i]['link']}" target="_blank"><img src="img/thumb-${worksInfo[i]['link']}.png" alt="${worksInfo[i]['workname'] }のサムネイル"></a></figure>
           <h4 class="work-main__title">${ worksInfo[i]['title'] }</h4>
           <p class="work-main__text">${ worksInfo[i]['worktext'] }</p>
         </div>
@@ -172,7 +172,9 @@ $(function(){
         if ($(document).scrollTop() < $(window).height()) {
           // naviListがクリックされてなかったらWORKSヘ
           if(!$(".naviList").hasClass("click")){
-            $(document).scrollTop($(".content-works").offset().top)
+            $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "swing");
+
+            // $(document).scrollTop($(".content-works").offset().top)
           }
         }
         scFlg = false;
@@ -276,7 +278,8 @@ $(function(){
 
   // ↓WORKSボタン
   $(".scroll-works").on("click",function(){
-    $(document).scrollTop($(".content-works").offset().top)
+    $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "swing");
+    // $(document).scrollTop($(".content-works").offset().top)
   })
 
   // ハンバーガーメニュー
@@ -345,23 +348,28 @@ $(function(){
   var sideNaviIndex = 0;
   naviList.each(function (i, e) {
     naviList.eq(i).on("click", function () {
+      // if(  )
+      // naviList.children("p").removeClass("on");
       sideNaviIndex = i;
       $(this).addClass("click");
       $(this).addClass("on");
       $(this).addClass("show");
       var thisClick = $(this);
       var offTop = content.eq(sideNaviIndex).offset().top;
-      $(document).scrollTop(offTop);
+      $("html, body").animate({ scrollTop: offTop }, "swing");
+      // $(document).scrollTop(offTop);
       // クリックされた瞬間だけ.clickをつけておく
       setTimeout(function () {
         thisClick.removeClass("click");
-      }, 1500)
+      }, 500)
     })
   });
 
   flgProfile = true;
   // スクロールした時
   $(document).on("scroll", function () {
+
+    console.log("aaa");
     var scTop = $(document).scrollTop();
     content.each(function (i) {
       // クリックされたリスト以外のものはクラス削除しておく

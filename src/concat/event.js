@@ -28,7 +28,8 @@ $(function(){
 
   // ↓WORKSボタン
   $(".scroll-works").on("click",function(){
-    $(document).scrollTop($(".content-works").offset().top)
+    $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "swing");
+    // $(document).scrollTop($(".content-works").offset().top)
   })
 
   // ハンバーガーメニュー
@@ -97,23 +98,28 @@ $(function(){
   var sideNaviIndex = 0;
   naviList.each(function (i, e) {
     naviList.eq(i).on("click", function () {
+      // if(  )
+      // naviList.children("p").removeClass("on");
       sideNaviIndex = i;
       $(this).addClass("click");
       $(this).addClass("on");
       $(this).addClass("show");
       var thisClick = $(this);
       var offTop = content.eq(sideNaviIndex).offset().top;
-      $(document).scrollTop(offTop);
+      $("html, body").animate({ scrollTop: offTop }, "swing");
+      // $(document).scrollTop(offTop);
       // クリックされた瞬間だけ.clickをつけておく
       setTimeout(function () {
         thisClick.removeClass("click");
-      }, 1500)
+      }, 500)
     })
   });
 
   flgProfile = true;
   // スクロールした時
   $(document).on("scroll", function () {
+
+    console.log("aaa");
     var scTop = $(document).scrollTop();
     content.each(function (i) {
       // クリックされたリスト以外のものはクラス削除しておく

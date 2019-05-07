@@ -12,7 +12,9 @@ $(function(){
         if ($(document).scrollTop() < $(window).height()) {
           // naviListがクリックされてなかったらWORKSヘ
           if(!$(".naviList").hasClass("click")){
-            $(document).scrollTop($(".content-works").offset().top)
+            $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "swing");
+
+            // $(document).scrollTop($(".content-works").offset().top)
           }
         }
         scFlg = false;
