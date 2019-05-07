@@ -97,7 +97,6 @@ $(function(){
   var sideNaviIndex = 0;
   naviList.each(function (i, e) {
     naviList.eq(i).on("click", function () {
-      $("html").css("overflow", "visible");
       sideNaviIndex = i;
       $(this).addClass("click");
       $(this).addClass("on");
@@ -115,6 +114,7 @@ $(function(){
   flgProfile = true;
   // スクロールした時
   $(document).on("scroll", function () {
+    var scTop = $(document).scrollTop();
     content.each(function (i) {
       // クリックされたリスト以外のものはクラス削除しておく
       if (!naviList.eq(i).hasClass("click")) {
@@ -139,6 +139,7 @@ $(function(){
         }
         else {
           if (content.eq(i).offset().top <= scTop && scTop < content.eq(next).offset().top) {
+            console.log(i)
             naviList.eq(i).addClass("show");
             naviList.eq(i).addClass("on");
             naviList.children("p").eq(i).addClass("on");

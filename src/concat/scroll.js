@@ -10,7 +10,10 @@ $(function(){
     if (beforeSc < afterSc){
       if (scFlg ){
         if ($(document).scrollTop() < $(window).height()) {
-          $(document).scrollTop($(".content-works").offset().top)
+          // naviListがクリックされてなかったらWORKSヘ
+          if(!$(".naviList").hasClass("click")){
+            $(document).scrollTop($(".content-works").offset().top)
+          }
         }
         scFlg = false;
         setTimeout(function(){
