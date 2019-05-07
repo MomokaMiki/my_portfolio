@@ -107,7 +107,7 @@ $(function(){
           }
         }
       }
-      if (winWid >= 668 && winWid < 1082) {  
+      if (winWid >= 680 && winWid < 1100) {  
         if (!Number(worksInfo.length % 2) == 0){
           var addCount = 2 - worksInfo.length % 2;
           for (i = 1; i <= addCount; i++) {

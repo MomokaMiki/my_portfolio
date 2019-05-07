@@ -1,9 +1,9 @@
 <?php
 
-  $instance = new mysqli("localhost","root","yururinpanda","mmiki");
+  $instance = new mysqli("mysql1019.db.sakura.ne.jp","mmiki-web","yururinpanda0317","mmiki-web_portfolio");
   $instance->set_charset("UTF-8");
 
-  $workId = filter_input(INPUT_GET,"work_id");
+  // $workId = filter_input(INPUT_GET,"work_id");
   $sql = "SELECT * FROM portfolio_works";
   $response = $instance->query( $sql );
 

@@ -64,7 +64,7 @@ VALUES
       "2年生後期",
       "45",
       "portfolio-v2",
-      "no" ),
+      "no","" ),
     ( "みゅーびっく",
       "0",
       "初心者のための楽器の通販サイト",
@@ -75,7 +75,7 @@ VALUES
       "2年生後期",
       "68",
       "mubic",
-      "block" ),
+      "block","" ),
     ( "Blessing Green Space",
       "1",
       "グランピングパーティ施設のwebサイト",
@@ -86,7 +86,7 @@ VALUES
       "2年生前期",
       "68",      
       "BlessingGreenSpace",
-      "block" ),
+      "block","" ),
       (
         "み〜とぺっと",
       "0",
@@ -98,7 +98,7 @@ VALUES
       "1年生後期",
       "69",
       "meetpet",
-      "block"
+      "block",""
       ),
       (
         "三木百花のぽ〜とふぉりお",
@@ -111,7 +111,7 @@ VALUES
       "2年生前期",
       "20",
       "old-portfolio",
-      "no"
+      "no",""
       ),
       (
         "コーディングガイドライン",
@@ -124,7 +124,7 @@ VALUES
       "2年生後期",
       "10",
       "guideline",
-      "no"
+      "no",""
       ),
       (
         "Mr.SOS",
@@ -137,7 +137,7 @@ VALUES
       "2年生夏休み期間",
       "50",
       "Mr.SOS",
-      "block"
+      "block",""
       ),
       (
         "Mini hospital",
@@ -150,7 +150,7 @@ VALUES
       "2年生夏季集中講座",
       "48",
       "MiniHospital",
-      "block"
+      "block",""
       ),
       (
         "Wanta",
@@ -163,7 +163,7 @@ VALUES
       "2年生後期",
       "68",
       "Wanta",
-      "block"
+      "block",""
       ),
       (
         "#mode",
@@ -176,7 +176,7 @@ VALUES
       "1年生後期",
       "45",
       "mode",
-      "block"
+      "block",""
       ),
       (
         "ベじれしぴ",
@@ -189,7 +189,7 @@ VALUES
       "2年生前期",
       "68",
       "vege-recipe",
-      "block"
+      "block",""
       ),
       (
         "ココ",
@@ -202,7 +202,7 @@ VALUES
       "1年生夏季集中講座",
       "48",
       "KOKO",
-      "block"
+      "block",""
       ),
       (
         "FiSave",
@@ -215,5 +215,5 @@ VALUES
       "1年生前期",
       "68",
       "fisave",
-      "block"
+      "block",""
       );
