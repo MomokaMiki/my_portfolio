@@ -348,10 +348,20 @@ $(function(){
   var sideNaviIndex = 0;
   naviList.each(function (i, e) {
     naviList.eq(i).on("click", function () {
-      // if(  )
-      // naviList.children("p").removeClass("on");
+
       sideNaviIndex = i;
       $(this).addClass("click");
+      naviList.each(function (i, e) {
+        if (!naviList.eq(i).hasClass("click") ){
+          naviList.eq(i).removeClass("on");
+          naviList.eq(i).removeClass("show");
+          
+          if( !$(".sideNavi").hasClass("sp") ){
+            naviList.eq(i).children("p").removeClass("on");
+          }
+        }
+    });
+
       $(this).addClass("on");
       $(this).addClass("show");
       var thisClick = $(this);
@@ -365,43 +375,64 @@ $(function(){
     })
   });
 
+  var content = $(".content");
   flgProfile = true;
+  var beNum = 0;
+  var nowNum = "";
   // スクロールした時
   $(document).on("scroll", function () {
-
-    console.log("aaa");
-    var scTop = $(document).scrollTop();
-    content.each(function (i) {
-      // クリックされたリスト以外のものはクラス削除しておく
-      if (!naviList.eq(i).hasClass("click")) {
-        naviList.eq(i).removeClass("show");
-
-        if (!naviList.eq(i).hasClass("mouseon")){
-          naviList.eq(i).removeClass("on");
-          if (!sideNavi.hasClass("sp")) {
-            naviList.eq(i).children("p").removeClass("on");
-          }
+    
+  
+  // スクロールするたびにスクロール値とる
+  nowSc = $(document).scrollTop();
+  if (!naviList.hasClass("click")) {
+      var next = i + 1;
+      //CONTACTの時だけ例外
+    if (nowSc >= content.eq(4).offset().top) {
+        nowNum = 4;
+      }
+    else {
+      for(var i = 0; i <= 3; i++){
+        var next = i+1;
+        if (content.eq(i).offset().top <= nowSc && nowSc < content.eq(next).offset().top) {
+          nowNum = i;
         }
       }
+    }
+    // 前いた場所とは違う場所に移動した時
+    if (Number(nowNum) == Number(beNum)) {
 
-      // クリックせずに普通にスクロールした時の処理
-      if (!naviList.hasClass("click")) {
+    }
+    else {
+      console.log("移動！！")
+      naviList.eq(beNum).removeClass("show");
+      naviList.eq(beNum).removeClass("on");
+      naviList.children("p").eq(beNum).removeClass("on");
+
+      naviList.eq(nowNum).addClass("show");
+      naviList.eq(nowNum).addClass("on");
+      naviList.children("p").eq(nowNum).addClass("on");
+
+    }
+
+
+  }
+    
+    console.log("今の場所："+nowNum);
+    console.log("前の場所："+beNum);
+
+    if (nowSc >= content.eq(4).offset().top) {
+      beNum = 4;
+    }
+    else {
+      for (var i = 0; i <= 3; i++) {
         var next = i + 1;
-        //CONTACTの時だけ例外
-        if (scTop >= content.eq(4).offset().top) {
-          naviList.eq(4).addClass("show");
-          naviList.eq(4).addClass("on");
-          naviList.children("p").eq(4).addClass("on");
-        }
-        else {
-          if (content.eq(i).offset().top <= scTop && scTop < content.eq(next).offset().top) {
-            console.log(i)
-            naviList.eq(i).addClass("show");
-            naviList.eq(i).addClass("on");
-            naviList.children("p").eq(i).addClass("on");
-          }
+        if (content.eq(i).offset().top <= nowSc && nowSc < content.eq(next).offset().top) {
+          beNum = i;
         }
       }
-    });
+    }
+
+    
   }); // scroll
 });
