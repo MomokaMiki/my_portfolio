@@ -146,6 +146,6 @@ gulp.task('babel', function (done) {
     .pipe(babel({
       presets: ['@babel/env']
     }))
-    .pipe(gulp.dest('./babel/'));
+    .pipe(gulp.dest('./babel'));
   done();
 });
