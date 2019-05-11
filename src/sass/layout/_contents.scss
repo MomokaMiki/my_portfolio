@@ -108,7 +108,15 @@
   }
 }
 @media (max-height: 700px){
- .scroll-works{
+  .scroll-works{
+    bottom: 4%;
+  }
+  .scroll-works span:first-child{
+    width: 20px;
+    left: 18px;
+    top: 42px;
+  }
+ .scroll-works p{
    display: none;
  }
 }

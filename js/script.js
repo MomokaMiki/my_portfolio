@@ -162,27 +162,39 @@ $(function(){
   var beforeSc = $(document).scrollTop();
   var scFlg = true;
   var flgProfile = true;
+
+  // afterScが0の時は下にいく動作をしない？？
   
   $(document).on("scroll",function(){
     var scTop = $(document).scrollTop();
-
     var afterSc = $(document).scrollTop();
-    if (beforeSc < afterSc){
-      if (scFlg ){
-        if ($(document).scrollTop() < $(window).height()) {
-          // naviListがクリックされてなかったらWORKSヘ
-          if(!$(".naviList").hasClass("click")){
-            $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "swing");
+    console.log(afterSc);
 
-            // $(document).scrollTop($(".content-works").offset().top)
+    if ( afterSc > 0 ){
+      if (beforeSc < afterSc ) {
+
+        if (scFlg) {
+          if ($(document).scrollTop() < $(window).height()) {
+            // naviListがクリックされてなかったらWORKSヘ
+            if (!$(".naviList").hasClass("click")) {
+              $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "swing");
+
+              // $(document).scrollTop($(".content-works").offset().top)
+            }
           }
+          scFlg = false;
+          setTimeout(function () {
+            scFlg = true;
+          }, 1000)
         }
-        scFlg = false;
-        setTimeout(function(){
-          scFlg = true;
-        },1000)
       }
     }
+    else{
+      console.log("マイナス");
+    }
+    
+
+    
     beforeSc = afterSc;
     
     // works表示アニメーション
@@ -404,7 +416,6 @@ $(function(){
 
     }
     else {
-      console.log("移動！！")
       naviList.eq(beNum).removeClass("show");
       naviList.eq(beNum).removeClass("on");
       naviList.children("p").eq(beNum).removeClass("on");
@@ -418,9 +429,6 @@ $(function(){
 
   }
     
-    console.log("今の場所："+nowNum);
-    console.log("前の場所："+beNum);
-
     if (nowSc >= content.eq(4).offset().top) {
       beNum = 4;
     }

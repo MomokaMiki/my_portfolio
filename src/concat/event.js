@@ -154,7 +154,6 @@ $(function(){
 
     }
     else {
-      console.log("移動！！")
       naviList.eq(beNum).removeClass("show");
       naviList.eq(beNum).removeClass("on");
       naviList.children("p").eq(beNum).removeClass("on");
@@ -168,9 +167,6 @@ $(function(){
 
   }
     
-    console.log("今の場所："+nowNum);
-    console.log("前の場所："+beNum);
-
     if (nowSc >= content.eq(4).offset().top) {
       beNum = 4;
     }
