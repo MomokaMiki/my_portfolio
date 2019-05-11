@@ -2,13 +2,10 @@ $(function(){
   var beforeSc = $(document).scrollTop();
   var scFlg = true;
   var flgProfile = true;
-
-  // afterScが0の時は下にいく動作をしない？？
   
   $(document).on("scroll",function(){
     var scTop = $(document).scrollTop();
     var afterSc = $(document).scrollTop();
-    console.log(afterSc);
 
     if ( afterSc > 0 ){
       if (beforeSc < afterSc ) {
@@ -29,12 +26,6 @@ $(function(){
         }
       }
     }
-    else{
-      console.log("マイナス");
-    }
-    
-
-    
     beforeSc = afterSc;
     
     // works表示アニメーション

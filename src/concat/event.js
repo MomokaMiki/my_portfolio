@@ -3,7 +3,6 @@ $(function(){
   var content = $(".content");
   var sideNavi = $(".sideNavi");
   var naviList = $(".naviList");
-  var scTop = $(document).scrollTop();
   // 作品 ViewMoreボタン
   $(document).on('click', '.btn-more', function () {
     if( worksList.hasClass("rimit") ){
@@ -29,7 +28,6 @@ $(function(){
   // ↓WORKSボタン
   $(".scroll-works").on("click",function(){
     $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "swing");
-    // $(document).scrollTop($(".content-works").offset().top)
   })
 
   // ハンバーガーメニュー
@@ -97,17 +95,17 @@ $(function(){
   // サイドナビをクリックした時
   var sideNaviIndex = 0;
   naviList.each(function (i, e) {
-    naviList.eq(i).on("click", function () {
-
+    $(this).on("click", function () {
       sideNaviIndex = i;
       $(this).addClass("click");
+
       naviList.each(function (i, e) {
-        if (!naviList.eq(i).hasClass("click") ){
-          naviList.eq(i).removeClass("on");
-          naviList.eq(i).removeClass("show");
+        if (!$(this).hasClass("click") ){
+          $(this).removeClass("on");
+          $(this).removeClass("show");
           
           if( !$(".sideNavi").hasClass("sp") ){
-            naviList.eq(i).children("p").removeClass("on");
+            $(this).children("p").removeClass("on");
           }
         }
     });
@@ -117,7 +115,6 @@ $(function(){
       var thisClick = $(this);
       var offTop = content.eq(sideNaviIndex).offset().top;
       $("html, body").animate({ scrollTop: offTop }, "swing");
-      // $(document).scrollTop(offTop);
       // クリックされた瞬間だけ.clickをつけておく
       setTimeout(function () {
         thisClick.removeClass("click");
@@ -125,14 +122,12 @@ $(function(){
     })
   });
 
-  var content = $(".content");
   flgProfile = true;
   var beNum = 0;
   var nowNum = "";
   // スクロールした時
   $(document).on("scroll", function () {
     
-  
   // スクロールするたびにスクロール値とる
   nowSc = $(document).scrollTop();
   if (!naviList.hasClass("click")) {
@@ -161,12 +156,8 @@ $(function(){
       naviList.eq(nowNum).addClass("show");
       naviList.eq(nowNum).addClass("on");
       naviList.children("p").eq(nowNum).addClass("on");
-
     }
-
-
   }
-    
     if (nowSc >= content.eq(4).offset().top) {
       beNum = 4;
     }
@@ -178,7 +169,5 @@ $(function(){
         }
       }
     }
-
-    
   }); // scroll
 });
