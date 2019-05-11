@@ -1,7 +1,10 @@
 $(window).on("load",function(){
 
   // リロードしたらトップへ
-  $('html').animate({ scrollTop: 0 }, '1');
+  $('html').animate({ scrollTop: 0 }, '0.001');
+  $.each($(".parts"), function (i, e) {
+    $(".parts").eq(i).removeClass("on");
+  })
   // リロードでスクロールアニメを見えなくする為に
   setTimeout(function(){
 
@@ -29,5 +32,5 @@ $(window).on("load",function(){
       $(".content-home").addClass("on");
       // $("html").css("overflow", "visible");
     }, 4500)
-  },1500);
+  },200);
 })

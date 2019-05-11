@@ -55,8 +55,15 @@ gulp.task('imagemin', function (done) {
   gulp.src('./src/imagemin/*.+(jpg|jpeg|png|gif)')
     .pipe(changed('./imagemin'))
     .pipe(imagemin([
-      imageminPng(),
-      imageminJpg(),
+      imageminPng({
+        quality: [.10,.20],
+        speed: 1,
+        floyd: 0
+      }),
+      imageminJpg({
+        quality: 85,
+        progressive: true
+      }),
       imageminGif({
         interlaced: false,
         optimizationLevel: 3,
@@ -76,7 +83,7 @@ gulp.task('imagemin', function (done) {
 var concat = require('gulp-concat');
 
 gulp.task('concat', function (done) {
-  gulp.src(['./src/concat/works.js', './src/concat/load.js', './src/concat/scroll.js', './src/concat/event.js'])
+  gulp.src(['./src/concat/load.js','./src/concat/works.js','./src/concat/scroll.js', './src/concat/event.js'])
     .pipe(plumber())
     .pipe(concat('script.js'))
     .pipe(gulp.dest('./js/'));
