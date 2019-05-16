@@ -12,45 +12,61 @@
   top: 50px;
   justify-content: center;
   align-items: center;
-  background: rgba(151,141,120,0.7);
   color: #fff;
+  background: rgba(140,128,96,0.5);
   text-align: center;
 }
-.home-main{
-  align-items: center;
-  &__title,
-  &__sub{
-    font-family: $semi;
-  }
+.home-main{  
   &__title{
-    margin-bottom: 30px;
-    font-size: 3.8rem;
+    margin-bottom: 26px;
+    font-size: 3.6rem;
+    font-family: $semi;
     letter-spacing: 0.2rem;
   }
-  &__sub{
-    margin: 60px 0 20px;
-    font-size: 2.8rem;
-    letter-spacing: 0.16rem;
-  }
-  &__list{
-    margin: 16px 0;
-    li{
-      line-height: 1.8;
-    }
-  }
-  &__list li,
   &__text{
+    font-size: 1.8rem;
+    font-family: $goR;
+    line-height: 2;
+  }
+}
+.home-skill{
+  margin-top: 60px; 
+  &__title{
+    margin-top: 40px;
+    font-size: 2.4rem;
+    font-family: $roman;
+    letter-spacing: 0.1rem;
+  }
+  &__text{
+    font-size: 1.6rem;
     font-family: $goL;
-    font-size: 1.6rem;
-    line-height: 2.4;
+    line-height: 1.8;
+
   }
-  &__text strong{
-    font-family: $goR;
-  }
-  &__last{
-    margin-top: 30px;
-    font-size: 1.6rem;
-    font-family: $goR;
+  .list-skill{
+    margin-top: 22px;
+    .skill-logo{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 26px;
+      margin-bottom: 6px;
+      img{
+        max-width: 38px;
+        max-height: 26px;
+        filter: saturate(80%); 
+        filter: brightness(100%);
+      }
+    }
+    li{
+      width: 50px;
+      margin: 0;
+    }
+    p{
+      font-size: 1.2rem;
+      font-family: $goL;
+    }
   }
 }
 @media (max-width:960px){

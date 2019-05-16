@@ -96,6 +96,13 @@ $(function(){
   var sideNaviIndex = 0;
   naviList.each(function (i, e) {
     $(this).on("click", function () {
+      $(".btn-humb").removeClass("onAnime");
+      $(".btn-humb").addClass("offAnime");
+      sideNavi.css({ opacity: 0, zIndex: -1 })
+      setTimeout(function () {
+        $(".btn-humb").removeClass("on");
+      }, 1900)
+
       sideNaviIndex = i;
       $(this).addClass("click");
 

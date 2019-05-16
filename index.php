@@ -60,15 +60,53 @@
       <section class="content content-home flex">
         <div class="home-main">
           <h2 class="home-main__title">Welcome to my portfolio site !!</h2>
-          <p class="home-main__text">専門学校で、Webの勉強をしている、三木 百花 と申します。<br>私のポートフォリオサイトにお越し下さり、ありがとうございます♪
-          </p>
-          <h3 class="home-main__sub">What I have in mind</h3>
-          <p class="home-main__text">私は、<strong>相手の立場や気持ち</strong>になって、考えることを心がけています。</p>
-          <ul class="home-main__list">
-            <li>相手の課題を研究し、アイデアを考え、実際につくる。</li>
-            <li>効率的に綺麗でまとまったコードを書く。</li>
-          </ul>
-          <p class="home-main__last">将来は、考えやコーディングにこだわりを持って、<br>周りの人を幸せにできるようなフロントエンドのエンジニアになりたいです。</p>
+          <p class="home-main__text">専門学校に通っている、三木百花と申します。<br>私のポートフォリオにお越し下さり、ありがとうございます。</p>
+          <div class="home-skill">
+            <p class="home-skill__text">現在、私はWebエンジニアとしての分野を中心に学んでいます。<br>よりまとまった、綺麗で分かりやすいコードを作れるように日々新しい技術を身につけています。</p>
+            <h3 class="home-skill__title">My Skill</h3>
+            <ul class="list-skill flex">
+              <li>
+                <p class="skill-logo"><img src="img/skill01.svg" alt="HTML5のロゴ"></p>
+                <p>HTML5</p>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/skill02.svg" alt="CSS3のロゴ"></p>
+                <p>CSS3</p>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/skill03.svg" alt="Sassのロゴ"></p>
+                <p>Sass</p>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/skill04.svg" alt="JavaScriptのロゴ"></p>
+                <p>JavaScript</p>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/skill05.svg" alt="jQueryのロゴ"></p>
+                <p>jQuery</p>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/skill06.svg" alt="Vue.jsのロゴ"></p>
+                <p>Vue.js</p>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/skill07.svg" alt="PHPのロゴ"></p>
+                <p>PHP</p>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/skill08.svg" alt="MySQLのロゴ"></p>
+                <p>MySQL</p>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/skill09.svg" alt="Laravelのロゴ"></p>
+                <p>Laravel</p>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/skill10.svg" alt="Node.jsのロゴ"></p>
+                <p>Node.js</p>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="scroll-works">
           <span></span>
@@ -244,9 +282,8 @@
             <li>
               <h3>MESSAGE</h3>
               <p class="profie-message">
-                日頃から、どうすれば綺麗で効率的なコードが書けるかを考えながらコーディングしています。<br>
-                中学校の頃の吹奏楽での活動の時から、集中してとことん磨くことが好きで、現在でのweb制作でも活かされています。<br>
-                エンジニア専攻ですが、Webデザインも大好きです。<br>授業以外に、フレームワークや3Dアニメーションなどを勉強しています。<br>専門1年生の頃からお粥屋さんで働いています。<br>3年生になって、Webのアルバイトも始めました。
+                私は、相手の立場や気持ちになって、考えることを心がけています。<br>実際に作ったものを使う人や、一緒にものを作る人が使いやすく、わかりやすいものを作ることが大切だと考えているからです。
+                <br>将来は、フロントエンドエンジニアとして、コードのように実際には見えない部分まで細かく追求して、<br>お客様を喜ばせられるものを作りたいと考えています。
               </p>
             </li>
           </ul>
