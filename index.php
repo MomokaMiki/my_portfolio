@@ -62,7 +62,7 @@
           <h2 class="home-main__title">Welcome to my portfolio site !!</h2>
           <p class="home-main__text">専門学校に通っている、三木百花と申します。<br>私のポートフォリオにお越し下さり、ありがとうございます。</p>
           <div class="home-skill">
-            <p class="home-skill__text">現在、私はWebエンジニアとしての分野を中心に学んでいます。<br>よりまとまった、綺麗で分かりやすいコードを作れるように日々新しい技術を身につけています。</p>
+            <p class="home-skill__text">現在、私はWebエンジニアとしての分野を中心に学んでいます。<br>よりまとまった、綺麗で分かりやすいコードを作れるように、<br>日々新しい技術を身につけています。</p>
             <h3 class="home-skill__title">My Skill</h3>
             <ul class="list-skill flex">
               <li>
