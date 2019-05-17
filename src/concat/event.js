@@ -98,10 +98,14 @@ $(function(){
     $(this).on("click", function () {
       $(".btn-humb").removeClass("onAnime");
       $(".btn-humb").addClass("offAnime");
-      sideNavi.css({ opacity: 0, zIndex: -1 })
-      setTimeout(function () {
-        $(".btn-humb").removeClass("on");
-      }, 1900)
+      console.log("aaa")
+      if (sideNavi.hasClass("sp") ){
+        sideNavi.css({ opacity: 0, zIndex: -1 })
+        setTimeout(function () {
+          $(".btn-humb").removeClass("on");
+        }, 1900)
+      }
+      
 
       sideNaviIndex = i;
       $(this).addClass("click");

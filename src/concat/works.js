@@ -35,7 +35,7 @@ $(function(){
               <li><i class="fas fa-mobile-alt ${ iconSp }"></i></li>
             </ul>
           </div>
-          <figure class="work-main__img"><a href="http://momokamiki.com/material/${ worksInfo[i]['link']}" target="_blank"><img src="img/thumb-${worksInfo[i]['link']}.png" alt="${worksInfo[i]['workname'] }のサムネイル"></a></figure>
+          <figure class="work-main__img"><a href="${ worksInfo[i]['url']}" target="_blank"><img src="img/thumb-${worksInfo[i]['link']}.png" alt="${worksInfo[i]['workname'] }のサムネイル"></a></figure>
           <h4 class="work-main__title">${ worksInfo[i]['title'] }</h4>
           <p class="work-main__text">${ worksInfo[i]['worktext'] }</p>
         </div>

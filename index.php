@@ -253,7 +253,7 @@
                   </div>
                 </li>
               </ul>
-              <a href="guideline.html" target="_blank">&gt;&nbsp;コーディングガイドライン</a>
+              <a href="material/guideline/" target="_blank">&gt;&nbsp;コーディングガイドライン</a>
             </li>
             <li>
               <h3>REQUIREMENT</h3>
