@@ -376,7 +376,8 @@ $(function(){
       $(this).addClass("show");
       let thisClick = $(this);
       let offTop = content.eq(sideNaviIndex).offset().top;
-      $("html, body").animate({ scrollTop: offTop }, "swing");
+      console.log("aa");
+      $("html, body").animate({ scrollTop: offTop }, "slow","swing");
       // クリックされた瞬間だけ.clickをつけておく
       setTimeout(function () {
         thisClick.removeClass("click");
@@ -393,7 +394,6 @@ $(function(){
   // スクロールするたびにスクロール値とる
   nowSc = $(document).scrollTop();
   if (!naviList.hasClass("click")) {
-      let next = i + 1;
       //CONTACTの時だけ例外
     if (nowSc >= content.eq(4).offset().top) {
         nowNum = 4;
