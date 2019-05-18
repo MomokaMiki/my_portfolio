@@ -30,7 +30,6 @@ $(window).on("load",function(){
     setTimeout(function () {
       $(".titleSvg").css("opacity", "0");
       $(".content-home").addClass("on");
-      // $("html").css("overflow", "visible");
     }, 4500)
   },200);
 })

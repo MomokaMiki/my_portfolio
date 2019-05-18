@@ -1,11 +1,11 @@
 $(function(){
-  var beforeSc = $(document).scrollTop();
-  var scFlg = true;
-  var flgProfile = true;
+  let beforeSc = $(document).scrollTop();
+  let scFlg = true;
+  let flgProfile = true;
   
   $(document).on("scroll",function(){
-    var scTop = $(document).scrollTop();
-    var afterSc = $(document).scrollTop();
+    let scTop = $(document).scrollTop();
+    let afterSc = $(document).scrollTop();
 
     if ( afterSc > 0 ){
       if (beforeSc < afterSc ) {
@@ -15,8 +15,6 @@ $(function(){
             // naviListがクリックされてなかったらWORKSヘ
             if (!$(".naviList").hasClass("click")) {
               $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "swing");
-
-              // $(document).scrollTop($(".content-works").offset().top)
             }
           }
           scFlg = false;

@@ -1,8 +1,8 @@
 $(function(){
-  var worksList = $(".worksList");
-  var content = $(".content");
-  var sideNavi = $(".sideNavi");
-  var naviList = $(".naviList");
+  const worksList = $(".worksList");
+  const content = $(".content");
+  const sideNavi = $(".sideNavi");
+  const naviList = $(".naviList");
   // 作品 ViewMoreボタン
   $(document).on('click', '.btn-more', function () {
     if( worksList.hasClass("rimit") ){
@@ -18,7 +18,7 @@ $(function(){
       setTimeout(function(){
         $(".btn-more").html("View&nbsp;More");
         worksList.addClass("rimit")
-        for (var i = 6; i <= $(".worksList > li").length; i++) {
+        for (let i = 6; i <= $(".worksList > li").length; i++) {
           $(".worksList > li").eq(i).addClass("none");
         }
       },1000)
@@ -93,12 +93,11 @@ $(function(){
   })
 
   // サイドナビをクリックした時
-  var sideNaviIndex = 0;
+  let sideNaviIndex = 0;
   naviList.each(function (i, e) {
     $(this).on("click", function () {
       $(".btn-humb").removeClass("onAnime");
       $(".btn-humb").addClass("offAnime");
-      console.log("aaa")
       if (sideNavi.hasClass("sp") ){
         sideNavi.css({ opacity: 0, zIndex: -1 })
         setTimeout(function () {
@@ -123,8 +122,8 @@ $(function(){
 
       $(this).addClass("on");
       $(this).addClass("show");
-      var thisClick = $(this);
-      var offTop = content.eq(sideNaviIndex).offset().top;
+      let thisClick = $(this);
+      let offTop = content.eq(sideNaviIndex).offset().top;
       $("html, body").animate({ scrollTop: offTop }, "swing");
       // クリックされた瞬間だけ.clickをつけておく
       setTimeout(function () {
@@ -134,22 +133,22 @@ $(function(){
   });
 
   flgProfile = true;
-  var beNum = 0;
-  var nowNum = "";
+  let beNum = 0;
+  let nowNum = "";
   // スクロールした時
   $(document).on("scroll", function () {
     
   // スクロールするたびにスクロール値とる
   nowSc = $(document).scrollTop();
   if (!naviList.hasClass("click")) {
-      var next = i + 1;
+      let next = i + 1;
       //CONTACTの時だけ例外
     if (nowSc >= content.eq(4).offset().top) {
         nowNum = 4;
       }
     else {
-      for(var i = 0; i <= 3; i++){
-        var next = i+1;
+      for(let i = 0; i <= 3; i++){
+        let next = i+1;
         if (content.eq(i).offset().top <= nowSc && nowSc < content.eq(next).offset().top) {
           nowNum = i;
         }
@@ -173,8 +172,8 @@ $(function(){
       beNum = 4;
     }
     else {
-      for (var i = 0; i <= 3; i++) {
-        var next = i + 1;
+      for (let i = 0; i <= 3; i++) {
+        let next = i + 1;
         if (content.eq(i).offset().top <= nowSc && nowSc < content.eq(next).offset().top) {
           beNum = i;
         }

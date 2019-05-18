@@ -30,7 +30,6 @@ $(window).on("load",function(){
     setTimeout(function () {
       $(".titleSvg").css("opacity", "0");
       $(".content-home").addClass("on");
-      // $("html").css("overflow", "visible");
     }, 4500)
   },200);
 })
@@ -43,11 +42,11 @@ $(function(){
     timeout: 10000
   })
   .done(function(data){
-    var worksInfo = data;
+    const worksInfo = data;
     $.each(worksInfo,function (i) {
 
-      var iconPc = "";
-      var iconSp = "";
+      let iconPc = "";
+      let iconSp = "";
       if (worksInfo[i]['device'] == 2 ){
         iconPc = "on";
         iconSp = "on";
@@ -59,7 +58,7 @@ $(function(){
         iconSp = "on";
       }
         
-      var item = `
+      let item = `
       <li class="work-box flex">
         <div class="work-main">
           <div class="work-main__head flex">
@@ -95,25 +94,24 @@ $(function(){
       </li>`
       $(".worksList").append(item);
 
-      
 
       // 企画書の有無
       if (worksInfo[i]['proposal'] == "block") {
-        var proposal = `<a href="pdf/${worksInfo[i]['link']}.pdf" target="_blank"><img src="img/icon-proposal.svg" alt='企画書を見る'></a>`
+        let proposal = `<a href="pdf/${worksInfo[i]['link']}.pdf" target="_blank"><img src="img/icon-proposal.svg" alt='企画書を見る'></a>`
         $(".work-title").eq(i).append(proposal);
       }
       // Githubの有無
       if (!worksInfo[i]['git'] == "") {
-        var git = `<a href="${worksInfo[i]['git']}" target="_blank"><i class="fab fa-github"></i></a>`
+        let git = `<a href="${worksInfo[i]['git']}" target="_blank"><i class="fab fa-github"></i></a>`
         $(".work-title").eq(i).append(git);
       }
       // 使用ソフト一覧
-      var softs = worksInfo[i]['soft'].split("/");
+      let softs = worksInfo[i]['soft'].split("/");
       $.each(softs,function(k,e){
         $(".worksList > li").eq(i).find(".used-soft ul").append(`<li><img src='img/soft-${softs[k]}.svg' alt='${softs[k] }のアイコン'></li>`);
       });
       // 使用言語一覧
-      var langs = worksInfo[i]['lang'].split("/");
+      let langs = worksInfo[i]['lang'].split("/");
       $.each(langs, function (k, e) {
         $(".worksList > li").eq(i).find(".used-lang ul").append(`<li><img src='img/lang-${langs[k]}.svg' alt='${langs[k]}のアイコン'></li>`);
       });
@@ -124,17 +122,17 @@ $(function(){
     addEmpty();
 
     // ６個目以降を消す
-    for (var i = 6; i <= $(".worksList > li").length; i++) {
+    for (let i = 6; i <= $(".worksList > li").length; i++) {
       $(".worksList > li").eq(i).addClass("none");
     }
 
     // ウィンドウの幅によって、WORKSの余りの空箱を追加
     function addEmpty() {
       $(".no").remove();
-      var winWid = $(window).width();
+      const winWid = $(window).width();
       if (winWid >= 1) {
         if (!Number(worksInfo.length % 3) == 0){
-          var addCount = 3 - worksInfo.length % 3;
+          let addCount = 3 - worksInfo.length % 3;
           for (i = 1; i <= addCount; i++) {
             $(".worksList").append("<li class='work-box no'></li>");
           }
@@ -145,7 +143,7 @@ $(function(){
       }
       if (winWid >= 680 && winWid < 1100) {  
         if (!Number(worksInfo.length % 2) == 0){
-          var addCount = 2 - worksInfo.length % 2;
+          let addCount = 2 - worksInfo.length % 2;
           for (i = 1; i <= addCount; i++) {
             $(".worksList").append("<li class='no'></li>");
           }
@@ -162,13 +160,13 @@ $(function(){
   })
 })
 $(function(){
-  var beforeSc = $(document).scrollTop();
-  var scFlg = true;
-  var flgProfile = true;
+  let beforeSc = $(document).scrollTop();
+  let scFlg = true;
+  let flgProfile = true;
   
   $(document).on("scroll",function(){
-    var scTop = $(document).scrollTop();
-    var afterSc = $(document).scrollTop();
+    let scTop = $(document).scrollTop();
+    let afterSc = $(document).scrollTop();
 
     if ( afterSc > 0 ){
       if (beforeSc < afterSc ) {
@@ -178,8 +176,6 @@ $(function(){
             // naviListがクリックされてなかったらWORKSヘ
             if (!$(".naviList").hasClass("click")) {
               $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "swing");
-
-              // $(document).scrollTop($(".content-works").offset().top)
             }
           }
           scFlg = false;
@@ -255,10 +251,10 @@ $(function(){
   })
 })
 $(function(){
-  var worksList = $(".worksList");
-  var content = $(".content");
-  var sideNavi = $(".sideNavi");
-  var naviList = $(".naviList");
+  const worksList = $(".worksList");
+  const content = $(".content");
+  const sideNavi = $(".sideNavi");
+  const naviList = $(".naviList");
   // 作品 ViewMoreボタン
   $(document).on('click', '.btn-more', function () {
     if( worksList.hasClass("rimit") ){
@@ -274,7 +270,7 @@ $(function(){
       setTimeout(function(){
         $(".btn-more").html("View&nbsp;More");
         worksList.addClass("rimit")
-        for (var i = 6; i <= $(".worksList > li").length; i++) {
+        for (let i = 6; i <= $(".worksList > li").length; i++) {
           $(".worksList > li").eq(i).addClass("none");
         }
       },1000)
@@ -349,12 +345,11 @@ $(function(){
   })
 
   // サイドナビをクリックした時
-  var sideNaviIndex = 0;
+  let sideNaviIndex = 0;
   naviList.each(function (i, e) {
     $(this).on("click", function () {
       $(".btn-humb").removeClass("onAnime");
       $(".btn-humb").addClass("offAnime");
-      console.log("aaa")
       if (sideNavi.hasClass("sp") ){
         sideNavi.css({ opacity: 0, zIndex: -1 })
         setTimeout(function () {
@@ -379,8 +374,8 @@ $(function(){
 
       $(this).addClass("on");
       $(this).addClass("show");
-      var thisClick = $(this);
-      var offTop = content.eq(sideNaviIndex).offset().top;
+      let thisClick = $(this);
+      let offTop = content.eq(sideNaviIndex).offset().top;
       $("html, body").animate({ scrollTop: offTop }, "swing");
       // クリックされた瞬間だけ.clickをつけておく
       setTimeout(function () {
@@ -390,22 +385,22 @@ $(function(){
   });
 
   flgProfile = true;
-  var beNum = 0;
-  var nowNum = "";
+  let beNum = 0;
+  let nowNum = "";
   // スクロールした時
   $(document).on("scroll", function () {
     
   // スクロールするたびにスクロール値とる
   nowSc = $(document).scrollTop();
   if (!naviList.hasClass("click")) {
-      var next = i + 1;
+      let next = i + 1;
       //CONTACTの時だけ例外
     if (nowSc >= content.eq(4).offset().top) {
         nowNum = 4;
       }
     else {
-      for(var i = 0; i <= 3; i++){
-        var next = i+1;
+      for(let i = 0; i <= 3; i++){
+        let next = i+1;
         if (content.eq(i).offset().top <= nowSc && nowSc < content.eq(next).offset().top) {
           nowNum = i;
         }
@@ -429,8 +424,8 @@ $(function(){
       beNum = 4;
     }
     else {
-      for (var i = 0; i <= 3; i++) {
-        var next = i + 1;
+      for (let i = 0; i <= 3; i++) {
+        let next = i + 1;
         if (content.eq(i).offset().top <= nowSc && nowSc < content.eq(next).offset().top) {
           beNum = i;
         }
