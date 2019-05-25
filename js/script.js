@@ -75,41 +75,45 @@ $(function(){
           <p class="work-main__text">${ worksInfo[i]['worktext'] }</p>
         </div>
         <div class="work-bottom">
-          <ul class="work-bottom__used flex">
-            <li class="used-soft">
+          <ul class="work-bottom__used">
+            <li class="used-soft flex">
               <h4>使用技術：</h4>
-              <ul class="flex"></ul>
+              <ul class="used-soft__list flex"></ul>
             </li>
             <li class="used-lang">
               <h4>担当部分：${ worksInfo[i]['part'] }</h4>
             </li>
           </ul>
+          <ul class="work-bottom__btn flex">
+            <li><a href="${ worksInfo[i]['url']}" target="_blank">サイトを見る</a></li>
+          </ul>
           <ul class="work-bottom__hash flex">
             <li>#&nbsp;${worksInfo[i]['season']}</li>
             <li>#&nbsp;${worksInfo[i]['worktype']}</li>
           </ul>
-          <ul class="work-bottom__btn"></ul>
         </div>
       </li>`
       $(".worksList").append(item);
 
       // 最新作品
       if (worksInfo[i]['new'] == 1 ){
-        let newWork = `<p class="work-new">NEW</p>`;
+        let newWork = `<p class="work-new">NEW!!</p>`;
         $(".work-box").eq(i).append(newWork);
       }
       // 企画書の有無
       if (worksInfo[i]['proposal'] == "block") {
-        let hash_proposal = `<li><a href="pdf/${worksInfo[i]['link']}.pdf" target="_blank">#&nbsp;企画</a></li>`
+        let hash_proposal = `<li>#&nbsp;企画</li>`
         $(".work-bottom__hash").eq(i).append(hash_proposal);
-        let btn_proposal = `<li><a href="pdf/${worksInfo[i]['link']}.pdf" target="_blank"><img src="img/icon-proposal.svg">企画書</a></li>`
+        console.log("企画書"+i)
+        let btn_proposal = `<li><a href="pdf/${worksInfo[i]['link']}.pdf" target="_blank">企画書を見る</a></li>`
         $(".work-bottom__btn").eq(i).append(btn_proposal);
       }
       // Githubの有無
       if (!worksInfo[i]['git'] == "") {
-        let hash_git = `<li><a href="${worksInfo[i]['git']}" target="_blank">#&nbsp;Github</a></li>`
+        let hash_git = `<li>#&nbsp;Github</li>`
         $(".work-bottom__hash").eq(i).append(hash_git);
-        let btn_git = `<li><a href="${worksInfo[i]['git']}" target="_blank"><i class="fab fa-github"></i>Github</a></li>`
+        console.log("Github" + i)
+        let btn_git = `<li><a href="${worksInfo[i]['git']}" target="_blank"><i class="fab fa-github"></i>Githubへ</a></li>`
         $(".work-bottom__btn").eq(i).append(btn_git);
       }
       // スキル一覧

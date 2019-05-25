@@ -202,15 +202,7 @@
   top: 10px;
   border: solid 1px $main;
   h4{
-    margin-bottom: 4px;
     font-family: $goR;
-    font-size: 1.4rem;
-  }
-  p{
-    margin: 4px 0;
-    font-family: $goL;
-    font-size: 1.2rem;
-    line-height: 1.4;
   }
 }
 .work-box.on{
@@ -222,13 +214,22 @@
   opacity: 0;
 }
 .work-main{
+  &__title{
+    font-size: 1.6rem;
+  }
+  &__text{
+    margin-top: 8px;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    font-family: $goL;
+  }
   &__head{
     justify-content: space-between;
     align-items: center;
   }
   &__img{
     height: 140px;
-    margin: 20px 0;
+    margin: 20px 0 30px;
     text-align: center;
     img{
       height: 100%;
@@ -240,7 +241,7 @@
   h3{
     margin-right: 2px;
     font-family: $goR;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
   a{
     width: 14px;
@@ -285,23 +286,64 @@
 }
 .work-bottom{
   &__used{
-    margin-top: 8px;
     li{
-      width: 50%;
-      li{
-        width: 20px;
-        margin: 0 2px;
-      }
+      margin-top: 6px;
+    }
+    h4{
+      font-size: 1.4rem;
     }
   }
   &__hash{
     flex-wrap: wrap;
-    margin-top: 6px;
+    margin-top: 12px;
     li{
       margin-right: 8px;
       font-family: $goL;
       font-size: 1.4rem;
     }
+  }
+  &__btn{
+    margin-top: 14px;
+    li{
+      margin-right: 10px;
+      a{
+        display: block;
+        padding: 6px;
+        border: solid 1px $main;
+        color: $main;
+        font-size: 1.4rem;
+        font-family: $goR;
+      }
+    }
+  }
+}
+.used-soft{
+  align-items: center;
+  &__list li{
+    display: flex;
+    align-items: center;
+    width: 20px;
+    margin: 0 2px;
+    img{
+      width: 20px;
+    }
+  }
+}
+.work-new{
+  position: absolute;
+  top: -22px;
+  left: 28px;
+  font-size: 1.6rem;
+  font-family: $goR;
+  &::before{
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -2px;
+    left: -40px;
+    content: "";
+    background-image: url("../img/icon-flower03.svg");
   }
 }
 
