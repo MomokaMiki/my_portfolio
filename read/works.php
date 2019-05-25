@@ -1,6 +1,6 @@
 <?php
 
-  $instance = new mysqli("mysql1019.db.sakura.ne.jp","mmiki-web","yururinpanda0317","mmiki-web_portfolio");
+  $instance = new mysqli("localhost","root","yururinpanda","mmiki");
   $instance->set_charset("UTF-8");
 
   // $workId = filter_input(INPUT_GET,"work_id");

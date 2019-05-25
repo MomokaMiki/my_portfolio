@@ -42,43 +42,45 @@ $(function(){
         <div class="work-bottom">
           <ul class="work-bottom__used flex">
             <li class="used-soft">
-              <h4>使用ソフト</h4>
+              <h4>使用技術：</h4>
               <ul class="flex"></ul>
             </li>
             <li class="used-lang">
-              <h4>使用言語/スキル</h4>
-              <ul class="flex"></ul>
+              <h4>担当部分：${ worksInfo[i]['part'] }</h4>
             </li>
           </ul>
           <ul class="work-bottom__hash flex">
-            <li>#${worksInfo[i]['season']}</li>
-            <li>#${worksInfo[i]['worktype']}</li>
-            <li>#約${worksInfo[i]['worktime']}時間</li>
+            <li>#&nbsp;${worksInfo[i]['season']}</li>
+            <li>#&nbsp;${worksInfo[i]['worktype']}</li>
           </ul>
+          <ul class="work-bottom__btn"></ul>
         </div>
       </li>`
       $(".worksList").append(item);
 
-
+      // 最新作品
+      if (worksInfo[i]['new'] == 1 ){
+        let newWork = `<p class="work-new">NEW</p>`;
+        $(".work-box").eq(i).append(newWork);
+      }
       // 企画書の有無
       if (worksInfo[i]['proposal'] == "block") {
-        let proposal = `<a href="pdf/${worksInfo[i]['link']}.pdf" target="_blank"><img src="img/icon-proposal.svg" alt='企画書を見る'></a>`
-        $(".work-title").eq(i).append(proposal);
+        let hash_proposal = `<li><a href="pdf/${worksInfo[i]['link']}.pdf" target="_blank">#&nbsp;企画</a></li>`
+        $(".work-bottom__hash").eq(i).append(hash_proposal);
+        let btn_proposal = `<li><a href="pdf/${worksInfo[i]['link']}.pdf" target="_blank"><img src="img/icon-proposal.svg">企画書</a></li>`
+        $(".work-bottom__btn").eq(i).append(btn_proposal);
       }
       // Githubの有無
       if (!worksInfo[i]['git'] == "") {
-        let git = `<a href="${worksInfo[i]['git']}" target="_blank"><i class="fab fa-github"></i></a>`
-        $(".work-title").eq(i).append(git);
+        let hash_git = `<li><a href="${worksInfo[i]['git']}" target="_blank">#&nbsp;Github</a></li>`
+        $(".work-bottom__hash").eq(i).append(hash_git);
+        let btn_git = `<li><a href="${worksInfo[i]['git']}" target="_blank"><i class="fab fa-github"></i>Github</a></li>`
+        $(".work-bottom__btn").eq(i).append(btn_git);
       }
-      // 使用ソフト一覧
-      let softs = worksInfo[i]['soft'].split("/");
-      $.each(softs,function(k,e){
-        $(".worksList > li").eq(i).find(".used-soft ul").append(`<li><img src='img/soft-${softs[k]}.svg' alt='${softs[k] }のアイコン'></li>`);
-      });
-      // 使用言語一覧
-      let langs = worksInfo[i]['lang'].split("/");
-      $.each(langs, function (k, e) {
-        $(".worksList > li").eq(i).find(".used-lang ul").append(`<li><img src='img/lang-${langs[k]}.svg' alt='${langs[k]}のアイコン'></li>`);
+      // スキル一覧
+      let skills = worksInfo[i]['skill'].split("/");
+      $.each(skills,function(k,e){
+        $(".worksList > li").eq(i).find(".used-soft ul").append(`<li><img src='img/skill-${skills[k]}.svg' alt='${skills[k] }のアイコン'></li>`);
       });
       // タイプスクエアリロード
       Ts.setAutoLoadFontSelector(".worksList", 100);

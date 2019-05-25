@@ -100,7 +100,7 @@ gulp.task('sync', function (done) {
   done();
 });
 gulp.task('bs-reload', function (done) {
-  browserSync.reload();
+    browserSync.reload();
   done();
 });
 

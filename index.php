@@ -59,50 +59,50 @@
       </div>
       <section class="content content-home flex">
         <div class="home-main">
-          <h2 class="home-main__title">Welcome to my portfolio site !!</h2>
-          <p class="home-main__text">専門学校に通っている、三木百花と申します。<br>私のポートフォリオにお越し下さり、ありがとうございます。</p>
+          <h2 class="home-main__title">Welcome to My Portfolio Site</h2>
+          <p class="home-main__text">こんにちは。三木百花と申します。<br>私のポートフォリオにお越し下さり、ありがとうございます!</p>
           <div class="home-skill">
-            <p class="home-skill__text">現在、私はWebエンジニアとしての分野を中心に学んでいます。<br>よりまとまった、綺麗で分かりやすいコードを作れるように、<br>日々新しい技術を身につけています。</p>
-            <h3 class="home-skill__title">My Skill</h3>
+            <p class="home-skill__text">私は、使う人や一緒にものを作る人などの"相手"の視点になって、<br>よりわかりやすく、使いやすいものを作れるように、<br>日々新しい技術の習得や、ものづくりに励んでいます。</p>
+            <h3 class="home-skill__title">Learning&nbsp;&nbsp;Skill</h3>
             <ul class="list-skill flex">
               <li>
-                <p class="skill-logo"><img src="img/skill01.svg" alt="HTML5のロゴ"></p>
+                <p class="skill-logo"><img src="img/icon-html.svg" alt="HTML5のロゴ"></p>
                 <p>HTML5</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/skill02.svg" alt="CSS3のロゴ"></p>
+                <p class="skill-logo"><img src="img/icon-css.svg" alt="CSS3のロゴ"></p>
                 <p>CSS3</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/skill03.svg" alt="Sassのロゴ"></p>
+                <p class="skill-logo"><img src="img/icon-sass.svg" alt="Sassのロゴ"></p>
                 <p>Sass</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/skill04.svg" alt="JavaScriptのロゴ"></p>
+                <p class="skill-logo"><img src="img/icon-js.svg" alt="JavaScriptのロゴ"></p>
                 <p>JavaScript</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/skill05.svg" alt="jQueryのロゴ"></p>
+                <p class="skill-logo"><img src="img/icon-jquery.svg" alt="jQueryのロゴ"></p>
                 <p>jQuery</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/skill06.svg" alt="Vue.jsのロゴ"></p>
+                <p class="skill-logo"><img src="img/icon-vue.svg" alt="Vue.jsのロゴ"></p>
                 <p>Vue.js</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/skill07.svg" alt="PHPのロゴ"></p>
+                <p class="skill-logo"><img src="img/icon-php.svg" alt="PHPのロゴ"></p>
                 <p>PHP</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/skill08.svg" alt="MySQLのロゴ"></p>
+                <p class="skill-logo"><img src="img/icon-mysql.svg" alt="MySQLのロゴ"></p>
                 <p>MySQL</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/skill09.svg" alt="Laravelのロゴ"></p>
+                <p class="skill-logo"><img src="img/icon-laravel.svg" alt="Laravelのロゴ"></p>
                 <p>Laravel</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/skill10.svg" alt="Node.jsのロゴ"></p>
+                <p class="skill-logo"><img src="img/icon-node.svg" alt="Node.jsのロゴ"></p>
                 <p>Node.js</p>
               </li>
             </ul>
@@ -131,7 +131,7 @@
               <p>三木&nbsp;百花<br>(みき&nbsp;ももか)</p>
             </li>
             <li>
-              <h3>SCHOOL</h3>
+              <h3>EDUCATION</h3>
               <p>ECCコンピュータ専門学校(大阪)<br>Webエンジニア専攻(20年卒)</p>
             </li>
             <li>
@@ -276,7 +276,7 @@
               </ul>
             </li>
             <li>
-              <h3>FAVORITE&nbsp;THINGS</h3>
+              <h3>INTEREST</h3>
               <p>楽器&nbsp;と&nbsp;ゲーム&nbsp;と&nbsp;うさぎ&nbsp;と&nbsp;ゆるりんぱんだ&nbsp;と&nbsp;コーディングが大好き。<br>フィギュアスケートを見るのも好きです。</p>
             </li>
             <li>
@@ -294,14 +294,14 @@
           <li class="history flex">
             <p class="history__year">2011〜2013</p>
             <div class="history__desc history-desc">
-              <h3 class="history-desc__title">Junior&nbsp;high&nbsp;school&nbsp;days</h3>
+              <h3 class="history-desc__title">Junior&nbsp;High&nbsp;School</h3>
               <p class="history-desc__text">中学校3年間は吹奏楽部に所属。パートリーダーも任されました。<br>この時は、自分のWindowsのパソコンでよく遊んでいました。</p>
             </div>
           </li>
           <li class="history flex">
             <p class="history__year">2014〜2016</p>
             <div class="history__desc history-desc">
-              <h3 class="history-desc__title">High&nbsp;school&nbsp;days</h3>
+              <h3 class="history-desc__title">Senior&nbsp;High&nbsp;School</h3>
               <p class="history-desc__text">大阪ビジネスフロンティアという商業高校に通っていました。
                 <br>情報処理や簿記、ビジネスなどについての授業があり、その中で一番、情報処理の授業が楽しく、大好きでした。<br>吹奏楽部に所属し、パートリーダーも任されました。</p>
             </div>
@@ -309,7 +309,7 @@
           <li class="history flex">
             <p class="history__year">2017</p>
             <div class="history__desc history-desc">
-              <h3 class="history-desc__title">ECC&nbsp;computer&nbsp;college&nbsp;year1</h3>
+              <h3 class="history-desc__title">ECC&nbsp;Computer&nbsp;College&nbsp;1st</h3>
               <p class="history-desc__text">前半は、グラフィックデザイン・Webデザイン・コーディングを全体的に学びました。<br>
               後半は、エンジニア専攻として、JavaScriptやPHPについて学び始めました。<br>
               とても楽しく、作品制作のモチベーションにも繋がりました。</p>
@@ -318,7 +318,7 @@
           <li class="history flex">
             <p class="history__year">2018</p>
             <div class="history__desc history-desc">
-              <h3 class="history-desc__title">ECC&nbsp;computer&nbsp;college&nbsp;year2</h3>
+              <h3 class="history-desc__title">ECC&nbsp;Computer&nbsp;College&nbsp;2nd</h3>
               <p class="history-desc__text">２年生になり制作して行く中で、自分がバックエンドよりもフロントエンドの方が得意で、好きだということが分かりました。<br>
               そして、1年生の時に取れなかった皆勤を取ることができました！<br>おまけに後期の成績はオールA(Aが最高値)でした。当たり前なのですが、やはり嬉しいです。</p>
             </div>
@@ -326,7 +326,7 @@
           <li class="history flex">
             <p class="history__year">2019</p>
             <div class="history__desc history-desc">
-              <h3 class="history-desc__title">ECC&nbsp;computer&nbsp;college&nbsp;year3</h3>
+              <h3 class="history-desc__title">ECC&nbsp;Computer&nbsp;College&nbsp;3rd</h3>
               <p class="history-desc__text">3年生になって、WEB制作会社でアルバイトを始めました。<br>
               また、１年生から飲食店のアルバイトも続けており、3年目に突入しました。<br>
               現在、チーム制作で、企業の情報を登録し、皆が探せるというサイトを作っています。<br>
