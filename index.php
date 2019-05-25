@@ -143,7 +143,7 @@
               <p>星の数は自己評価です。</p>
               <ul class="list-skill flex">
                 <li>
-                  <p class="skill-logo"><img src="img/skill01.svg" alt="HTML5のロゴ"></p>
+                  <p class="skill-logo"><img src="img/icon-html.svg" alt="HTML5のロゴ"></p>
                   <p>HTML5</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -154,7 +154,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/skill02.svg" alt="CSS3のロゴ"></p>
+                  <p class="skill-logo"><img src="img/icon-css.svg" alt="CSS3のロゴ"></p>
                   <p>CSS3</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -165,7 +165,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/skill03.svg" alt="Sassのロゴ"></p>
+                  <p class="skill-logo"><img src="img/icon-sass.svg" alt="Sassのロゴ"></p>
                   <p>Sass</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -176,7 +176,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/skill04.svg" alt="JavaScriptのロゴ"></p>
+                  <p class="skill-logo"><img src="img/icon-js.svg" alt="JavaScriptのロゴ"></p>
                   <p>JavaScript</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -187,7 +187,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/skill05.svg" alt="jQueryのロゴ"></p>
+                  <p class="skill-logo"><img src="img/icon-jquery.svg" alt="jQueryのロゴ"></p>
                   <p>jQuery</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -198,7 +198,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/skill06.svg" alt="Vue.jsのロゴ"></p>
+                  <p class="skill-logo"><img src="img/icon-vue.svg" alt="Vue.jsのロゴ"></p>
                   <p>Vue.js</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -209,7 +209,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/skill10.svg" alt="Node.jsのロゴ"></p>
+                  <p class="skill-logo"><img src="img/icon-node.svg" alt="Node.jsのロゴ"></p>
                   <p>Node.js</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -220,7 +220,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/skill07.svg" alt="PHPのロゴ"></p>
+                  <p class="skill-logo"><img src="img/icon-php.svg" alt="PHPのロゴ"></p>
                   <p>PHP</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -231,7 +231,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/skill08.svg" alt="MySQLのロゴ"></p>
+                  <p class="skill-logo"><img src="img/icon-mysql.svg" alt="MySQLのロゴ"></p>
                   <p>MySQL</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -242,7 +242,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/skill09.svg" alt="Laravelのロゴ"></p>
+                  <p class="skill-logo"><img src="img/icon-laravel.svg" alt="Laravelのロゴ"></p>
                   <p>Laravel</p>
                   <div>
                     <i class="fas fa-star"></i>
