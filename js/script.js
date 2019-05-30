@@ -45,6 +45,8 @@ $(function(){
     const worksInfo = data;
     $.each(worksInfo,function (i) {
 
+      console.log(i)
+
       let iconPc = "";
       let iconSp = "";
       if (worksInfo[i]['device'] == 2 ){
@@ -70,7 +72,7 @@ $(function(){
               <li><i class="fas fa-mobile-alt ${ iconSp }"></i></li>
             </ul>
           </div>
-          <figure class="work-main__img"><a href="${ worksInfo[i]['url']}" target="_blank"><img src="img/thumb-${worksInfo[i]['link']}.png" alt="${worksInfo[i]['workname'] }のサムネイル"></a></figure>
+          <figure class="work-main__img"><a href="${ worksInfo[i]['url']}" target="_blank"><img data-src="img/thumb-${worksInfo[i]['link']}.png" alt="${worksInfo[i]['workname'] }のサムネイル" class="lazyload" src=""></a></figure>
           <h4 class="work-main__title">${ worksInfo[i]['title'] }</h4>
           <p class="work-main__text">${ worksInfo[i]['worktext'] }</p>
         </div>
@@ -110,20 +112,20 @@ $(function(){
       }
       // Githubの有無
       if (!worksInfo[i]['git'] == "") {
-        let hash_git = `<li>#&nbsp;Github</li>`
+        let hash_git = `<li>#&nbsp;GitHub</li>`
         $(".work-bottom__hash").eq(i).append(hash_git);
-        console.log("Github" + i)
-        let btn_git = `<li><a href="${worksInfo[i]['git']}" target="_blank"><i class="fab fa-github"></i>Githubへ</a></li>`
+        let btn_git = `<li><a href="${worksInfo[i]['git']}" target="_blank"><i class="fab fa-gitHub"></i>GitHubへ</a></li>`
         $(".work-bottom__btn").eq(i).append(btn_git);
       }
       // スキル一覧
       let skills = worksInfo[i]['skill'].split("/");
       $.each(skills,function(k,e){
-        $(".worksList > li").eq(i).find(".used-soft ul").append(`<li><img src='img/skill-${skills[k]}.svg' alt='${skills[k] }のアイコン'></li>`);
+        $(".worksList > li").eq(i).find(".used-soft ul").append(`<li><img data-src='img/skill-${skills[k]}.svg' alt='${skills[k] }のアイコン' class="lazyload" src=""></li>`);
       });
-      // タイプスクエアリロード
-      Ts.setAutoLoadFontSelector(".worksList", 100);
     })
+    // タイプスクエアリロード
+    Ts.setAutoLoadFontSelector(".worksList", 100);
+
     // 余白分のworklist追加
     addEmpty();
 
@@ -438,4 +440,12 @@ $(function(){
       }
     }
   }); // scroll
+
+  // ハッシュタグ検索
+  const hashList = $(".work-bottom__hash li");
+  console.log(hashList);
+  $(document).on("click",hashList,function(e){
+    let clickHash = hashList.text();
+    console.log(clickHash);
+  })
 });

@@ -180,4 +180,12 @@ $(function(){
       }
     }
   }); // scroll
+
+  // ハッシュタグ検索
+  const hashList = $(".work-bottom__hash li");
+  console.log(hashList);
+  $(document).on("click",hashList,function(e){
+    let clickHash = hashList.text();
+    console.log(clickHash);
+  })
 });

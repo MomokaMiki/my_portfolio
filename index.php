@@ -14,9 +14,9 @@
 <body>
   <div class="load">
     <div class="load-inner flex">
-      <img src="img/icon-flower01.svg" alt="">
-      <img src="img/icon-flower02.svg" alt="">
-      <img src="img/icon-flower03.svg" alt="">
+      <img data-src="img/icon-flower01.svg" alt="" class="lazyload" src="">
+      <img data-src="img/icon-flower02.svg" alt="" class="lazyload" src="">
+      <img data-src="img/icon-flower03.svg" alt="" class="lazyload" src="">
     </div>
   </div>
   <div class="sideNavi">
@@ -66,43 +66,43 @@
             <h3 class="home-skill__title">Learning&nbsp;&nbsp;Skill</h3>
             <ul class="list-skill flex">
               <li>
-                <p class="skill-logo"><img src="img/icon-html.svg" alt="HTML5のロゴ"></p>
+                <p class="skill-logo"><img data-src="img/icon-html.svg" alt="HTML5のロゴ" class="lazyload" src=""></p>
                 <p>HTML5</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-css.svg" alt="CSS3のロゴ"></p>
+                <p class="skill-logo"><img data-src="img/icon-css.svg" alt="CSS3のロゴ" class="lazyload" src=""></p>
                 <p>CSS3</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-sass.svg" alt="Sassのロゴ"></p>
+                <p class="skill-logo"><img data-src="img/icon-sass.svg" alt="Sassのロゴ" class="lazyload" src=""></p>
                 <p>Sass</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-js.svg" alt="JavaScriptのロゴ"></p>
+                <p class="skill-logo"><img data-src="img/icon-js.svg" alt="JavaScriptのロゴ" class="lazyload" src=""></p>
                 <p>JavaScript</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-jquery.svg" alt="jQueryのロゴ"></p>
+                <p class="skill-logo"><img data-src="img/icon-jquery.svg" alt="jQueryのロゴ" class="lazyload" src=""></p>
                 <p>jQuery</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-vue.svg" alt="Vue.jsのロゴ"></p>
+                <p class="skill-logo"><img data-src="img/icon-vue.svg" alt="Vue.jsのロゴ" class="lazyload" src=""></p>
                 <p>Vue.js</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-php.svg" alt="PHPのロゴ"></p>
+                <p class="skill-logo"><img data-src="img/icon-php.svg" alt="PHPのロゴ" class="lazyload" src=""></p>
                 <p>PHP</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-mysql.svg" alt="MySQLのロゴ"></p>
+                <p class="skill-logo"><img data-src="img/icon-mysql.svg" alt="MySQLのロゴ" class="lazyload" src=""></p>
                 <p>MySQL</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-laravel.svg" alt="Laravelのロゴ"></p>
+                <p class="skill-logo"><img data-src="img/icon-laravel.svg" alt="Laravelのロゴ" class="lazyload" src=""></p>
                 <p>Laravel</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-node.svg" alt="Node.jsのロゴ"></p>
+                <p class="skill-logo"><img data-src="img/icon-node.svg" alt="Node.jsのロゴ" class="lazyload" src=""></p>
                 <p>Node.js</p>
               </li>
             </ul>
@@ -117,6 +117,7 @@
       </section>
       <section class="content content-works">
         <h2>WORKS</h2>
+        <div class="searchArea"></div>
         <ul class="worksList flex rimit"></ul>
         <button class="btn-more">View&nbsp;More</button>
       </section>
@@ -143,7 +144,7 @@
               <p>星の数は自己評価です。</p>
               <ul class="list-skill flex">
                 <li>
-                  <p class="skill-logo"><img src="img/icon-html.svg" alt="HTML5のロゴ"></p>
+                  <p class="skill-logo"><img data-src="img/icon-html.svg" alt="HTML5のロゴ" class="lazyload" src=""></p>
                   <p>HTML5</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -154,7 +155,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/icon-css.svg" alt="CSS3のロゴ"></p>
+                  <p class="skill-logo"><img data-src="img/icon-css.svg" alt="CSS3のロゴ" class="lazyload" src=""></p>
                   <p>CSS3</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -165,7 +166,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/icon-sass.svg" alt="Sassのロゴ"></p>
+                  <p class="skill-logo"><img data-src="img/icon-sass.svg" alt="Sassのロゴ" class="lazyload" src=""></p>
                   <p>Sass</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -176,7 +177,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/icon-js.svg" alt="JavaScriptのロゴ"></p>
+                  <p class="skill-logo"><img data-src="img/icon-js.svg" alt="JavaScriptのロゴ" class="lazyload" src=""></p>
                   <p>JavaScript</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -187,7 +188,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/icon-jquery.svg" alt="jQueryのロゴ"></p>
+                  <p class="skill-logo"><img data-src="img/icon-jquery.svg" alt="jQueryのロゴ" class="lazyload" src=""></p>
                   <p>jQuery</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -198,7 +199,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/icon-vue.svg" alt="Vue.jsのロゴ"></p>
+                  <p class="skill-logo"><img data-src="img/icon-vue.svg" alt="Vue.jsのロゴ" class="lazyload" src=""></p>
                   <p>Vue.js</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -209,7 +210,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/icon-node.svg" alt="Node.jsのロゴ"></p>
+                  <p class="skill-logo"><img data-src="img/icon-node.svg" alt="Node.jsのロゴ" class="lazyload" src=""></p>
                   <p>Node.js</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -220,7 +221,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/icon-php.svg" alt="PHPのロゴ"></p>
+                  <p class="skill-logo"><img data-src="img/icon-php.svg" alt="PHPのロゴ" class="lazyload" src=""></p>
                   <p>PHP</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -231,7 +232,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/icon-mysql.svg" alt="MySQLのロゴ"></p>
+                  <p class="skill-logo"><img data-src="img/icon-mysql.svg" alt="MySQLのロゴ" class="lazyload" src=""></p>
                   <p>MySQL</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -242,7 +243,7 @@
                   </div>
                 </li>
                 <li>
-                  <p class="skill-logo"><img src="img/icon-laravel.svg" alt="Laravelのロゴ"></p>
+                  <p class="skill-logo"><img data-src="img/icon-laravel.svg" alt="Laravelのロゴ" class="lazyload" src=""></p>
                   <p>Laravel</p>
                   <div>
                     <i class="fas fa-star"></i>
@@ -347,7 +348,7 @@
             <li><a href="https://twitter.com/web_En_miki" target="_blank"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://www.instagram.com/pandasan0317" target="_blank"><i class="fab fa-instagram"></i></a></li>
           </ul>
-          <p class="contact__git"><a href="https://github.com/MomokaMiki/"><i class="fab fa-github"></i><span>github</span></a></p>
+          <p class="contact__git"><a href="https://github.com/MomokaMiki/"><i class="fab fa-github"></i><span>GitHub</span></a></p>
         </div>
       </section>
     </div>
@@ -356,8 +357,8 @@
     <small>&copy;&nbsp;2019&nbsp;&nbsp;Momoka&nbsp;Miki</small>
   </footer>
   <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/lazysizes.min.js"></script>
   <script src="js/script.js"></script>
-  <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?5b49521a4774449c972b1df2e90393a3"
-    charset="utf-8"></script>
+  <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?5b49521a4774449c972b1df2e90393a3" charset="utf-8"></script>
 </body>
 </html>

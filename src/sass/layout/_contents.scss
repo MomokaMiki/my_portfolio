@@ -286,6 +286,7 @@
 }
 .work-bottom{
   &__used{
+    margin-top: 12px;
     li{
       margin-top: 6px;
     }
@@ -300,6 +301,7 @@
       margin-right: 8px;
       font-family: $goL;
       font-size: 1.4rem;
+      cursor: pointer;
     }
   }
   &__btn{
@@ -313,6 +315,9 @@
         color: $main;
         font-size: 1.4rem;
         font-family: $goR;
+        i{
+          margin-right: 4px;
+        }
       }
     }
   }
@@ -340,8 +345,8 @@
     width: 40px;
     height: 40px;
     position: absolute;
-    top: -2px;
-    left: -40px;
+    top: -4px;
+    left: -44px;
     content: "";
     background-image: url("../img/icon-flower03.svg");
   }
