@@ -117,7 +117,9 @@
       </section>
       <section class="content content-works">
         <h2>WORKS</h2>
-        <div class="searchArea"></div>
+        <div class="searchArea">
+          <p class="searchArea__content"><span></span>で絞り込み中</p>
+        </div>
         <ul class="worksList flex rimit"></ul>
         <button class="btn-more">View&nbsp;More</button>
       </section>

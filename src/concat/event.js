@@ -182,10 +182,15 @@ $(function(){
   }); // scroll
 
   // ハッシュタグ検索
-  const hashList = $(".work-bottom__hash li");
+  const hashList = ".work-bottom__hash li";
   console.log(hashList);
   $(document).on("click",hashList,function(e){
-    let clickHash = hashList.text();
-    console.log(clickHash);
+    // hashList => $("")ではなくタグを書かないといけない
+    // $(this) => function自体
+    // e => クリックのイベント
+    let clickHash = $(e.target).text();
+    let hashText = clickHash.replace(/#+\s/,"");
+    console.log(hashText);
+    $(".searchArea__content span").text(hashText);
   })
 });
