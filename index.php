@@ -118,7 +118,14 @@
       <section class="content content-works">
         <h2>WORKS</h2>
         <div class="searchArea">
-          <p class="searchArea__content"><span></span>で絞り込み中</p>
+          <p class="searchArea__content">
+            #&nbsp;ハッシュタグで絞り込み
+          </p>
+          <ul class="searchArea__hash between">
+            <li data-hash="season">#&nbsp;3年生</li>
+            <li data-hash="worktype">#&nbsp;個人制作</li>
+            <li data-hash="git">#&nbsp;GitHub</li>
+          </ul>
           <button class="searchArea__btn"><i class="fas fa-times"></i></button>
         </div>
         <ul class="worksList flex rimit"></ul>

@@ -1,6 +1,5 @@
 $(function(){
   const worksList = $(".worksList");
-  const workBox = $(".work-box");
   const content = $(".content");
   const sideNavi = $(".sideNavi");
   const naviList = $(".naviList");
@@ -11,6 +10,7 @@ $(function(){
 
   // 作品 ViewMoreボタン
   $(document).on('click', '.btn-more', function () {
+    const workBox = $(".work-box");
     if( worksList.hasClass("rimit") ){
       workBox.removeClass("none");
       $(".btn-more").html("Close")

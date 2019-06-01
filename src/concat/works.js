@@ -1,11 +1,11 @@
 $(function(){
   const worksList = $(".worksList");
-  const workBox = $(".work-box");
-
+  const btnMore = $(".btn-more");
+  
   // worksの一覧を追加表示させる関数
   function displayWorks ( works ){
     $.each(works, function (i) {
-
+      
       let iconPc = "";
       let iconSp = "";
       if (works[i]['device'] == 2) {
@@ -59,7 +59,7 @@ $(function(){
       // 最新作品
       if (works[i]['new'] == 1) {
         let newWork = `<p class="work-new">NEW!!</p>`;
-        workBox.eq(i).append(newWork);
+        $(".work-box").eq(i).append(newWork);
       }
       // 企画書の有無
       if (works[i]['proposal'] == "block") {
@@ -78,19 +78,19 @@ $(function(){
       // スキル一覧
       let skills = works[i]['skill'].split("/");
       $.each(skills, function (k, e) {
-        workBox.eq(i).find(".used-soft ul").append(`<li><img src='img/skill-${skills[k]}.svg' alt='${skills[k]}のアイコン'></li>`);
+        $(".used-soft__list").eq(i).append(`<li><img src='img/skill-${skills[k]}.svg' alt='${skills[k]}のアイコン'></li>`);
       });
     })
 
+
     // ６個目以降を消す
-    for (let i = 6; i <= workBox.length; i++) {
-      workBox.eq(i).addClass("none");
+    for (let i = 6; i <= $(".work-box").length; i++) {
+      $(".work-box").eq(i).addClass("none");
     }
   }
 
   // ウィンドウの幅によって、WORKSの余りの空箱を追加する関数
-  function addEmpty() {
-    let workBox = workBox;
+  function addEmpty(workBox) {
     $(".no").remove();
     const winWid = $(window).width();
     if (winWid >= 1) {
@@ -115,8 +115,9 @@ $(function(){
   }
 
   // 検索する時の表示非表示の関数
-  function displaySwitch(hashSearchList){
-
+  function displaySwitch(hashSearchList,time){
+    const workBox = $(".work-box");
+    
     $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "slow", "swing");
     setTimeout(function(){
       // 一覧削除
@@ -125,16 +126,16 @@ $(function(){
         workBox.remove();
         // 一覧表示
         displayWorks(hashSearchList);
-        addEmpty();
+        addEmpty(hashSearchList);
         let i = 0;
         setTimeout(function () {
           while (i < 3) {
-            workBox.eq(i).addClass("on")
+            $(".work-box").eq(i).addClass("on")
             i++;
           }
         }, 200)
       }, 400);
-    },1000)
+    },time)
   }
 
   $.ajax({
@@ -154,56 +155,95 @@ $(function(){
     Ts.setAutoLoadFontSelector(".worksList", 100);
 
     // 余白分のworklist追加
-    addEmpty();
+    addEmpty(worksInfo);
 
     // 画面サイズが変わるたびにaddEmptyを実行
-    $(window).on("resize", function () {
-      addEmpty();
-    });
+    // $(window).on("resize", function () {
+    //   console.log("a")
+    //   let workBox = $(".work-box");
+    //   addEmpty();
+    // });
 
-    // ハッシュタグ検索
-    const hashList = ".work-bottom__hash li";
-    $(document).on("click", hashList, function (e) {
-      $(".searchArea").addClass("on");
-      $(".searchArea__content span").text(hashText);
-      let clickHash = $(e.target).text();
-      let hashText = clickHash.replace(/#+\s/, "");
-      let clickHashList = $(e.target).attr("data-hash");
-      
-      if (clickHashList == "season" ){
+    // ハッシュタグ検索をする関数
+    function hashSearch(clickHashList, hashText){
+      $(".searchArea__btn").addClass("on");
+      $(".searchArea__content").text(`# ${hashText}で検索中`);
+      btnMore.html("View&nbsp;More");
+
+      if (clickHashList == "season") {
+        worksList.addClass("rimit");
         let hashSearchList = worksInfo.filter(function (work) {
           return work.season == hashText;
         });
-        displaySwitch(hashSearchList);
+        displaySwitch(hashSearchList, 800);
+        if (hashSearchList.length <= 6) {
+          btnMore.css("display", "none");
+        }
       }
 
       if (clickHashList == "worktype") {
+        worksList.addClass("rimit");
         let hashSearchList = worksInfo.filter(function (work) {
           return work.worktype == hashText;
         });
-        displaySwitch(hashSearchList);
+        displaySwitch(hashSearchList, 800);
+        if (hashSearchList.length <= 6) {
+          btnMore.css("display", "none");
+        }
       }
 
       if (clickHashList == "git") {
+        worksList.addClass("rimit");
         let hashSearchList = worksInfo.filter(function (work) {
           return work.git !== null;
         });
-        displaySwitch(hashSearchList);
+        displaySwitch(hashSearchList, 800);
+        if (hashSearchList.length <= 6) {
+          btnMore.css("display", "none");
+        }
       }
 
       if (clickHashList == "proposal") {
+        worksList.addClass("rimit");
         let hashSearchList = worksInfo.filter(function (work) {
           return work.proposal == "block";
         });
-        displaySwitch(hashSearchList);
+        displaySwitch(hashSearchList, 800);
+        if (hashSearchList.length <= 6) {
+          btnMore.css("display", "none");
+        }
       }
+    }
+    
+
+    // workの中のハッシュリストから検索
+    const hashList = ".work-bottom__hash li";
+    
+    $(document).on("click", hashList, function (e) {
+      let clickHashList = $(e.target).attr("data-hash");
+      let clickHash = $(e.target).text();
+      let hashText = clickHash.replace(/#+\s/, "");
+      hashSearch(clickHashList, hashText);
+    })
+
+    // タイトル下の検索候補から検索
+    $(".searchArea__hash li").on("click",function(){
+      let clickHashList = $(this).attr("data-hash");
+      let clickHash = $(this).text();
+      let hashText = clickHash.replace(/#+\s/, "");
+      hashSearch(clickHashList, hashText);
     })
 
     // 検索を消すボタン
     $(".searchArea__btn").on("click", function () {
       $(".searchArea").removeClass("on");
+      worksList.addClass("rimit");
+      $(".searchArea__btn").removeClass("on");
+      $(".searchArea__content").text("# ハッシュタグで絞り込み");
       // 一覧表示
-      displaySwitch(worksInfo);
+      displaySwitch(worksInfo,200);
+      btnMore.css("display","block");
+      btnMore.html("View&nbsp;More");
     })
   })
   .fail(function (error) {

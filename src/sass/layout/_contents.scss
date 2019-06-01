@@ -183,20 +183,21 @@
 }
 
 .searchArea{
-  opacity: 0;
+  width: 280px;
+  margin: 0 auto;
   text-align: center;
-  &.on{
-    opacity: 1;
-  }
+  position: relative;
   &__content{
     display: inline;
+    position: relative;
     font-size: 1.6rem;
     font-family: $goR;
   }
   &__btn{
-    position: relative;
-    top: -8px;
-    left: 2px;
+    display: none;
+    position: absolute;
+    top: -6px;
+    right: 38px;
     i{
       font-size: 1.4rem;
       color: $hover;
@@ -204,6 +205,19 @@
         color: $main;
       }
     } 
+    &.on{
+      display: block;
+    }
+  }
+  &__hash{
+    width: 280px;
+    margin: 16px auto 0;
+    padding: 6px 22px;
+    border: solid 1px $main;
+    border-radius: 0.4rem;
+    font-family: $goL;
+    font-size: 1.4rem;
+    cursor: pointer;
   }
 }
     
@@ -226,6 +240,7 @@
   position: relative;
   top: 10px;
   border: solid 1px $main;
+  border-radius: 0.4rem;
   h4{
     font-family: $goR;
   }
@@ -342,6 +357,7 @@
         display: block;
         padding: 6px;
         border: solid 1px $main;
+        border-radius: 0.4rem;
         color: $main;
         font-size: 1.4rem;
         font-family: $goR;
