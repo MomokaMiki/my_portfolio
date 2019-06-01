@@ -14,7 +14,7 @@ $(function(){
       },200)
     }
     else{
-      $(document).scrollTop($(".content-works").offset().top)
+      $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "swing");
       setTimeout(function(){
         $(".btn-more").html("View&nbsp;More");
         worksList.addClass("rimit")
@@ -50,6 +50,11 @@ $(function(){
     }
   })
 
+  // Topへ戻るボタン
+  $(".btn-top").on("click",function(){
+    $("html,body").animate({ scrollTop: 0 }, "slow", "swing");
+  })
+
   // スマホサイズかどうかを測定
   if ($(window).width() <= 960) {
     // SP
@@ -59,6 +64,7 @@ $(function(){
 
   // 画面サイズ変わるたびに変更
   $(window).on("resize", function () {
+    addEmptySkill();
     sideNavi.removeClass("sp");
     if ($(window).width() <= 960) {
       sideNavi.css({ opacity: 0, zIndex: -1 })
@@ -133,64 +139,78 @@ $(function(){
     })
   });
 
+
   flgProfile = true;
   let beNum = 0;
   let nowNum = "";
   // スクロールした時
   $(document).on("scroll", function () {
-    
-  // スクロールするたびにスクロール値とる
-  nowSc = $(document).scrollTop();
-  if (!naviList.hasClass("click")) {
-      //CONTACTの時だけ例外
-    if (nowSc >= content.eq(4).offset().top) {
-        nowNum = 4;
-      }
-    else {
-      for(let i = 0; i <= 3; i++){
-        let next = i+1;
-        if (content.eq(i).offset().top <= nowSc && nowSc < content.eq(next).offset().top) {
-          nowNum = i;
+    // スクロールするたびにスクロール値とる
+    nowSc = $(document).scrollTop();
+
+    // topへ戻るボタン
+    if (nowSc >= $(".content-works").offset().top){
+      console.log("ererrwer");
+      $(".btn-top").addClass("on");
+    }
+    else{
+      $(".btn-top").removeClass("on");
+    }
+
+    if (!naviList.hasClass("click")) {
+        //CONTACTの時だけ例外
+      if (nowSc >= content.eq(4).offset().top) {
+          nowNum = 4;
+        }
+      else {
+        for(let i = 0; i <= 3; i++){
+          let next = i+1;
+          if (content.eq(i).offset().top <= nowSc && nowSc < content.eq(next).offset().top) {
+            nowNum = i;
+          }
         }
       }
-    }
-    // 前いた場所とは違う場所に移動した時
-    if (Number(nowNum) == Number(beNum)) {
+      // 前いた場所とは違う場所に移動した時
+      if (Number(nowNum) == Number(beNum)) {
 
-    }
-    else {
-      naviList.eq(beNum).removeClass("show");
-      naviList.eq(beNum).removeClass("on");
-      naviList.children("p").eq(beNum).removeClass("on");
+      }
+      else {
+        naviList.eq(beNum).removeClass("show");
+        naviList.eq(beNum).removeClass("on");
+        naviList.children("p").eq(beNum).removeClass("on");
 
-      naviList.eq(nowNum).addClass("show");
-      naviList.eq(nowNum).addClass("on");
-      naviList.children("p").eq(nowNum).addClass("on");
-    }
-  }
-    if (nowSc >= content.eq(4).offset().top) {
-      beNum = 4;
-    }
-    else {
-      for (let i = 0; i <= 3; i++) {
-        let next = i + 1;
-        if (content.eq(i).offset().top <= nowSc && nowSc < content.eq(next).offset().top) {
-          beNum = i;
-        }
+        naviList.eq(nowNum).addClass("show");
+        naviList.eq(nowNum).addClass("on");
+        naviList.children("p").eq(nowNum).addClass("on");
       }
     }
-  }); // scroll
+      if (nowSc >= content.eq(4).offset().top) {
+        beNum = 4;
+      }
+      else {
+        for (let i = 0; i <= 3; i++) {
+          let next = i + 1;
+          if (content.eq(i).offset().top <= nowSc && nowSc < content.eq(next).offset().top) {
+            beNum = i;
+          }
+        }
+      }
+    }); // scroll
 
-  // ハッシュタグ検索
-  const hashList = ".work-bottom__hash li";
-  console.log(hashList);
-  $(document).on("click",hashList,function(e){
-    // hashList => $("")ではなくタグを書かないといけない
-    // $(this) => function自体
-    // e => クリックのイベント
-    let clickHash = $(e.target).text();
-    let hashText = clickHash.replace(/#+\s/,"");
-    console.log(hashText);
-    $(".searchArea__content span").text(hashText);
-  })
+
+
+  // ウィンドウの幅によって、WORKSの余りの空箱を追加する関数
+  function addEmptySkill() {
+    $(".append").remove();
+    let skillBox = $(".prof-list-kill li");
+    const listWid = $(".prof-list-kill").width();
+    let boxWid = skillBox.width();
+    let column = Math.floor(listWid / boxWid);
+    let result = skillBox.length % column;
+    for (let i = result; i <= column; i++) {
+      $(".prof-list-kill").append("<li class='append'></li>");
+    }
+  } 
+  addEmptySkill();
+
 });

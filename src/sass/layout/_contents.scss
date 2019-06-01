@@ -184,11 +184,27 @@
 }
 
 .searchArea{
-  
+  opacity: 0;
+  text-align: center;
+  &.on{
+    opacity: 1;
+  }
   &__content{
-    text-align: center;
+    display: inline;
     font-size: 1.6rem;
     font-family: $goR;
+  }
+  &__btn{
+    position: relative;
+    top: -8px;
+    left: 2px;
+    i{
+      font-size: 1.4rem;
+      color: $hover;
+      &:hover{
+        color: $main;
+      }
+    } 
   }
 }
     
@@ -266,13 +282,17 @@
   
 }
 .work-device{
-  i{
+  li{
+    width: 20px;
     margin-left: 8px;
-    font-size: 1.6rem;
-    color: rgba(151,141,120,0.5);
-  }
-  i.on{
-    color: $main;
+    text-align: center;
+    i{
+      font-size: 1.6rem;
+      color: rgba(151,141,120,0.5);
+      &.on{
+        color: $main;
+      }
+    }
   }
 }
 .btn-more{
@@ -311,6 +331,7 @@
       margin-right: 8px;
       font-family: $goL;
       font-size: 1.4rem;
+      line-height: 1.4rem;
       cursor: pointer;
     }
   }
@@ -501,6 +522,14 @@
     width: 300px;
     margin: 0 auto;
   }
+  .list-skill{
+    max-width: 400px;
+  }
+}
+@media(max-width:370px){
+  .list-skill{
+    max-width: 240px;
+  }
 }
 
 /* HISTORY */
@@ -657,5 +686,45 @@
         font-family: $roman;
       }
     }
+  }
+}
+
+// Topへ戻るボタン
+.btn-top{
+  transition: ease 0.2s; 
+  opacity: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: $main;
+  position: fixed;
+  right: 30px;
+  bottom: 40px;
+  cursor: default;
+  &.on{
+    opacity: 0.8;
+    cursor: pointer;
+    &:hover{
+    opacity: 1;
+    }
+  }
+  
+  &::before,&::after{
+    display: block;
+    content: "";
+    position: absolute;
+    top: 20px;
+    width: 4px;
+    height: 20px;
+    border-radius: 0.4rem;
+    background: #fff;
+  }
+  &::before{
+    transform: rotate(50deg);
+    left: 22px;
+  }
+  &::after{
+    transform: rotate(-50deg);
+    right: 22px;
   }
 }
