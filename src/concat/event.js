@@ -1,25 +1,31 @@
 $(function(){
   const worksList = $(".worksList");
+  const workBox = $(".work-box");
   const content = $(".content");
   const sideNavi = $(".sideNavi");
   const naviList = $(".naviList");
+  const profListSlill = $(".prof-list-kill");
+  const btnTop = $(".btn-top");
+  const conWorksTop = $(".content-works").offset().top;
+  const btnHumb = $(".btn-humb");
+
   // 作品 ViewMoreボタン
   $(document).on('click', '.btn-more', function () {
     if( worksList.hasClass("rimit") ){
-      $(".worksList > li").removeClass("none");
+      workBox.removeClass("none");
       $(".btn-more").html("Close")
       worksList.removeClass("rimit")
       setTimeout(function(){
-        $(".worksList > li").addClass("on");
+        workBox.addClass("on");
       },200)
     }
     else{
-      $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "swing");
+      $("html, body").animate({ scrollTop: conWorksTop }, "swing");
       setTimeout(function(){
         $(".btn-more").html("View&nbsp;More");
         worksList.addClass("rimit")
-        for (let i = 6; i <= $(".worksList > li").length; i++) {
-          $(".worksList > li").eq(i).addClass("none");
+        for (let i = 6; i <= workBox.length; i++) {
+          workBox.eq(i).addClass("none");
         }
       },1000)
     }        
@@ -27,31 +33,31 @@ $(function(){
 
   // ↓WORKSボタン
   $(".scroll-works").on("click",function(){
-    $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "swing");
+    $("html, body").animate({ scrollTop: conWorksTop }, "swing");
   })
 
   // ハンバーガーメニュー
-  $(".btn-humb").on("click", function () {
+  btnHumb.on("click", function () {
     $(this).removeClass("offAnime");
     $(this).removeClass("onAnime");
     if ($(this).hasClass("on")) {
       $(this).addClass("offAnime");
       sideNavi.css({ opacity: 0, zIndex: -1 })
       setTimeout(function () {
-        $(".btn-humb").removeClass("on");
+        btnHumb.removeClass("on");
       }, 1900)
     }
     else {
       $(this).addClass("onAnime");
       sideNavi.css({ opacity: 1, zIndex: 1 })
       setTimeout(function () {
-        $(".btn-humb").addClass("on");
+        btnHumb.addClass("on");
       }, 1900)
     }
   })
 
   // Topへ戻るボタン
-  $(".btn-top").on("click",function(){
+  btnTop.on("click",function(){
     $("html,body").animate({ scrollTop: 0 }, "slow", "swing");
   })
 
@@ -102,35 +108,30 @@ $(function(){
   let sideNaviIndex = 0;
   naviList.each(function (i, e) {
     $(this).on("click", function () {
-      $(".btn-humb").removeClass("onAnime");
-      $(".btn-humb").addClass("offAnime");
+      btnHumb.removeClass("onAnime");
+      btnHumb.addClass("offAnime");
       if (sideNavi.hasClass("sp") ){
         sideNavi.css({ opacity: 0, zIndex: -1 })
         setTimeout(function () {
-          $(".btn-humb").removeClass("on");
+          btnHumb.removeClass("on");
         }, 1900)
       }
-      
-
       sideNaviIndex = i;
       $(this).addClass("click");
-
       naviList.each(function (i, e) {
         if (!$(this).hasClass("click") ){
           $(this).removeClass("on");
           $(this).removeClass("show");
           
-          if( !$(".sideNavi").hasClass("sp") ){
+          if (!sideNavi.hasClass("sp") ){
             $(this).children("p").removeClass("on");
           }
         }
-    });
-
+      });
       $(this).addClass("on");
       $(this).addClass("show");
       let thisClick = $(this);
       let offTop = content.eq(sideNaviIndex).offset().top;
-      console.log("aa");
       $("html, body").animate({ scrollTop: offTop }, "slow","swing");
       // クリックされた瞬間だけ.clickをつけておく
       setTimeout(function () {
@@ -138,7 +139,6 @@ $(function(){
       }, 500)
     })
   });
-
 
   flgProfile = true;
   let beNum = 0;
@@ -149,12 +149,11 @@ $(function(){
     nowSc = $(document).scrollTop();
 
     // topへ戻るボタン
-    if (nowSc >= $(".content-works").offset().top){
-      console.log("ererrwer");
-      $(".btn-top").addClass("on");
+    if (nowSc >= conWorksTop){
+      btnTop.addClass("on");
     }
     else{
-      $(".btn-top").removeClass("on");
+      btnTop.removeClass("on");
     }
 
     if (!naviList.hasClass("click")) {
@@ -184,33 +183,30 @@ $(function(){
         naviList.children("p").eq(nowNum).addClass("on");
       }
     }
-      if (nowSc >= content.eq(4).offset().top) {
-        beNum = 4;
-      }
-      else {
-        for (let i = 0; i <= 3; i++) {
-          let next = i + 1;
-          if (content.eq(i).offset().top <= nowSc && nowSc < content.eq(next).offset().top) {
-            beNum = i;
-          }
+    if (nowSc >= content.eq(4).offset().top) {
+      beNum = 4;
+    }
+    else {
+      for (let i = 0; i <= 3; i++) {
+        let next = i + 1;
+        if (content.eq(i).offset().top <= nowSc && nowSc < content.eq(next).offset().top) {
+          beNum = i;
         }
       }
-    }); // scroll
-
-
+    }
+  }); // scroll
 
   // ウィンドウの幅によって、WORKSの余りの空箱を追加する関数
   function addEmptySkill() {
     $(".append").remove();
-    let skillBox = $(".prof-list-kill li");
-    const listWid = $(".prof-list-kill").width();
+    let skillBox = profListSlill.children("li");
+    const listWid = profListSlill.width();
     let boxWid = skillBox.width();
     let column = Math.floor(listWid / boxWid);
     let result = skillBox.length % column;
     for (let i = result; i <= column; i++) {
-      $(".prof-list-kill").append("<li class='append'></li>");
+      profListSlill.append("<li class='append'></li>");
     }
   } 
   addEmptySkill();
-
 });

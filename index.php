@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Miki Momoka's Portfolio</title>
-  <meta name="description" content="三木百花のポートフォリオサイトです。">
+  <meta name="description" content="Miki Momoka's Portfolio｜三木百花のポートフォリオサイトです。">
   <link rel="shortcut icon" href="img/favi.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
@@ -14,9 +14,9 @@
 <body>
   <div class="load">
     <div class="load-inner flex">
-      <img src="img/icon-flower01.svg" alt="" class="lazyload">
-      <img src="img/icon-flower02.svg" alt="" class="lazyload">
-      <img src="img/icon-flower03.svg" alt="" class="lazyload">
+      <img src="img/icon-flower01.svg" alt="">
+      <img src="img/icon-flower02.svg" alt="">
+      <img src="img/icon-flower03.svg" alt="">
     </div>
   </div>
   <div class="sideNavi">
@@ -66,43 +66,43 @@
             <h3 class="home-skill__title">Learning&nbsp;&nbsp;Skill</h3>
             <ul class="list-skill flex">
               <li>
-                <p class="skill-logo"><img src="img/icon-html.svg" alt="HTML5のロゴ" class="lazyload" ></p>
+                <p class="skill-logo"><img src="img/icon-html.svg" alt="HTML5のロゴ"></p>
                 <p>HTML5</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-css.svg" alt="CSS3のロゴ" class="lazyload"></p>
+                <p class="skill-logo"><img src="img/icon-css.svg" alt="CSS3のロゴ"></p>
                 <p>CSS3</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-sass.svg" alt="Sassのロゴ" class="lazyload"></p>
+                <p class="skill-logo"><img src="img/icon-sass.svg" alt="Sassのロゴ"></p>
                 <p>Sass</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-js.svg" alt="JavaScriptのロゴ" class="lazyload"></p>
+                <p class="skill-logo"><img src="img/icon-js.svg" alt="JavaScriptのロゴ"></p>
                 <p>JavaScript</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-jquery.svg" alt="jQueryのロゴ" class="lazyload"></p>
+                <p class="skill-logo"><img src="img/icon-jquery.svg" alt="jQueryのロゴ"></p>
                 <p>jQuery</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-vue.svg" alt="Vue.jsのロゴ" class="lazyload"></p>
+                <p class="skill-logo"><img src="img/icon-vue.svg" alt="Vue.jsのロゴ"></p>
                 <p>Vue.js</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-php.svg" alt="PHPのロゴ" class="lazyload"></p>
+                <p class="skill-logo"><img src="img/icon-php.svg" alt="PHPのロゴ"></p>
                 <p>PHP</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-mysql.svg" alt="MySQLのロゴ" class="lazyload"></p>
+                <p class="skill-logo"><img src="img/icon-mysql.svg" alt="MySQLのロゴ"></p>
                 <p>MySQL</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-laravel.svg" alt="Laravelのロゴ" class="lazyload"></p>
+                <p class="skill-logo"><img src="img/icon-laravel.svg" alt="Laravelのロゴ"></p>
                 <p>Laravel</p>
               </li>
               <li>
-                <p class="skill-logo"><img src="img/icon-node.svg" alt="Node.jsのロゴ" class="lazyload"></p>
+                <p class="skill-logo"><img src="img/icon-node.svg" alt="Node.jsのロゴ"></p>
                 <p>Node.js</p>
               </li>
             </ul>
@@ -128,169 +128,169 @@
         <div class="bg-profile flex">
           <?php include("read/svg-profile.html"); ?>
         </div>
-          <h2>PROFILE</h2>
-          <ul>
-            <li>
-              <h3>NAME</h3>
-              <p>三木&nbsp;百花<br>(みき&nbsp;ももか)</p>
-            </li>
-            <li>
-              <h3>EDUCATION</h3>
-              <p>ECCコンピュータ専門学校(大阪)<br>Webエンジニア専攻(20年卒)</p>
-            </li>
-            <li>
-              <h3>BIRTH&nbsp;DAY</h3>
-              <p>1999/03/17&nbsp;20歳</p>
-            </li>
-            <li>
-              <h3>ENGINEER&nbsp;SKILL</h3>
-              <p>星の数は自己評価です。</p>
-              <ul class="list-skill flex prof-list-kill">
-                <li>
-                  <p class="skill-logo"><img src="img/icon-html.svg" alt="HTML5のロゴ" class="lazyload"></p>
-                  <p>HTML5</p>
-                  <div>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                  </div>
-                </li>
-                <li>
-                  <p class="skill-logo"><img src="img/icon-css.svg" alt="CSS3のロゴ" class="lazyload"></p>
-                  <p>CSS3</p>
-                  <div>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                  </div>
-                </li>
-                <li>
-                  <p class="skill-logo"><img src="img/icon-sass.svg" alt="Sassのロゴ" class="lazyload"></p>
-                  <p>Sass</p>
-                  <div>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                  </div>
-                </li>
-                <li>
-                  <p class="skill-logo"><img src="img/icon-js.svg" alt="JavaScriptのロゴ" class="lazyload"></p>
-                  <p>JavaScript</p>
-                  <div>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                  </div>
-                </li>
-                <li>
-                  <p class="skill-logo"><img src="img/icon-jquery.svg" alt="jQueryのロゴ" class="lazyload"></p>
-                  <p>jQuery</p>
-                  <div>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                  </div>
-                </li>
-                <li>
-                  <p class="skill-logo"><img src="img/icon-vue.svg" alt="Vue.jsのロゴ" class="lazyload"></p>
-                  <p>Vue.js</p>
-                  <div>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                  </div>
-                </li>
-                <li>
-                  <p class="skill-logo"><img src="img/icon-node.svg" alt="Node.jsのロゴ" class="lazyload"></p>
-                  <p>Node.js</p>
-                  <div>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                  </div>
-                </li>
-                <li>
-                  <p class="skill-logo"><img src="img/icon-php.svg" alt="PHPのロゴ" class="lazyload"></p>
-                  <p>PHP</p>
-                  <div>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                  </div>
-                </li>
-                <li>
-                  <p class="skill-logo"><img src="img/icon-mysql.svg" alt="MySQLのロゴ" class="lazyload"></p>
-                  <p>MySQL</p>
-                  <div>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                  </div>
-                </li>
-                <li>
-                  <p class="skill-logo"><img src="img/icon-laravel.svg" alt="Laravelのロゴ" class="lazyload" ></p>
-                  <p>Laravel</p>
-                  <div>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                  </div>
-                </li>
-              </ul>
-              <a href="material/guideline/" target="_blank">&gt;&nbsp;コーディングガイドライン</a>
-            </li>
-            <li>
-              <h3>REQUIREMENT</h3>
-              <ul class="list-history">
-                <li>2015年：日本商工会議所主催簿記検定試験3級合格</li>
-                <li>2015年：全国商業高等学校協会主催 情報処理検定<br><span>ビジネス情報部門1級合格</span></li>
-                <li>2016年：全国商業高等学校協会主催簿記実務検定1級合格</li>
-                <li>2017年：文部科学省後援 色彩検定3級合格</li>
-                <li>2018年：サーティファイ主催 Webクリエイター能力認定<br><span>エキスパート合格</span></li>
-              </ul>
-            </li>
-            <li>
-              <h3>EXPO&nbsp;&amp;&nbsp;CONVENTION</h3>
-              <ul class="list-history">
-                <li>2017年：学内コンテスト「ECC&nbsp;EXPO&nbsp;2017」に選出<br><span>作品名「み〜とぺっと」</span></li>
-                <li>2017年：第１回&nbsp;専門学校&nbsp;HTML5作品アワード&nbsp;デザイン賞受賞<br><span>作品名「#mode」</span></li>
-                <li>2018年：第13回&nbsp;若年者ものづくり競技大会<br><span>ウェブデザイン部門&nbsp;銅賞受賞</span></li>
-                <li>2018年：Hack&nbsp;U&nbsp;2018&nbsp;OSAKAに出場&nbsp;作品名「Mr.SOS」</li>
-                <li>2018年：学内コンテスト「ECC&nbsp;EXPO&nbsp;2018」に選出<br><span>作品名「みゅーびっく」</span></li>
-              </ul>
-            </li>
-            <li>
-              <h3>INTEREST</h3>
-              <p>楽器&nbsp;と&nbsp;ゲーム&nbsp;と&nbsp;うさぎ&nbsp;と&nbsp;ゆるりんぱんだ&nbsp;と&nbsp;コーディングが大好き。<br>フィギュアスケートを見るのも好きです。</p>
-            </li>
-            <li>
-              <h3>MESSAGE</h3>
-              <p class="profie-message">
-                私は、相手の立場や気持ちになって、考えることを心がけています。<br>実際に作ったものを使う人や、一緒にものを作る人が使いやすく、わかりやすいものを作ることが大切だと考えているからです。
-                <br>将来は、フロントエンドエンジニアとして、コードのように実際には見えない部分まで細かく追求して、<br>お客様を喜ばせられるものを作りたいと考えています。
-              </p>
-            </li>
-          </ul>
+        <h2>PROFILE</h2>
+        <ul>
+          <li>
+            <h3>NAME</h3>
+            <p>三木&nbsp;百花<br>(みき&nbsp;ももか)</p>
+          </li>
+          <li>
+            <h3>EDUCATION</h3>
+            <p>ECCコンピュータ専門学校(大阪)<br>Webエンジニア専攻(20年卒)</p>
+          </li>
+          <li>
+            <h3>BIRTH&nbsp;DAY</h3>
+            <p>1999/03/17&nbsp;20歳</p>
+          </li>
+          <li>
+            <h3>ENGINEER&nbsp;SKILL</h3>
+            <p>星の数は自己評価です。</p>
+            <ul class="list-skill flex prof-list-kill">
+              <li>
+                <p class="skill-logo"><img src="img/icon-html.svg" alt="HTML5のロゴ"></p>
+                <p>HTML5</p>
+                <div>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/icon-css.svg" alt="CSS3のロゴ"></p>
+                <p>CSS3</p>
+                <div>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/icon-sass.svg" alt="Sassのロゴ"></p>
+                <p>Sass</p>
+                <div>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/icon-js.svg" alt="JavaScriptのロゴ"></p>
+                <p>JavaScript</p>
+                <div>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/icon-jquery.svg" alt="jQueryのロゴ"></p>
+                <p>jQuery</p>
+                <div>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/icon-vue.svg" alt="Vue.jsのロゴ"></p>
+                <p>Vue.js</p>
+                <div>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/icon-node.svg" alt="Node.jsのロゴ"></p>
+                <p>Node.js</p>
+                <div>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/icon-php.svg" alt="PHPのロゴ"></p>
+                <p>PHP</p>
+                <div>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/icon-mysql.svg" alt="MySQLのロゴ"></p>
+                <p>MySQL</p>
+                <div>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </li>
+              <li>
+                <p class="skill-logo"><img src="img/icon-laravel.svg" alt="Laravelのロゴ"></p>
+                <p>Laravel</p>
+                <div>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </li>
+            </ul>
+            <a href="material/guideline/" target="_blank">&gt;&nbsp;コーディングガイドライン</a>
+          </li>
+          <li>
+            <h3>REQUIREMENT</h3>
+            <ul class="list-history">
+              <li>2015年：日本商工会議所主催簿記検定試験3級合格</li>
+              <li>2015年：全国商業高等学校協会主催 情報処理検定<br><span>ビジネス情報部門1級合格</span></li>
+              <li>2016年：全国商業高等学校協会主催簿記実務検定1級合格</li>
+              <li>2017年：文部科学省後援 色彩検定3級合格</li>
+              <li>2018年：サーティファイ主催 Webクリエイター能力認定<br><span>エキスパート合格</span></li>
+            </ul>
+          </li>
+          <li>
+            <h3>EXPO&nbsp;&amp;&nbsp;CONVENTION</h3>
+            <ul class="list-history">
+              <li>2017年：学内コンテスト「ECC&nbsp;EXPO&nbsp;2017」に選出<br><span>作品名「み〜とぺっと」</span></li>
+              <li>2017年：第１回&nbsp;専門学校&nbsp;HTML5作品アワード&nbsp;デザイン賞受賞<br><span>作品名「#mode」</span></li>
+              <li>2018年：第13回&nbsp;若年者ものづくり競技大会<br><span>ウェブデザイン部門&nbsp;銅賞受賞</span></li>
+              <li>2018年：Hack&nbsp;U&nbsp;2018&nbsp;OSAKAに出場&nbsp;作品名「Mr.SOS」</li>
+              <li>2018年：学内コンテスト「ECC&nbsp;EXPO&nbsp;2018」に選出<br><span>作品名「みゅーびっく」</span></li>
+            </ul>
+          </li>
+          <li>
+            <h3>INTEREST</h3>
+            <p>楽器&nbsp;と&nbsp;ゲーム&nbsp;と&nbsp;うさぎ&nbsp;と&nbsp;ゆるりんぱんだ&nbsp;と&nbsp;コーディングが大好き。<br>フィギュアスケートを見るのも好きです。</p>
+          </li>
+          <li>
+            <h3>MESSAGE</h3>
+            <p class="profie-message">
+              私は、相手の立場や気持ちになって、考えることを心がけています。<br>実際に作ったものを使う人や、一緒にものを作る人が使いやすく、わかりやすいものを作ることが大切だと考えているからです。
+              <br>将来は、フロントエンドエンジニアとして、コードのように実際には見えない部分まで細かく追求して、<br>お客様を喜ばせられるものを作りたいと考えています。
+            </p>
+          </li>
+        </ul>
       </section>
       <section class="content content-history">
         <h2 class="content-history__title">HISTORY</h2>
@@ -361,7 +361,6 @@
     <small>&copy;&nbsp;2019&nbsp;&nbsp;Momoka&nbsp;Miki</small>
   </footer>
   <script src="js/jquery-3.3.1.min.js"></script>
-  <!-- <script src="js/lazysizes.min.js"></script> -->
   <script src="js/script.js"></script>
   <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?5b49521a4774449c972b1df2e90393a3" charset="utf-8"></script>
 </body>

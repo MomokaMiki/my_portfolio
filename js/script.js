@@ -34,10 +34,11 @@ $(window).on("load",function(){
   },200);
 })
 $(function(){
+  const worksList = $(".worksList");
+  const workBox = $(".work-box");
 
   // worksの一覧を追加表示させる関数
   function displayWorks ( works ){
-    console.log("aa")
     $.each(works, function (i) {
 
       let iconPc = "";
@@ -65,7 +66,7 @@ $(function(){
               <li><i class="fas fa-mobile-alt ${ iconSp}"></i></li>
             </ul>
           </div>
-          <figure class="work-main__img"><a href="${ works[i]['url']}" target="_blank"><img src="img/thumb-${works[i]['link']}.png" alt="${works[i]['workname']}のサムネイル" class="lazyload"></a></figure>
+          <figure class="work-main__img"><a href="${ works[i]['url']}" target="_blank"><img src="img/thumb-${works[i]['link']}.png" alt="${works[i]['workname']}のサムネイル"></a></figure>
           <h4 class="work-main__title">${ works[i]['title']}</h4>
           <p class="work-main__text">${ works[i]['worktext']}</p>
         </div>
@@ -88,18 +89,17 @@ $(function(){
           </ul>
         </div>
       </li>`
-      $(".worksList").append(item);
+      worksList.append(item);
 
       // 最新作品
       if (works[i]['new'] == 1) {
         let newWork = `<p class="work-new">NEW!!</p>`;
-        $(".work-box").eq(i).append(newWork);
+        workBox.eq(i).append(newWork);
       }
       // 企画書の有無
       if (works[i]['proposal'] == "block") {
         let hash_proposal = `<li data-hash="proposal">#&nbsp;企画</li>`
         $(".work-bottom__hash").eq(i).append(hash_proposal);
-        console.log("企画書" + i)
         let btn_proposal = `<li><a href="pdf/${works[i]['link']}.pdf" target="_blank">企画書を見る</a></li>`
         $(".work-bottom__btn").eq(i).append(btn_proposal);
       }
@@ -113,37 +113,37 @@ $(function(){
       // スキル一覧
       let skills = works[i]['skill'].split("/");
       $.each(skills, function (k, e) {
-        $(".worksList > li").eq(i).find(".used-soft ul").append(`<li><img src='img/skill-${skills[k]}.svg' alt='${skills[k]}のアイコン' class="lazyload"></li>`);
+        workBox.eq(i).find(".used-soft ul").append(`<li><img src='img/skill-${skills[k]}.svg' alt='${skills[k]}のアイコン'></li>`);
       });
     })
 
     // ６個目以降を消す
-    for (let i = 6; i <= $(".work-box").length; i++) {
-      $(".work-box").eq(i).addClass("none");
+    for (let i = 6; i <= workBox.length; i++) {
+      workBox.eq(i).addClass("none");
     }
   }
 
   // ウィンドウの幅によって、WORKSの余りの空箱を追加する関数
   function addEmpty() {
-    let workBox = $(".work-box");
+    let workBox = workBox;
     $(".no").remove();
     const winWid = $(window).width();
     if (winWid >= 1) {
       if (!Number(workBox.length % 3) == 0) {
         let addCount = 3 - workBox.length % 3;
         for (i = 1; i <= addCount; i++) {
-          $(".worksList").append("<li class='work-box no'></li>");
+          worksList.append("<li class='work-box no'></li>");
         }
-        if ($(".worksList").hasClass("rimit")) {
+        if (worksList.hasClass("rimit")) {
           $(".worksList .no").addClass("none");
         }
       }
     }
     if (winWid >= 680 && winWid < 1100) {
-      if (!Number($(".work-box").length % 2) == 0) {
-        let addCount = 2 - $(".work-box").length % 2;
+      if (!Number(workBox.length % 2) == 0) {
+        let addCount = 2 - workBox.length % 2;
         for (i = 1; i <= addCount; i++) {
-          $(".worksList").append("<li class='no'></li>");
+          worksList.append("<li class='no'></li>");
         }
       }
     }
@@ -155,24 +155,22 @@ $(function(){
     $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "slow", "swing");
     setTimeout(function(){
       // 一覧削除
-      $(".work-box").removeClass("on");
+      workBox.removeClass("on");
       setTimeout(function () {
-        $(".work-box").remove();
-
+        workBox.remove();
         // 一覧表示
         displayWorks(hashSearchList);
         addEmpty();
         let i = 0;
         setTimeout(function () {
           while (i < 3) {
-            $(".work-box").eq(i).addClass("on")
+            workBox.eq(i).addClass("on")
             i++;
           }
         }, 200)
       }, 400);
     },1000)
   }
-
 
   $.ajax({
     url: "read/works.php",
@@ -188,7 +186,7 @@ $(function(){
     displayWorks(worksInfo);
 
     // タイプスクエアリロード
-    // Ts.setAutoLoadFontSelector(".worksList", 100);
+    Ts.setAutoLoadFontSelector(".worksList", 100);
 
     // 余白分のworklist追加
     addEmpty();
@@ -200,18 +198,13 @@ $(function(){
 
     // ハッシュタグ検索
     const hashList = ".work-bottom__hash li";
-    console.log(hashList);
     $(document).on("click", hashList, function (e) {
-      // hashList => $("")ではなくタグを書かないといけない
-      // $(this) => function自体
-      // e => クリックのイベント
       $(".searchArea").addClass("on");
+      $(".searchArea__content span").text(hashText);
       let clickHash = $(e.target).text();
       let hashText = clickHash.replace(/#+\s/, "");
       let clickHashList = $(e.target).attr("data-hash");
-      $(".searchArea__content span").text(hashText);
       
-
       if (clickHashList == "season" ){
         let hashSearchList = worksInfo.filter(function (work) {
           return work.season == hashText;
@@ -239,13 +232,11 @@ $(function(){
         });
         displaySwitch(hashSearchList);
       }
-    
     })
 
     // 検索を消すボタン
     $(".searchArea__btn").on("click", function () {
       $(".searchArea").removeClass("on");
-
       // 一覧表示
       displaySwitch(worksInfo);
     })
@@ -347,26 +338,32 @@ $(function(){
 })
 $(function(){
   const worksList = $(".worksList");
+  const workBox = $(".work-box");
   const content = $(".content");
   const sideNavi = $(".sideNavi");
   const naviList = $(".naviList");
+  const profListSlill = $(".prof-list-kill");
+  const btnTop = $(".btn-top");
+  const conWorksTop = $(".content-works").offset().top;
+  const btnHumb = $(".btn-humb");
+
   // 作品 ViewMoreボタン
   $(document).on('click', '.btn-more', function () {
     if( worksList.hasClass("rimit") ){
-      $(".worksList > li").removeClass("none");
+      workBox.removeClass("none");
       $(".btn-more").html("Close")
       worksList.removeClass("rimit")
       setTimeout(function(){
-        $(".worksList > li").addClass("on");
+        workBox.addClass("on");
       },200)
     }
     else{
-      $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "swing");
+      $("html, body").animate({ scrollTop: conWorksTop }, "swing");
       setTimeout(function(){
         $(".btn-more").html("View&nbsp;More");
         worksList.addClass("rimit")
-        for (let i = 6; i <= $(".worksList > li").length; i++) {
-          $(".worksList > li").eq(i).addClass("none");
+        for (let i = 6; i <= workBox.length; i++) {
+          workBox.eq(i).addClass("none");
         }
       },1000)
     }        
@@ -374,31 +371,31 @@ $(function(){
 
   // ↓WORKSボタン
   $(".scroll-works").on("click",function(){
-    $("html, body").animate({ scrollTop: $(".content-works").offset().top }, "swing");
+    $("html, body").animate({ scrollTop: conWorksTop }, "swing");
   })
 
   // ハンバーガーメニュー
-  $(".btn-humb").on("click", function () {
+  btnHumb.on("click", function () {
     $(this).removeClass("offAnime");
     $(this).removeClass("onAnime");
     if ($(this).hasClass("on")) {
       $(this).addClass("offAnime");
       sideNavi.css({ opacity: 0, zIndex: -1 })
       setTimeout(function () {
-        $(".btn-humb").removeClass("on");
+        btnHumb.removeClass("on");
       }, 1900)
     }
     else {
       $(this).addClass("onAnime");
       sideNavi.css({ opacity: 1, zIndex: 1 })
       setTimeout(function () {
-        $(".btn-humb").addClass("on");
+        btnHumb.addClass("on");
       }, 1900)
     }
   })
 
   // Topへ戻るボタン
-  $(".btn-top").on("click",function(){
+  btnTop.on("click",function(){
     $("html,body").animate({ scrollTop: 0 }, "slow", "swing");
   })
 
@@ -449,35 +446,30 @@ $(function(){
   let sideNaviIndex = 0;
   naviList.each(function (i, e) {
     $(this).on("click", function () {
-      $(".btn-humb").removeClass("onAnime");
-      $(".btn-humb").addClass("offAnime");
+      btnHumb.removeClass("onAnime");
+      btnHumb.addClass("offAnime");
       if (sideNavi.hasClass("sp") ){
         sideNavi.css({ opacity: 0, zIndex: -1 })
         setTimeout(function () {
-          $(".btn-humb").removeClass("on");
+          btnHumb.removeClass("on");
         }, 1900)
       }
-      
-
       sideNaviIndex = i;
       $(this).addClass("click");
-
       naviList.each(function (i, e) {
         if (!$(this).hasClass("click") ){
           $(this).removeClass("on");
           $(this).removeClass("show");
           
-          if( !$(".sideNavi").hasClass("sp") ){
+          if (!sideNavi.hasClass("sp") ){
             $(this).children("p").removeClass("on");
           }
         }
-    });
-
+      });
       $(this).addClass("on");
       $(this).addClass("show");
       let thisClick = $(this);
       let offTop = content.eq(sideNaviIndex).offset().top;
-      console.log("aa");
       $("html, body").animate({ scrollTop: offTop }, "slow","swing");
       // クリックされた瞬間だけ.clickをつけておく
       setTimeout(function () {
@@ -485,7 +477,6 @@ $(function(){
       }, 500)
     })
   });
-
 
   flgProfile = true;
   let beNum = 0;
@@ -496,12 +487,11 @@ $(function(){
     nowSc = $(document).scrollTop();
 
     // topへ戻るボタン
-    if (nowSc >= $(".content-works").offset().top){
-      console.log("ererrwer");
-      $(".btn-top").addClass("on");
+    if (nowSc >= conWorksTop){
+      btnTop.addClass("on");
     }
     else{
-      $(".btn-top").removeClass("on");
+      btnTop.removeClass("on");
     }
 
     if (!naviList.hasClass("click")) {
@@ -531,33 +521,30 @@ $(function(){
         naviList.children("p").eq(nowNum).addClass("on");
       }
     }
-      if (nowSc >= content.eq(4).offset().top) {
-        beNum = 4;
-      }
-      else {
-        for (let i = 0; i <= 3; i++) {
-          let next = i + 1;
-          if (content.eq(i).offset().top <= nowSc && nowSc < content.eq(next).offset().top) {
-            beNum = i;
-          }
+    if (nowSc >= content.eq(4).offset().top) {
+      beNum = 4;
+    }
+    else {
+      for (let i = 0; i <= 3; i++) {
+        let next = i + 1;
+        if (content.eq(i).offset().top <= nowSc && nowSc < content.eq(next).offset().top) {
+          beNum = i;
         }
       }
-    }); // scroll
-
-
+    }
+  }); // scroll
 
   // ウィンドウの幅によって、WORKSの余りの空箱を追加する関数
   function addEmptySkill() {
     $(".append").remove();
-    let skillBox = $(".prof-list-kill li");
-    const listWid = $(".prof-list-kill").width();
+    let skillBox = profListSlill.children("li");
+    const listWid = profListSlill.width();
     let boxWid = skillBox.width();
     let column = Math.floor(listWid / boxWid);
     let result = skillBox.length % column;
     for (let i = result; i <= column; i++) {
-      $(".prof-list-kill").append("<li class='append'></li>");
+      profListSlill.append("<li class='append'></li>");
     }
   } 
   addEmptySkill();
-
 });
