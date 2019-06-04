@@ -56,7 +56,7 @@ gulp.task('imagemin', function (done) {
     .pipe(changed('./imagemin'))
     .pipe(imagemin([
       imageminPng({
-        quality: [.10,.20],
+        quality: [.65,.80],
         speed: 1,
         floyd: 0
       }),
