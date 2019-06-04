@@ -567,33 +567,23 @@
 }
 .history{
   margin-bottom: 70px;
-  p{
-    font-size: 1.4rem;
-    line-height: 1.4;
-  }
-  &__year.on{
-    right: 0;
-    opacity: 1;
-  }
   &__year{
     opacity: 0;
     transition: ease 0.5s;
     position: relative;
     right: 20px;
     font-family: $roman;
+    font-size: 1.6rem;
+    line-height: 1.6;
     width: 140px;
     font-style: italic;
+    &.on{
+      right: 0;
+      opacity: 1;
+    }
   }
   &__desc{
     width: calc(700px - 140px);
-    p.on{
-      opacity: 1;
-    }
-    p{
-      opacity: 0;
-      transition: ease 0.5s;
-      font-family: $goL;
-    }
   }
 }
 .history-desc__title{
@@ -603,13 +593,26 @@
   right: 20px;
   margin-bottom: 20px;
   font-family: $semi;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-style: italic;
-  letter-spacing: 0.12rem;
+  letter-spacing: 0.14rem;
+  &.on{
+    opacity: 1;
+    right: 0;
+  }
 }
-.history-desc__title.on{
-  opacity: 1;
-  right: 0;
+.history-desc__text{
+  opacity: 0;
+  transition: ease 0.5s;
+  font-family: $goL;
+  font-size: 1.4rem;
+  line-height: 1.8;
+  opacity: 0;
+  transition: ease 0.5s;
+  font-family: $goL;
+  &.on{
+    opacity: 1;
+  }
 }
 @media (max-width:960px){
   .content-history{

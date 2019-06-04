@@ -288,13 +288,13 @@
           </li>
           <li>
             <h3>INTEREST</h3>
-            <p>楽器&nbsp;と&nbsp;ゲーム&nbsp;と&nbsp;うさぎ&nbsp;と&nbsp;ゆるりんぱんだ&nbsp;と&nbsp;コーディングが大好き。<br>フィギュアスケートを見るのも好きです。</p>
+            <p>楽器&nbsp;と&nbsp;ゲーム&nbsp;と&nbsp;うさぎ&nbsp;と&nbsp;ゆるりんぱんだ&nbsp;と&nbsp;コーディングが大好き。<br>フィギュアスケートを見たり、自分が気に入った風景の写真を撮ったりすることも好きです。</p>
           </li>
           <li>
             <h3>MESSAGE</h3>
             <p class="profie-message">
               私は、相手の立場や気持ちになって、考えることを心がけています。<br>実際に作ったものを使う人や、一緒にものを作る人が使いやすく、わかりやすいものを作ることが大切だと考えているからです。
-              <br>将来は、フロントエンドエンジニアとして、コードのように実際には見えない部分まで細かく追求して、<br>お客様を喜ばせられるものを作りたいと考えています。
+              <br>将来は、フロントエンドエンジニアとして、コードのように実際には見えない部分まで細かく追求して、<br>お客様やチームのメンバーから喜んでもらえるものを作りたいと考えています。
             </p>
           </li>
         </ul>
@@ -306,7 +306,7 @@
             <p class="history__year">2011〜2013</p>
             <div class="history__desc history-desc">
               <h3 class="history-desc__title">Junior&nbsp;High&nbsp;School</h3>
-              <p class="history-desc__text">中学校3年間は吹奏楽部に所属。パートリーダーも任されました。<br>この時は、自分のWindowsのパソコンでよく遊んでいました。</p>
+              <p class="history-desc__text">中学校3年間は吹奏楽部に所属してフルートを担当。パートリーダーも任されました。<br>この時は、システムエンジニアである両親から譲ってもらったWindowsのパソコンでよく遊んでいました。</p>
             </div>
           </li>
           <li class="history flex">
@@ -322,16 +322,16 @@
             <div class="history__desc history-desc">
               <h3 class="history-desc__title">ECC&nbsp;Computer&nbsp;College&nbsp;1st</h3>
               <p class="history-desc__text">前半は、グラフィックデザイン・Webデザイン・コーディングを全体的に学びました。<br>
-              後半は、エンジニア専攻として、JavaScriptやPHPについて学び始めました。<br>
-              とても楽しく、作品制作のモチベーションにも繋がりました。</p>
+              後半は、エンジニア専攻として、JavaScriptやPHPについて深く学び始めました。<br>
+              授業でのコーディングはとても楽しく、作品制作のモチベーションにも繋がりました。</p>
             </div>
           </li>
           <li class="history flex">
             <p class="history__year">2018</p>
             <div class="history__desc history-desc">
               <h3 class="history-desc__title">ECC&nbsp;Computer&nbsp;College&nbsp;2nd</h3>
-              <p class="history-desc__text">２年生になり制作して行く中で、自分がバックエンドよりもフロントエンドの方が得意で、好きだということが分かりました。<br>
-              そして、1年生の時に取れなかった皆勤を取ることができました！<br>おまけに後期の成績はオールA(Aが最高値)でした。当たり前なのですが、やはり嬉しいです。</p>
+              <p class="history-desc__text">２年生になり、制作して行く中で気づいたのは、フロントエンドコーディングをしている時が一番楽しくて好きだということでした。ここで、私はフロントエンドエンジニア を目指そうと決意しました。<br>
+              そして、1年生の時に取れなかった皆勤を取ることができました！おまけに後期の成績はオールA(Aが最高値)でした。<br>当たり前のことではありますが、それが出来ていてこそ、作業効率などが上昇し、良いものが作れることに繋がっていると思います。</p>
             </div>
           </li>
           <li class="history flex">
@@ -340,8 +340,8 @@
               <h3 class="history-desc__title">ECC&nbsp;Computer&nbsp;College&nbsp;3rd</h3>
               <p class="history-desc__text">3年生になって、WEB制作会社でアルバイトを始めました。<br>
               また、１年生から飲食店のアルバイトも続けており、3年目に突入しました。<br>
-              現在、チーム制作で、企業の情報を登録し、皆が探せるというサイトを作っています。<br>
-              それが完成したら、実際に次年度から学内の学生が使う予定です。</p>
+              授業では、クラス全員でメディアを立ち上げたり、センサーなどを使ったコンテンツ制作など、様々な技術を使って制作しています。<br>
+              自主的には、作品投稿/シェアサイトや、複数人で遊べるサービスなどを制作しています。
             </div>
           </li>
         </ul>
@@ -350,7 +350,7 @@
         <h2 class="content-contact__title">CONTACT</h2>
         <div class="content-contact__main contact">
           <div class="contact__mail">
-            <p>なんでもお気軽に、ご連絡ください。</p>
+            <p>お気軽にご連絡ください。</p>
             <a href="mailto:miki.momoka.0317@gmail.com" target="_blank">miki.momoka.0317@gmail.com</a>
           </div>
           <ul class="contact__sns between">
