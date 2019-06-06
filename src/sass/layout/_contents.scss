@@ -409,7 +409,7 @@
     letter-spacing: 0.12rem;
   }
   p{
-    font-family: $goL;
+    font-family: $goR;
     font-size: 1.4rem;
     line-height: 2.4;
   }
@@ -438,11 +438,11 @@
 .list-history{
   margin-top: 22px;
   li{
-    width: 394px;
+    width: 400px;
     line-height: 2.4rem;
     margin: 10px auto;
     text-align: left;
-    font-family: $goL;
+    font-family: $goR;
     font-size: 1.4rem;
     span{
       margin-left: 58px;
@@ -504,11 +504,8 @@
   .list-skill{
     max-width: 500px;
   }
-  .content-profile p{
-    line-height: 2rem;
-  }
   .list-history li{
-    width: 366px;
+    width: 370px;
     span{
       margin-left: 54px;
     }
@@ -717,7 +714,7 @@
   background: $main;
   position: fixed;
   right: 30px;
-  bottom: 40px;
+  bottom: 74px;
   cursor: default;
   &.on{
     opacity: 0.8;
