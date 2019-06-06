@@ -178,7 +178,7 @@ $(function(){
     method: "get",
     cache: false,
     dataType: "json",
-    timeout: 10000
+    timeout: 3000
   })
   .done(function(data){
     const worksInfo = data.slice();
@@ -282,7 +282,7 @@ $(function(){
     })
   })
   .fail(function (error) {
-    console.log(error);
+    console.log(error.responseText);
   })
 })
 $(function(){
@@ -548,17 +548,15 @@ $(function(){
         }
       }
       // 前いた場所とは違う場所に移動した時
-      if (Number(nowNum) == Number(beNum)) {
-
-      }
-      else {
+      if ( Number(nowNum) !== Number(beNum)) {
         naviList.eq(beNum).removeClass("show");
         naviList.eq(beNum).removeClass("on");
-        naviList.children("p").eq(beNum).removeClass("on");
-
         naviList.eq(nowNum).addClass("show");
         naviList.eq(nowNum).addClass("on");
-        naviList.children("p").eq(nowNum).addClass("on");
+        if (!sideNavi.hasClass("sp")) {
+          naviList.children("p").eq(beNum).removeClass("on");
+          naviList.children("p").eq(nowNum).addClass("on");
+        }
       }
     }
     if (nowSc >= content.eq(4).offset().top) {

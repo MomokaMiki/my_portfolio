@@ -143,7 +143,7 @@ $(function(){
     method: "get",
     cache: false,
     dataType: "json",
-    timeout: 10000
+    timeout: 3000
   })
   .done(function(data){
     const worksInfo = data.slice();
@@ -247,6 +247,6 @@ $(function(){
     })
   })
   .fail(function (error) {
-    console.log(error);
+    console.log(error.responseText);
   })
 })
